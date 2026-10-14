@@ -173,16 +173,18 @@
                                     textField({
                                         id: 'pickUp',
                                         title: 'Pickup Location',
+                                        oninputFunction: 'getMapDetails()',
                                         icon: '<i class="bi bi-geo-alt"></i>',
                                     });
                                 </script>
                             </div>
 
-                            <div class="text_field_container" id="dropOff_container">
+                            <div class="text_field_container" id="destination_container">
                                 <script>
                                     textField({
-                                        id: 'dropOff',
+                                        id: 'destination',
                                         title: 'Drop-off Location',
+                                        oninputFunction: 'getMapDetails()',
                                         icon: '<i class="bi bi-geo"></i>',
                                     });
                                 </script>
@@ -226,6 +228,9 @@
                             <i class="bi-car-front-fill"></i>
                             <span>Book Now!</span>
                         </button>
+
+                        <!-- <div id="output"></div>
+                                    <div id="map"></div> -->
                     </div>
                 </div>
             </div>
@@ -826,6 +831,15 @@
 
         <?php include 'bottom-scripts.php' ?>
     </section>
+    <!-- Load Google Maps API with Places & call initMap -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.write(`
+            <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNYG0x6xtJOeYx6PTmRjjqBVI9FPgGNSw&libraries=places&callback=initMap&t=${timestamp}">
+            <\/script>
+        `);
+    </script>
 </body>
 
 </html>

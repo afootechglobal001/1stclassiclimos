@@ -2230,3 +2230,9 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 		font-size: 14px;
 	}
 }
+
+
+#map{
+    width: 100%;
+    height: 300px;
+}
