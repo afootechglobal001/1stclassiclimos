@@ -227,23 +227,6 @@
                             <span>Book Now!</span>
                         </button>
                     </div>
-
-                    <!-- <div class="slide-book-footer">
-                        <div>
-                            <i class="bi bi-headset"></i>
-                            24/7 Support
-                        </div>
-                        <span></span>
-                        <div>
-                            <i class="bi bi-clock-history"></i>
-                            On-Time Pickup
-                        </div>
-                        <span></span>
-                        <div>
-                            <i class="bi bi-shield-check"></i>
-                            Trusted & Secure
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </section>
