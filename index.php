@@ -156,7 +156,7 @@
                         </div>
                     </div>
 
-                    <div class="slide-book-form" id="slideBookForm">
+                    <div class="slide-book-form">
                         <div class="slide-book-fields" id="slideBookFields">
                             <div class="text_field_container" id="route_container" style="display: none;">
                                 <script>
@@ -228,9 +228,6 @@
                             <i class="bi-car-front-fill"></i>
                             <span>Book Now!</span>
                         </button>
-
-                        <!-- <div id="output"></div>
-                                    <div id="map"></div> -->
                     </div>
                 </div>
             </div>
@@ -605,7 +602,99 @@
             </div>
         </section>
 
-        <section class="body-div net-bg-tl">
+        <section class="body-div ambient-bg how-it-works-body-div net-bg-tl">
+            <div class="body-div-in how-it-works-body-div-in">
+                <div class="main-pages-back-div">
+                    <div class="general-title how-it-works-title" data-aos="fade-in" data-aos-duration="1000">
+                        <div class="top-title">
+                            <i class="bi-car-front-fill"></i>
+                            <span><strong>How It Works</strong></span>
+                        </div>
+
+                        <div class="main-title">
+                            <h2>Luxury, Made Effortless</h2>
+                            <p>From choosing your vehicle to turning the key, Revamo keeps every step simple, seamless, and tailored to the way you travel.</p>
+
+                            <div class="btn-div">
+                                <a href="<?php echo $websiteUrl?>/#" title="Start Your Journey">
+                                <button class="btn" title="Start Your Journey">
+                                    <i class="bi-car-front-fill"></i>
+                                    Start Your Journey
+                                </button></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="how-it-works-wrapper" data-aos="fade-in" data-aos-duration="1000">
+                       <div class="how-it-works" data-number="01">
+                            <div class="message-user">
+                                <div class="user-avatar">
+                                    <img src="<?php echo $websiteUrl ?>/all-images/images/choose-ride.png"
+                                        alt="Choose Your Car">
+                                </div>
+                            </div>
+                            
+                            <div class="text-div">
+                                <h3>Choose Your Car</h3>
+                                <p>
+                                    Explore our fleet and find your perfect ride.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="how-it-works" data-number="02">
+                            <div class="message-user">
+                                <div class="user-avatar">
+                                    <img src="<?php echo $websiteUrl ?>/all-images/images/details.png"
+                                        alt="Select Your Details">
+                                </div>
+                            </div>
+
+                           <div class="text-div">
+                                <h3>Select Your Details</h3>
+                                <p>
+                                    Select your dates, locations & preferences.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="how-it-works" data-number="03">
+                            <div class="message-user">
+                                <div class="user-avatar">
+                                    <img src="<?php echo $websiteUrl ?>/all-images/images/confirm-ride.png"
+                                        alt="Confirm Your Ride">
+                                </div>
+                            </div>
+                            
+                            <div class="text-div">
+                                <h3>Confirm Your Ride</h3>
+                                <p>
+                                    Review your booking & confirm your reservation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="how-it-works" data-number="04">
+                            <div class="message-user">
+                                <div class="user-avatar">
+                                    <img src="<?php echo $websiteUrl ?>/all-images/images/enjoy-ride.png"
+                                        alt="Enjoy The Drive">
+                                </div>
+                            </div>
+                            
+                            <div class="text-div">
+                                <h3>Enjoy The Drive</h3>
+                                <p>
+                                    Collect your car and enjoy every moment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="body-div net-bg-br">
             <div class="body-div-in">
                 <div class="main-pages-back-div">
                     <div class="faq-wrapper" data-aos="fade-in" data-aos-duration="1200">
@@ -701,7 +790,7 @@
             </div>
         </section>
 
-        <section class="body-div ambient-bg net-bg-tl">
+        <section class="body-div ambient-bg net-bg-tr">
             <div class="body-div-in">
                 <div class="main-pages-back-div">
                     <div class="general-title" data-aos="fade-in" data-aos-duration="1000">
@@ -717,7 +806,7 @@
             </div>
         </section>
 
-        <section class="body-div net-bg-tl">
+        <section class="body-div">
             <div class="body-div-in">
                 <div class="main-pages-back-div">
                     <div class="general-title">
@@ -829,7 +918,61 @@
             </div>
         </section>
 
-        <?php include 'bottom-scripts.php' ?>
+        <section class="body-div app-download-body-div">
+            <div class="body-div-in">
+                <div class="main-pages-back-div">
+                    <div class="general-title how-it-works-title app-download-title" data-aos="fade-in" data-aos-duration="1000">
+                        <div class="top-title">
+                            <i class="bi-car-front-fill"></i>
+                            <span><strong><?php echo $appName; ?> In Your Pocket</strong></span>
+                        </div>
+
+                        <div class="main-title">
+                            <h2>Discover A Smarter Way To Travel In Luxury</h2>
+                            <p>Manage your reservations, explore our premium fleet, request concierge assistance, and keep every journey within reach with the Revamo experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" data-aos="fade-in" data-aos-duration="1000">
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <h4>Easy Booking</h4>
+                        </div>
+
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <h4>Real-Time Updates</h4>
+                        </div>
+                    </div>
+
+                    <div class="download-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="download-app" title="Download On Google Play">
+                            <div class="icon">
+                                <i class="bi bi-google-play"></i>
+                            </div>
+
+                            <div class="text">
+                                <p>Get It On</p>
+                                <h4>Google Play</h4>
+                            </div>
+                        </div>
+
+                        <div class="download-app" title="Download On App Store">
+                            <div class="icon">
+                                <i class="bi bi-apple"></i>
+                            </div>
+
+                            <div class="text">
+                                <p>Download On The</p>
+                                <h4>App Store</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <?php include 'footer.php' ?>
     </section>
     <!-- Load Google Maps API with Places & call initMap -->
     <script>

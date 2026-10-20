@@ -9,8 +9,8 @@
                         <li><i class="bi-whatsapp"></i></li></a>
                         <a href="https://web.facebook.com/1stclassiclimos" target="_blank" title="Facebook">
                         <li class="li"><i class="bi-facebook"></i></li></a>
-                        <a href="https://twitter.com/1stclassiclimos" target="_blank" title="Twitter">
-                        <li class="li"><i class="bi-twitter"></i></li></a>
+                        <a href="https://twitter.com/1stclassiclimos" target="_blank" title="X">
+                        <li class="li"><i class="bi bi-twitter-x"></i></li></a>
                         <a href="https://www.linkedin.com/company/1stclassiclimos" target="_blank" title="Linkedin">
                         <li class="li"><i class="bi-linkedin"></i></li></a>
                         <a href="https://www.instagram.com/1stclassiclimos/" target="_blank" title="Instagram">
