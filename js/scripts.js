@@ -307,14 +307,33 @@ function changeBookingType(bookingType) {
 
   // Reset fields
   $('#route_container, #duration_container').hide();
-  $('#pickUp_container, #dropOff_container, #pickupDate_container, #pickupTime_container').show();
+  $('#pickUp_container, #destination_container, #pickupDate_container, #pickupTime_container').show();
 
   //// Booking Type
   if (bookingType === 'hourly') {
-    $('#dropOff_container').hide();
+    $('#destination_container').hide();
     $('#duration_container').show();
   } else if (bookingType === 'flat-rate') {
-    $('#pickUp_container, #dropOff_container').hide();
+    $('#pickUp_container, #destination_container').hide();
     $('#route_container').show();
+  }
+}
+
+
+//// Toggle Service Locations ////
+function _toggleServiceLocation() {
+  const button = $('#toggleServiceLocationBtn');
+  const locations = $('#footerServiceLocationContent li:gt(15)');
+  const isExpanded = button.data('expanded') === true;
+
+  // Prevent overlapping animations
+  locations.stop(true, true);
+
+  if (isExpanded) {
+    locations.slideToggle('slow');
+    button.text('View All Locations').attr('title', 'View All Service Locations').data('expanded', false);
+  } else {
+    locations.slideToggle('slow');
+    button.text('Show Less').attr('title', 'Show Fewer Service Locations').data('expanded', true);
   }
 }
