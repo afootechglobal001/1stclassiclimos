@@ -665,7 +665,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
                  rgba(8, 11, 16, 0.675) 50%,
                 rgba(6, 38, 77, 0.00) 80%
             ),
-            url('../all-images/body-pix/slide-bg1.png');
+            url('../all-images/body-pix/slide-bg1.jpg');
     }
 
     25%, 49% {
@@ -704,7 +704,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
                  rgba(8, 11, 16, 0.675) 50%,
                 rgba(6, 38, 77, 0.00) 80%
             ),
-            url('../all-images/body-pix/slide-bg4.webp');
+            url('../all-images/body-pix/slide-bg4.jpg');
     }
 }
 
