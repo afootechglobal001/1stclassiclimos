@@ -1074,6 +1074,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     gap: 5px;
     padding: 5px;
     background: var(--tab-btn-bg);
