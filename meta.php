@@ -9,6 +9,7 @@
 <link href="<?php echo $websiteUrl ?>/style/animate.css" type="text/css" rel="stylesheet" media="all">
 <link href="<?php echo $websiteUrl ?>/style/aos.css" type="text/css" rel="stylesheet" />
 <link href="<?php echo $websiteUrl ?>/style/paramount.css?v=<?php echo $codeVersion ?>" type="text/css" rel="stylesheet" />
+<link href="<?php echo $websiteUrl?>/style/tablePaginator.css?v=<?php echo $codeVersion?>" type="text/css" rel="stylesheet" />
 <link href="<?php echo $websiteUrl ?>/style/main-style.css?v=<?php echo $codeVersion ?>" type="text/css" rel="stylesheet" />
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -17,6 +18,7 @@
 <script src="<?php echo $websiteUrl ?>/js/helper.js?v=<?php echo $codeVersion ?>" type="text/javascript"></script>
 <script src="<?php echo $websiteUrl ?>/js/textfield-selectfield.js?v=<?php echo $codeVersion ?>"></script>
 <script src="<?php echo $websiteUrl ?>/js/aos.js?v=<?php echo $codeVersion ?>"></script>
+<script src="<?php echo $websiteUrl?>/js/tablePaginator.js?v=<?php echo $codeVersion?>"></script>
 
 <link href="<?php echo $websiteUrl ?>/slide-property/product-carousel/carousel.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo $websiteUrl ?>/slide-property/product-carousel/carousel.js?v=<?php echo $codeVersion ?>" type="text/javascript"></script>

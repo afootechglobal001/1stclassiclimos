@@ -29,7 +29,14 @@
 
             <div class="right-content">
                 <ul class="ul-right-content">
-                    <a href="<?php echo $websiteUrl?>/#" title="Blog & Articles">
+                    <a href="#download-app" title="Download Mobile App">
+                        <li class="app-li">
+                            <i class="bi bi-google-play"></i>
+                            App
+                        </li>
+                    </a>
+
+                    <a href="<?php echo $websiteUrl?>/blog" title="Blog & Articles">
                         <li
                             class="blog-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/blog")) {?> active <?php }?>">
                             <i class="bi-journal"></i>
@@ -37,7 +44,7 @@
                         </li>
                     </a>
 
-                    <a href="<?php echo $websiteUrl?>/#" title="Frequently Asked Questions">
+                    <a href="<?php echo $websiteUrl?>/faq" title="Frequently Asked Questions">
                         <li
                             class="Faq-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/faq")) {?> active <?php }?>">
                             <i class="bi-question-circle"></i>
@@ -45,9 +52,9 @@
                         </li>
                     </a>
 
-                    <a href="<?php echo $websiteUrl?>/#" title="Frequently Asked Questions">
+                    <a href="<?php echo $websiteUrl?>/service-locations" title="Service Locations">
                         <li
-                            class="Faq-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/faq")) {?> active <?php }?>">
+                            class="Faq-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/service-locations")) {?> active <?php }?>">
                             <i class="bi-geo-alt"></i>
                             Service Locations
                         </li>
@@ -100,8 +107,8 @@
                     </a>
 
                     <li id="expand-li"
-                        class="services <?php if (strstr($websiteAutoUrl, "$websiteUrl/services")) {?> active <?php }?>">
-                        <a href="<?php echo $websiteUrl?>/#" title="Services">
+                        class="services <?php if (strstr($websiteAutoUrl, "$websiteUrl/airport-transportation-limousine-car-service")) {?> active <?php }?>">
+                        <a href="<?php echo $websiteUrl?>/airport-transportation-limousine-car-service" title="Services">
                             <i class="bi-plus"></i> Services </a>
 
                         <ul class="animated fadeIn">
@@ -124,9 +131,9 @@
                         </li>
                     </a>
 
-                    <a href="<?php echo $websiteUrl?>/gallery" title="Fleets">
+                    <a href="<?php echo $websiteUrl?>/fleet" title="Fleets">
                         <li
-                            class="fleets-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/fleets")) {?> active <?php }?>">
+                            class="fleets-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/fleet")) {?> active <?php }?>">
                             Fleets
                         </li>
                     </a>

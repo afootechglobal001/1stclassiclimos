@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_WARNING);
 $websiteAutoUrl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$appName = '1ST CLASSIC';
+$appName = '1st Classic';
 
 //$websiteUrl='https://1stclassiclimos.com'; /// For Live Server Url //
 $websiteUrl = 'http://localhost/weblist-studio/1stclassiclimos';
@@ -60,4 +60,15 @@ $userDeviceId = getBrowserId();
     /// Portal Middleware Urls ///
     var portalMiddleWareUrl = websiteUrl + '/portal/config/code'; /// For Portal Login Middleware Url //
     var portalUrl = websiteUrl + '/portal'; /// For Portal Url //
+
+    /// Pictures Paths ///
+    var blogPixPath = websiteUrl + '/uploaded_files/blog'; /// For Blog Picture Path //
+    var servicePixPath = websiteUrl + '/uploaded_files/services'; /// For Services Picture Path //
+    var pagesPixPath = websiteUrl + '/uploaded_files/pagePictures'; /// For Pages Pictures Path //
+    var fleetPixPath = websiteUrl + '/uploaded_files/fleets'; /// For Fleet Pictures Path //
+    
+    var pageCategory = {
+        SERVICE: 'SERVICE',
+        BLOG: 'BLOG',
+    }
 </script>

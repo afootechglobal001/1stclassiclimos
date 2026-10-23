@@ -1,3 +1,57 @@
+<section class="body-div app-download-body-div" id="download-app">
+    <div class="body-div-in">
+        <div class="main-pages-back-div">
+            <div class="general-title how-it-works-title app-download-title" data-aos="fade-in" data-aos-duration="1000">
+                <div class="top-title">
+                    <i class="bi-car-front-fill"></i>
+                    <span><strong><?php echo $appName; ?> In Your Pocket</strong></span>
+                </div>
+
+                <div class="main-title">
+                    <h2>Discover A Smarter Way To Travel In Luxury</h2>
+                    <p>Manage your reservations, explore our premium fleet, request concierge assistance, and keep every journey within reach with the Revamo experience.</p>
+                </div>
+            </div>
+
+            <div class="feature-wrapper" data-aos="fade-in" data-aos-duration="1000">
+                <div class="feature-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <h4>Easy Booking</h4>
+                </div>
+
+                <div class="feature-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <h4>Real-Time Updates</h4>
+                </div>
+            </div>
+
+            <div class="download-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                <div class="download-app" title="Download On Google Play">
+                    <div class="icon">
+                        <i class="bi bi-google-play"></i>
+                    </div>
+
+                    <div class="text">
+                        <p>Get It On</p>
+                        <h4>Google Play</h4>
+                    </div>
+                </div>
+
+                <div class="download-app" title="Download On App Store">
+                    <div class="icon">
+                        <i class="bi bi-apple"></i>
+                    </div>
+
+                    <div class="text">
+                        <p>Download On The</p>
+                        <h4>App Store</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <footer class="footer-div">
     <div class="footer-div-in">
         <div class="support-wrapper" data-aos="fade-up" data-aos-duration="1000">
@@ -58,7 +112,7 @@
         <div class="segment-back-div bottom-segment">
             <div class="segment-div" data-aos="fade-up" data-aos-duration="1000">
                 <h3>About Us</h3>
-                <div class="logo-div"><img src="<?php echo $websiteUrl?>/all-images/images/logo.png" alt="<?php echo $appName?> Logo"></div>
+                <div class="logo-div"><img src="<?php echo $websiteUrl?>/all-images/images/footer-logo.png" alt="<?php echo $appName?> Logo"></div>
                 <p><strong><?php echo $appName?> </strong> is a full-service chauffeured ground transportation company providing private airport transfers, corporate black-car service, FBO transportation, executive travel, hourly chauffeur service, Sprinter transportation, charter buses, group transportation, special events, and private tours.</p>
                
                 <div class="flex-column">
@@ -96,7 +150,7 @@
             <div class="segment-div" data-aos="fade-up" data-aos-duration="1200">
                 <h3>Quick Links</h3>
                 <ul>
-                    <a href="<?php echo $websiteUrl?>/#" title="Service Locations">
+                    <a href="<?php echo $websiteUrl?>/service-locations" title="Service Locations">
                         <li>Service Locations</li>
                     </a>
                     <a href="<?php echo $websiteUrl?>/#" title="Book A Ride Now">
@@ -105,37 +159,37 @@
                     <a href="<?php echo $websiteUrl?>/#" title="Account SignUp/Login">
                         <li>Account SignUp/Login</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="About Us">
+                    <a href="<?php echo $websiteUrl?>/about" title="About Us">
                         <li>About <?php echo $appName?></li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Contact Us">
+                    <a href="<?php echo $websiteUrl?>/contact-us" title="Contact Us">
                         <li>Contact Us</li>
                     </a>
                     <a href="<?php echo $websiteUrl?>/#" title="Wine Tour">
                         <li>Wine Tour</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Blog & Articles">
+                    <a href="<?php echo $websiteUrl?>/blog" title="Blog & Articles">
                         <li>Blog & Articles</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Frequently Asked Questions">
+                    <a href="<?php echo $websiteUrl?>/faq" title="Frequently Asked Questions">
                         <li>Frequently Asked Questions</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Terms & Conditions">
+                    <a href="<?php echo $websiteUrl?>/terms-and-conditions" title="Terms & Conditions">
                         <li>Terms & Conditions</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Privacy Policy">
+                    <a href="<?php echo $websiteUrl?>/privacy-policy" title="Privacy Policy">
                         <li>Privacy Policy</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Cookies Policy">
+                    <a href="<?php echo $websiteUrl?>/cookies-policy" title="Cookies Policy">
                         <li>Cookies Policy</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Affiliate Networks">
+                    <a href="<?php echo $websiteUrl?>/affiliates" title="Affiliate Networks">
                         <li>Affiliate Networks</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Fleets">
+                    <a href="<?php echo $websiteUrl?>/fleet" title="Fleets">
                         <li>Fleets</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Services">
+                    <a href="<?php echo $websiteUrl?>/airport-transportation-limousine-car-service" title="Services">
                         <li>Services </li>
                     </a>
                     <a href="<?php echo $websiteUrl?>/#" title="Package Deals">

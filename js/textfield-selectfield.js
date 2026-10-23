@@ -12,6 +12,7 @@ function textField(options) {
     maxlength = null,
     rows = null,
     icon = "",
+    applyBorder = false,
   } = options;
 
   const isPassword = type === "password";
@@ -24,7 +25,7 @@ function textField(options) {
 		  <div class="issueText" id="issue_${id}"></div>
         `
       : `
-          <input class="text_field border-textFields" type="${type}" id="${id}" placeholder="" value="${value}"
+          <input class="text_field ${applyBorder ? "border-textFields" : ""}" type="${type}" id="${id}" placeholder="" value="${value}"
             ${onKeyPressFunction ? `onkeypress="${onKeyPressFunction}"` : ""} 
             ${onKeyUpFunction ? `onkeyup="${onKeyUpFunction}"` : ""}
             ${onblurFunction ? `onblur="${onblurFunction}"` : ""}

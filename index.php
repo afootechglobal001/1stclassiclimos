@@ -1,4 +1,6 @@
 <?php include 'config/constants.php'; ?>
+<?php include 'config/functions.php'; ?>
+
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http: //www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -35,7 +37,7 @@
 
                     <div class="btn-div">
                         <button class="btn" title="Make Reservation Now"><i class="bi bi-calendar2-check-fill"></i> Make Reservation Now</button>
-                        <button class="btn variant-btn" title="Make Reservation Now"><i class="bi-car-front-fill"></i> EXplore Our Fleets</button>
+                        <button class="btn variant-btn" title="Make Reservation Now"><i class="bi-car-front-fill"></i> Explore Our Fleets</button>
                     </div>
 
                     <div class="features-wrapper">
@@ -164,6 +166,7 @@
                                         id: 'route',
                                         title: 'Route',
                                         icon: '<i class="bi bi-signpost-2"></i>',
+                                        applyBorder: true,
                                     });
                                 </script>
                             </div>
@@ -175,6 +178,7 @@
                                         title: 'Pickup Location',
                                         oninputFunction: 'getMapDetails()',
                                         icon: '<i class="bi bi-geo-alt"></i>',
+                                        applyBorder: true,
                                     });
                                 </script>
                             </div>
@@ -186,6 +190,7 @@
                                         title: 'Drop-off Location',
                                         oninputFunction: 'getMapDetails()',
                                         icon: '<i class="bi bi-geo"></i>',
+                                        applyBorder: true,
                                     });
                                 </script>
                             </div>
@@ -196,6 +201,7 @@
                                         id: 'pickupDate',
                                         title: 'Pickup Date',
                                         type: 'date',
+                                        applyBorder: true,
                                     });
                                 </script>
                             </div>
@@ -206,6 +212,7 @@
                                         id: 'pickupTime',
                                         title: 'Pickup Time',
                                         type: 'time',
+                                        applyBorder: true,
                                     });
                                 </script>
                             </div>
@@ -216,6 +223,7 @@
                                         id: 'duration',
                                         title: 'Duration (In Hours)',
                                         icon: '<i class="bi bi-hourglass-split"></i>',
+                                        applyBorder: true,
                                     });
                                 </script>
                             </div>
@@ -248,100 +256,18 @@
                         </div>
                     </div>
 
-                    <div class="fleet-wrapper">
-                        <div class="fleet-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl; ?>/uploaded_files/fleets/executive-sedan.jpg" alt="Executive luxury sedan">
-                                <span class="category">Luxury Sedan</span>
-                                <h3>Executive Sedan</h3>
-                            </div>
-
-                            <div class="fleet-content">
-                                <div class="fleet-features">
-                                    <div class="feature">
-                                        <i class="bi bi-people"></i>
-                                        <span>4 Passengers</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="bi bi-sliders"></i>
-                                        <span>Automatic</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="bi bi-luggage"></i>
-                                        <span>2 Suitcase</span>
-                                    </div>
-                                </div>
-
-                                <div class="price">$84.99  <span> / Hourly Rate</span></div>
-                                <a href="#">
-                                    <button class="btn" title="View Vehicle"><i class="bi bi-eye"></i> View Vehicle</button>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="fleet-div" data-aos="fade-up" data-aos-duration="1300">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl; ?>/uploaded_files/fleets/executive-suv.jpg" alt="Executive class luxury SUV">
-                                <span class="category">Luxury SUV</span>
-                                <h3>Executive Class SUV</h3>
-                            </div>
-
-                            <div class="fleet-content">
-                                <div class="fleet-features">
-                                    <div class="feature">
-                                        <i class="bi bi-people"></i>
-                                        <span>6 Passengers</span>
-                                    </div>
-                                    <div class="feature">   
-                                        <i class="bi bi-sliders"></i>
-                                        <span>Automatic</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="bi bi-luggage"></i>
-                                        <span>6 Suitcase</span>
-                                    </div>
-                                </div>
-
-                                <div class="price">$94.99 <span> / Hourly Rate</span></div>
-                                <a href="#">
-                                    <button class="btn" title="View Vehicle"><i class="bi bi-eye"></i> View Vehicle</button>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="fleet-div" data-aos="fade-up" data-aos-duration="1400">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl; ?>/uploaded_files/fleets/executive-class-sprinter-van.jpg" alt="Executive class luxury Sprinter van">
-                                <span class="category">Luxury Van</span>
-                                <h3>Executive Class Sprinter Van</h3>
-                            </div>
-
-                            <div class="fleet-content">
-                                <div class="fleet-features">
-                                    <div class="feature">
-                                        <i class="bi bi-people"></i>
-                                        <span>14 Passengers</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="bi bi-sliders"></i>
-                                        <span>Automatic</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="bi bi-luggage"></i>
-                                        <span>14 Suitcase</span>
-                                    </div>
-                                </div>
-
-                                <div class="price">$159.99  <span> / Hourly Rate</span></div>
-                                <a href="#">
-                                    <button class="btn" title="View Vehicle"><i class="bi bi-eye"></i> View Vehicle</button>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="fleet-wrapper" id="indexFleetPageContent">
+                        <script>
+                            _getPageList({
+                                pageCategory: "FLEET",
+                                limit: 3,
+                                pageContainer: "indexFleetPageContent"
+                            })
+                        </script> 
                     </div>
 
                     <div class="bottom-btn-div animated fadeIn">
-                        <a href="<?php echo $websiteUrl; ?>/#">
+                        <a href="<?php echo $websiteUrl; ?>/fleet">
                         <button class="btn" title="Explore More Fleet">
                             Explore More Fleet
                             <i class="bi bi-car-front-fill"></i>
@@ -508,191 +434,9 @@
             </div>
         </section>
 
-        <section class="body-div net-bg-bl">
-            <div class="body-div-in">
-                <div class="main-pages-back-div">
-                    <div class="general-title" data-aos="fade-in" data-aos-duration="1000">
-                        <div class="top-title">
-                            <i class="bi-car-front-fill"></i>
-                            <span><strong>Why Choose Us</strong></span>
-                        </div>
+        <?php _whyChooseUsSection('net-bg-bl', $websiteUrl, $appName); ?>
 
-                        <div class="main-title">
-                            <h2>Why Choose <?php echo $appName; ?>?</h2>
-                            <p>Discover a better way to travel with exceptional comfort, timeless class, and complete confidence on every journey.</p>
-                        </div>
-                    </div>
-
-                    <div class="why-choose-us-wrapper">
-                        <div class="text-wrapper">
-                            <div class="listing" data-aos="fade-up" data-aos-duration="1000">
-                                <div class="icon">
-                                    <i class="bi bi-calendar2-check"></i>
-                                </div>
-
-                                <div class="content">
-                                    <h3>Real-time booking System</h3>
-                                    <p>Booking your transportation service online and get an instant confirmation</p>
-                                </div>
-                            </div>
-
-                            <div class="listing" data-aos="fade-up" data-aos-duration="1200">
-                                <div class="icon">
-                                    <i class="bi bi-clock-history"></i>
-                                </div>
-
-                                <div class="content">
-                                    <h3>24/7 service available</h3>
-                                    <p>We are a 24/7 car service provider. Always at your service when needed.</p>
-                                </div>
-                            </div>
-
-                            <div class="listing" data-aos="fade-up" data-aos-duration="1300">
-                                <div class="icon">
-                                    <i class="bi bi-shield-lock"></i>
-                                </div>
-
-                                <div class="content">
-                                    <h3>Secure online payment system</h3>
-                                    <p>Go cashless by securely paying online not having to carrying cash with you.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="center-image" data-aos="fade-in" data-aos-duration="1000">
-                            <img src="<?php echo $websiteUrl; ?>/all-images/body-pix/why-us.jpg" alt="Why Choose<?php echo $appName ?>">
-                        </div>
-
-                        <div class="text-wrapper">
-                            <div class="listing" data-aos="fade-up" data-aos-duration="1000">
-                                <div class="icon">
-                                    <i class="bi bi-emoji-smile"></i>
-                                </div>
-
-                                <div class="content">
-                                    <h3>100% customer satisfaction</h3>
-                                    <p>We ensure maximum client satisfaction guiding our vision and mission</p>
-                                </div>
-                            </div>
-
-                            <div class="listing" data-aos="fade-up" data-aos-duration="1200">
-                                <div class="icon">
-                                    <i class="bi bi-award"></i>
-                                </div>
-
-                                <div class="content">
-                                    <h3>Premium Standards</h3>
-                                    <p>Experience exceptional vehicle care, comfort, and attention to every detail.</p>
-                                </div>
-                            </div>
-
-                            <div class="listing" data-aos="fade-up" data-aos-duration="1300">
-                                <div class="icon">
-                                    <i class="bi bi-headset"></i>
-                                </div>
-
-                                <div class="content">
-                                    <h3>Always Ready</h3>
-                                    <p>Get dedicated reservation assistance whenever your next journey calls.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="body-div ambient-bg how-it-works-body-div net-bg-tl">
-            <div class="body-div-in how-it-works-body-div-in">
-                <div class="main-pages-back-div">
-                    <div class="general-title how-it-works-title" data-aos="fade-in" data-aos-duration="1000">
-                        <div class="top-title">
-                            <i class="bi-car-front-fill"></i>
-                            <span><strong>How It Works</strong></span>
-                        </div>
-
-                        <div class="main-title">
-                            <h2>Luxury, Made Effortless</h2>
-                            <p>From choosing your vehicle to turning the key, Revamo keeps every step simple, seamless, and tailored to the way you travel.</p>
-
-                            <div class="btn-div">
-                                <a href="<?php echo $websiteUrl?>/#" title="Start Your Journey">
-                                <button class="btn" title="Start Your Journey">
-                                    <i class="bi-car-front-fill"></i>
-                                    Start Your Journey
-                                </button></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="how-it-works-wrapper" data-aos="fade-in" data-aos-duration="1000">
-                       <div class="how-it-works" data-number="01">
-                            <div class="message-user">
-                                <div class="user-avatar">
-                                    <img src="<?php echo $websiteUrl ?>/all-images/images/choose-ride.png"
-                                        alt="Choose Your Car">
-                                </div>
-                            </div>
-                            
-                            <div class="text-div">
-                                <h3>Choose Your Car</h3>
-                                <p>
-                                    Explore our fleet and find your perfect ride.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="how-it-works" data-number="02">
-                            <div class="message-user">
-                                <div class="user-avatar">
-                                    <img src="<?php echo $websiteUrl ?>/all-images/images/details.png"
-                                        alt="Select Your Details">
-                                </div>
-                            </div>
-
-                           <div class="text-div">
-                                <h3>Select Your Details</h3>
-                                <p>
-                                    Select your dates, locations & preferences.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="how-it-works" data-number="03">
-                            <div class="message-user">
-                                <div class="user-avatar">
-                                    <img src="<?php echo $websiteUrl ?>/all-images/images/confirm-ride.png"
-                                        alt="Confirm Your Ride">
-                                </div>
-                            </div>
-                            
-                            <div class="text-div">
-                                <h3>Confirm Your Ride</h3>
-                                <p>
-                                    Review your booking & confirm your reservation.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="how-it-works" data-number="04">
-                            <div class="message-user">
-                                <div class="user-avatar">
-                                    <img src="<?php echo $websiteUrl ?>/all-images/images/enjoy-ride.png"
-                                        alt="Enjoy The Drive">
-                                </div>
-                            </div>
-                            
-                            <div class="text-div">
-                                <h3>Enjoy The Drive</h3>
-                                <p>
-                                    Collect your car and enjoy every moment.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <?php _howItWorksSection('net-bg-tl', 'ambient-bg'); ?>
 
         <section class="body-div net-bg-br">
             <div class="body-div-in">
@@ -715,70 +459,17 @@
                                 </div>
                             </div>
 
-                            <div class="faq-toggle-back">
-                                <div class="faq-toggle" id="faq1">
-                                    <div class="title-text" onclick="_collapse('faq1')">
-                                        <div class="quest-text-div">
-                                            <div class="icon-div"><i class="bi-question"></i></div>
-                                            <h3>How do I make a reservation?</h3>
-                                        </div>
-                                        <div class="expand-div" id="faq1num">
-                                            <i class="bi bi-plus"></i>
-                                        </div>
-                                    </div>
-                                    <div class="answer-div" id="faq1answer" style="display: none;">
-                                        <p>Reservation can be made by calling <strong><a href="tel:1-800-658-5679">(1-800) 658-5679</a></strong> or by clicking on <strong>BOOK A RIDE</strong> for an online reservation.</p>
-                                    </div>
-                                </div>
-
-                                <div class="faq-toggle" id="faq2">
-                                    <div class="title-text" onclick="_collapse('faq2')">
-                                        <div class="quest-text-div">
-                                            <div class="icon-div"><i class="bi-question"></i></div>
-                                            <h3>How far in advance are you required to make a booking?</h3>
-                                        </div>
-                                        <div class="expand-div" id="faq2num">
-                                            <i class="bi bi-plus"></i>
-                                        </div>
-                                    </div>
-                                    <div class="answer-div" id="faq2answer" style="display: none;">
-                                        <p>We require at least a minimum of 3 hours in advance for booking airport transportation both for arrival and pickup to the airport and transfers. And a minimum of  12 hours advance reservation for stretch limousines, charter buses, and mini-charter buses.</p>
-                                    </div>
-                                </div>
-
-                                <div class="faq-toggle" id="faq3">
-                                    <div class="title-text" onclick="_collapse('faq3')">
-                                        <div class="quest-text-div">
-                                            <div class="icon-div"><i class="bi-question"></i></div>
-                                            <h3>Can I/We open a corporate or personal account?</h3>
-                                        </div>
-                                        <div class="expand-div" id="faq3num">
-                                            <i class="bi bi-plus"></i>
-                                        </div>
-                                    </div>
-                                    <div class="answer-div" id="faq3answer" style="display: none;">
-                                        <p>We offer both corporate and personal accounts. A credit card authorization form will be emailed, and  ID validation and other documentation must be returned along with the signed and completed CC authorization form.  Major corporate accounts may qualify for billing terms, subject to review and approval. Click Account Sign-up to open one</p>
-                                    </div>
-                                </div>
-
-                                <div class="faq-toggle" id="faq4">
-                                    <div class="title-text" onclick="_collapse('faq4')">
-                                        <div class="quest-text-div">
-                                            <div class="icon-div"><i class="bi-question"></i></div>
-                                            <h3>When do we send the driver's info?</h3>
-                                        </div>
-                                        <div class="expand-div" id="faq4num">
-                                            <i class="bi bi-plus"></i>
-                                        </div>
-                                    </div>
-                                    <div class="answer-div" id="faq4answer" style="display: none;">
-                                        <p>The driver's information will be sent out together with the 6-hour and 3-hour notifications via email.</p>
-                                    </div>
-                                </div>
+                            <div class="faq-toggle-back" id="indexFaqPageContent">
+                                <script>
+                                    _getFaqList({
+                                        limit: 4,
+                                        pageContainer: "indexFaqPageContent"
+                                    })
+                                </script>
                             </div>
 
                             <div class="btn-div">
-                                <a href="<?php echo $websiteUrl; ?>/#">
+                                <a href="<?php echo $websiteUrl; ?>/faq">
                                 <button class="btn" title="Read More FAQ">
                                     Read More FAQ
                                     <i class="bi bi-arrow-right-circle"></i>
@@ -790,21 +481,7 @@
             </div>
         </section>
 
-        <section class="body-div ambient-bg net-bg-tr">
-            <div class="body-div-in">
-                <div class="main-pages-back-div">
-                    <div class="general-title" data-aos="fade-in" data-aos-duration="1000">
-                        <div class="top-title">
-                            <i class="bi-car-front-fill"></i>
-                            <span><strong>Testimonials</strong></span>
-                        </div>
-                    </div>
-                    
-                    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-                    <div class="elfsight-app-da7202e9-404c-4854-b154-c25bf91f03e1" style="width:96%; margin:auto;"></div>
-                </div>
-            </div>
-        </section>
+        <?php _customerReviewSection('net-bg-tr', 'ambient-bg'); ?>
 
         <section class="body-div">
             <div class="body-div-in">
@@ -821,152 +498,21 @@
                         </div>
                     </div>
 
-                    <div class="blog-back-div">
-                        <div class="blog-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="blog-inner-div">
-                                <div class="title">General</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl; ?>/uploaded_files/blog/blog-1.webp" alt="Enjoy a Stress-Free Airport Transfer">
-                                </div>
-
-                                <div class="text-div">
-                                    <div class="count">
-                                        <i class="bi-calendar3"></i> 22 Aug, 2026
-                                        <span>|</span>
-                                        <i class="bi-eye-fill"></i> 1,200 VIEWS
-                                    </div>
-
-                                    <h3>Enjoy a Stress-Free Airport Transfer</h3>
-                                    <p>
-                                        Discover reliable airport transportation with professional
-                                        chauffeurs, timely pickups, and comfortable rides to your
-                                        destination...
-                                    </p>
-
-                                    <div class="btn-div">
-                                        <button class="btn" title="Book Now">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog-div" data-aos="fade-up" data-aos-duration="1300">
-                            <div class="blog-inner-div">
-                                <div class="title">General</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl; ?>/uploaded_files/blog/blog-2.jpeg" alt="24/7 Airport Pickup & Drop-off – Premium Chauffeured Service">
-                                </div>
-
-                                <div class="text-div">
-                                    <div class="count">
-                                        <i class="bi-calendar3"></i> 22 Aug, 2026
-                                        <span>|</span>
-                                        <i class="bi-eye-fill"></i> 1,200 VIEWS
-                                    </div>
-
-                                    <h3>24/7 Airport Pickup & Drop-off – Premium Chauffeured Service</h3>
-                                    <p>
-                                        Discover reliable airport transportation with professional
-                                        chauffeurs, timely pickups, and comfortable rides to your
-                                        destination...
-                                    </p>
-
-                                    <div class="btn-div">
-                                        <button class="btn" title="Book Now">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog-div" data-aos="fade-up" data-aos-duration="1400">
-                            <div class="blog-inner-div">
-                                <div class="title">General</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl; ?>/uploaded_files/blog/blog-3.jpeg" alt="Monterey Airport Limo and Black Car Service">
-                                </div>
-
-                                <div class="text-div">
-                                    <div class="count">
-                                        <i class="bi-calendar3"></i> 22 Aug, 2026
-                                        <span>|</span>
-                                        <i class="bi-eye-fill"></i> 1,200 VIEWS
-                                    </div>
-
-                                    <h3>Monterey Airport Limo and Black Car Service</h3>
-                                    <p>
-                                        Discover reliable airport transportation with professional
-                                        chauffeurs, timely pickups, and comfortable rides to your
-                                        destination...
-                                    </p>
-
-                                    <div class="btn-div">
-                                        <button class="btn" title="Book Now">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="blog-back-div" id="indexBlogPageContainer">
+                        <script>
+                            _getPageList({
+                                pageCategory: "BLOG",
+                                pageContainer: "indexBlogPageContainer"
+                            })
+                        </script>
                     </div>
 
                     <div class="bottom-btn-div animated fadeIn">
-                        <a href="<?php echo $websiteUrl; ?>/#">
+                        <a href="<?php echo $websiteUrl; ?>/blog">
                         <button class="btn" title="Read More Blogs">
                             Read More Blogs
                             <i class="bi bi-arrow-right-circle"></i>
                         </button></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="body-div app-download-body-div">
-            <div class="body-div-in">
-                <div class="main-pages-back-div">
-                    <div class="general-title how-it-works-title app-download-title" data-aos="fade-in" data-aos-duration="1000">
-                        <div class="top-title">
-                            <i class="bi-car-front-fill"></i>
-                            <span><strong><?php echo $appName; ?> In Your Pocket</strong></span>
-                        </div>
-
-                        <div class="main-title">
-                            <h2>Discover A Smarter Way To Travel In Luxury</h2>
-                            <p>Manage your reservations, explore our premium fleet, request concierge assistance, and keep every journey within reach with the Revamo experience.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-wrapper" data-aos="fade-in" data-aos-duration="1000">
-                        <div class="feature-item">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <h4>Easy Booking</h4>
-                        </div>
-
-                        <div class="feature-item">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <h4>Real-Time Updates</h4>
-                        </div>
-                    </div>
-
-                    <div class="download-wrapper" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="download-app" title="Download On Google Play">
-                            <div class="icon">
-                                <i class="bi bi-google-play"></i>
-                            </div>
-
-                            <div class="text">
-                                <p>Get It On</p>
-                                <h4>Google Play</h4>
-                            </div>
-                        </div>
-
-                        <div class="download-app" title="Download On App Store">
-                            <div class="icon">
-                                <i class="bi bi-apple"></i>
-                            </div>
-
-                            <div class="text">
-                                <p>Download On The</p>
-                                <h4>App Store</h4>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
