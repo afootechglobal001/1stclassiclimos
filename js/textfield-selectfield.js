@@ -48,10 +48,11 @@ function selectField(options) {
     fieldValue = "",
     fieldLabel = "",
     icon = "",
+    applyBorder = false,
   } = options;
 
   const template = `
-    <select class="text_field select_text_field selectSearch border-textFields" id="${id}"
+    <select class="text_field select_text_field selectSearch ${applyBorder ? "border-textFields" : ""}" id="${id}"
         onclick="_selectOption('${id}')" style="opacity: 1;">
 		${
       fieldValue
@@ -251,4 +252,174 @@ function _getSelectCategory(fieldId) {
     console.error("Error:", error);
     _actionAlert("An unexpected error occurred. Please try again.", false);
   }
+}
+
+
+
+
+// -------------------------------------------------------------
+// NEW FILTER SELECT COMPONENT FUNCTION
+// -------------------------------------------------------------
+function filterSelectField(options) {
+  const {
+    id = "",
+    title = "",
+    emptyValue = "Select option",
+    fieldValue = "",
+    fieldLabel = "",
+    icon = "bi bi-sliders",
+    items = []
+  } = options;
+
+  const initialLabel = fieldLabel || emptyValue;
+
+  let optionsList = "";
+  if (emptyValue) {
+    optionsList += `<li data-val="" onclick="_clickFilterOption('${id}', '', '${emptyValue}')">${emptyValue}</li>`;
+  }
+
+  items.forEach(item => {
+    const isSelected = item.value === fieldValue ? "selected-option" : "";
+    optionsList += `
+      <li class="${isSelected}" data-val="${item.value}" onclick="_clickFilterOption('${id}', '${item.value}', '${item.label}')">
+        ${item.label}
+      </li>
+    `;
+  });
+
+  const template = `
+    <h4>${title}</h4>
+    <div class="pill-select-box" onclick="_toggleFilterDropdown('${id}')">
+      <div class="pill-select-content">
+        <i class="${icon}"></i>
+        <span id="selectedLabel_${id}">${initialLabel}</span>
+      </div>
+      <i class="bi bi-chevron-down pill-chevron-icon"></i>
+    </div>
+
+    <!-- Hidden native input to store selected value -->
+    <input type="hidden" id="${id}" value="${fieldValue}">
+
+    <div class="searchPanel animated fadeIn" id="searchPanel_${id}" style="display: none;">
+      <input type="text" class="searchTxt" placeholder="Type here to search..."
+             id="txtSearchValue_${id}" autocomplete="off" onkeyup="_filterSearchList('${id}')">
+      <ul id="searchList_${id}">
+        ${optionsList}
+      </ul>
+    </div>
+    <div class="issueText" id="issue_${id}"></div>
+  `;
+
+  $("#" + id + "_container").html(template);
+}
+
+// Open / Close Dropdown
+function _toggleFilterDropdown(id) {
+  const panel = $("#searchPanel_" + id);
+  const container = $("#" + id + "_container");
+  const isOpen = panel.is(":visible");
+
+  $(".filter-field-wrapper .searchPanel").hide();
+  $(".filter-field-wrapper").removeClass("active");
+
+  if (!isOpen) {
+    panel.show();
+    container.addClass("active");
+    $("#txtSearchValue_" + id).focus();
+  }
+}
+
+// Live Search Filter
+function _filterSearchList(id) {
+  const query = $("#txtSearchValue_" + id).val().toLowerCase();
+  $("#searchList_" + id + " li").each(function () {
+    const text = $(this).text().toLowerCase();
+    if (text.indexOf(query) > -1) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+}
+
+// Option Selected
+function _clickFilterOption(id, value, label) {
+  $("#" + id).val(value).trigger("change");
+  $("#selectedLabel_" + id).text(label);
+
+  $("#searchList_" + id + " li").removeClass("selected-option");
+  $(`#searchList_${id} li[data-val="${value}"]`).addClass("selected-option");
+
+  $("#searchPanel_" + id).hide();
+  $("#" + id + "_container").removeClass("active");
+  $("#txtSearchValue_" + id).val("");
+// Update dynamic filter status text
+  _updateFilterStatusText();
+}
+
+// Close when clicking outside
+$(document).on("click", function (e) {
+  if (!$(e.target).closest(".filter-field-wrapper").length) {
+    $(".filter-field-wrapper .searchPanel").hide();
+    $(".filter-field-wrapper").removeClass("active");
+  }
+});
+
+// 1. Fully Dynamic Status Tag Builder
+function _updateFilterStatusText() {
+  let container = $("#activeFiltersContainer");
+  container.empty();
+
+  let activeFilters = [];
+
+  // Automatically find all hidden filter inputs on the card
+  $(".fleet-filter-card input[type='hidden']").each(function () {
+    const filterId = $(this).attr('id');
+    const val = $(this).val();
+    const currentLabel = $("#selectedLabel_" + filterId).text();
+
+    // If a filter value is selected (non-empty)
+    if (val !== "" && val !== null && val !== undefined) {
+      activeFilters.push(`
+        <span class="filter-pill-tag">
+          ${currentLabel} 
+          <i class="bi bi-x" onclick="_removeSingleFilter('${filterId}')"></i>
+        </span>
+      `);
+    }
+  });
+
+  if (activeFilters.length > 0) {
+    container.html(activeFilters.join(""));
+  } else {
+    container.html('<span class="status-text" id="filterStatusText">Showing all vehicles</span>');
+  }
+}
+
+// 2. Fully Dynamic Single Filter Removal
+function _removeSingleFilter(filterId) {
+  // Automatically grab the default empty label from the first <li> in the dropdown list
+  const defaultLabel = $("#searchList_" + filterId + " li").first().text().trim() || "Select";
+  
+  _clickFilterOption(filterId, "", defaultLabel);
+  $("#selectedLabel_" + filterId).text(defaultLabel);
+}
+
+// 3. Fully Dynamic Reset Button Handler
+function _clearFleetFilters() {
+  // Automatically loop and reset every filter found in the card container
+  $(".fleet-filter-card input[type='hidden']").each(function () {
+    const filterId = $(this).attr('id');
+    const defaultLabel = $("#searchList_" + filterId + " li").first().text().trim() || "Select";
+    
+    _clickFilterOption(filterId, "", defaultLabel);
+    $("#selectedLabel_" + filterId).text(defaultLabel);
+  });
+
+  // Reset status container back to default text
+  $("#activeFiltersContainer").html('<span class="status-text" id="filterStatusText">Showing all vehicles</span>');
+  
+  // Close any open search dropdown panels
+  $(".searchPanel").hide();
+  $(".filter-field-wrapper").removeClass("active");
 }

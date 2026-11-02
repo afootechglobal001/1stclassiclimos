@@ -143,19 +143,7 @@
                             <h3>Where would you like to go?</h3>
                         </div>
 
-                        <div class="tabs-btn-div">
-                            <button class="btn active" onclick="changeBookingType('distance')">
-                                <i class="bi bi-signpost-2"></i> Distance
-                            </button>
-
-                            <button class="btn" onclick="changeBookingType('hourly')">
-                                <i class="bi bi-clock"></i> Hourly
-                            </button>
-
-                            <button class="btn" onclick="changeBookingType('flat-rate')">
-                                <i class="bi bi-cash-coin"></i> Flat Rate
-                            </button>
-                        </div>
+                        <?php _bookTabBtn($extraClass) ?>
                     </div>
 
                     <div class="slide-book-form">
