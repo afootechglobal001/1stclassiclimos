@@ -159,7 +159,7 @@
             </nav>
 
             <div class="btn-div">
-                <a href="<?php echo $website_url?>/#" title="Book a ride now!">
+                <a href="<?php echo $websiteUrl?>/bookings" title="Book a ride now!">
                 <button class="btn" title="Book a ride now!"><i class="bi-car-front-fill"></i> Book a ride now!</button></a>
                 <button class="mobile-btn" onclick="_openMenu()"><i class="bi-text-right"></i></button>
             </div>

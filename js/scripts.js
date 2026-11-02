@@ -36,25 +36,13 @@ $(window).scroll(function () {
     $(".sticky-div").css({
       position: "relative",
       top: "0",
-      height: "auto",
-      overflow: "visible",
     });
   } else {
-    if (scrollHeight >= 700) {
-      $(".sticky-div").css({
-        position: "sticky",
-        top: "150px",
-        "min-height": "280px",
-        overflow: "auto",
-      });
-    } else {
-      $(".sticky-div").css({
-        position: "relative",
-        top: "0",
-        height: "auto",
-        overflow: "auto",
-      });
-    }
+    $(".sticky-div").css({
+      position: scrollHeight >= 700 ? "sticky" : "relative",
+      top: scrollHeight >= 700 ? "150px" : "0",
+      minHeight: scrollHeight >= 700 ? "280px" : "auto",
+    });
   }
 });
 
@@ -257,68 +245,7 @@ $(document).ready(function () {
     }
 });
 
-
-
-function _changeMaintenanceStep(stepNumber, clickedStep) {
-  $('.how-it-works-progress .step').removeClass('active done');
-
-  $(clickedStep).addClass('active');
-
-  $('.maintenance-step.active-step').removeClass('active-step').removeClass('aos-animate').hide();
-
-  var selectedStep = $('.maintenance-step[data-step="' + stepNumber + '"]');
-
-  selectedStep.addClass('active-step').removeClass('aos-animate').hide().show();
-
-  setTimeout(function () {
-    selectedStep.addClass('aos-animate');
-  }, 10);
-}
-
-function _completeServiceRequest() {
-  _showCustomConfirm({
-    callback: () => {
-      _getNextPage({page:'customreInfoPage'});
-    },
-    title: "Request Submitted!",
-    message: "Your service request has been successfully submitted. Our team will review your request and contact you with the next steps and appointment details.",
-    alertType: "success",
-    trueActionBtnText: "Okay, Thanks",
-    closeOnOverlayClick: false,
-  });
-}
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function changeBookingType(bookingType) {
-  // Allow only valid booking types
-  const validTypes = ['distance', 'hourly', 'flat-rate'];
-
-  if (!validTypes.includes(bookingType)) {
-      return;
-  }
-
-  // Update active tab
-  $('.tabs-btn-div .btn').removeClass('active');
-  $('.tabs-btn-div .btn').each(function () {
-      if ($(this).attr('onclick') === `changeBookingType('${bookingType}')`) {
-          $(this).addClass('active');
-      }
-  });
-
-  // Reset fields
-  $('#route_container, #duration_container').hide();
-  $('#pickUp_container, #destination_container, #pickupDate_container, #pickupTime_container').show();
-
-  //// Booking Type
-  if (bookingType === 'hourly') {
-    $('#destination_container').hide();
-    $('#duration_container').show();
-  } else if (bookingType === 'flat-rate') {
-    $('#pickUp_container, #destination_container').hide();
-    $('#route_container').show();
-  }
-}
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //// Toggle Service Locations ////
 function _toggleServiceLocation() {
