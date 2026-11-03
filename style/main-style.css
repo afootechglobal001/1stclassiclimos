@@ -5142,11 +5142,6 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   font-size: 14px;
   font-family: body-font;
   color: var(--sub-body-color);
-  padding-left: 15px;
-}
-
-.booking-summary-div .details-div.no-gap h5 {
-  padding-left: 0px !important;
 }
 
 .booking-summary-div .details-div.justify-space-between h5{
