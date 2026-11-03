@@ -865,7 +865,7 @@
                                     </script>
                                 </div>
 
-                                <div class="btn-div" id="verifyDiscountBtn">
+                                <div class="btn-div flight-btn" id="verifyDiscountBtn">
                                     <script>
                                         generalButtons({
                                             container: "verifyDiscountBtn",
