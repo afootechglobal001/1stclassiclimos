@@ -4,6 +4,11 @@ function _getBookingNextPage(props) {
     sessionStorage.setItem("currentBookingsPage", page);
     _getPage({ page: page, url: siteMiddlewareUrl });
     _updateProgress(page);
+
+    window.scrollTo({
+        top: "100px",
+        behavior: "smooth"
+    });
 }
 
 
@@ -176,19 +181,9 @@ function _getSelectMeetAndGreet(fieldId) {
         const id = response.data[i].meetAndGreetId;
         const value = response.data[i].categoryName;
         const price = response.data[i].price;
+        const priceAmountText = `$${thousandSeperator(price)}`;
 
-        $("#searchList_" + fieldId).append(
-            "<li onclick=\"_clickOption('searchList_" +
-            fieldId +
-            "', '" +
-            id +
-            "', '" +
-            value +
-            "');\">" +
-            value +
-            "($" + price + ")" +
-            "</li>"
-        );
+        $('#searchList_'+ fieldId).append('<li onclick="_clickOption(\'searchList_' + fieldId + '\', \'' + id + '\', \'' + value + ' (' + priceAmountText + ')' + '\');">' + value + ' (' + priceAmountText + ')' + '</li>');
     }
 
     } catch (error) {
@@ -330,16 +325,10 @@ function _selectVehicle(element) {
 // Separate helper function to update summary UI & calculate deposit
 function _updateSelectedPrice(vehicleData) {
     const totalAmount = vehicleData.numericPrice;
-    
-    /// Calculate Deposit
-    /// 30% deposit calculation
-    const depositPercentage = 0.30;
-    const depositAmount = (totalAmount * depositPercentage).toFixed(2);
 
     /// Update Summary UI
     $("#selectedVehiclePrice").html('$' + `${totalAmount}`);
-     $("#totalVicleAmount").html('$' + `${totalAmount}`);
-    $("#totalDepositAmount").html('$' + `${depositAmount}`);
+    $("#totalVehicleAmount").html('$' + `${totalAmount}`);
 }
 
 //// Select Payment Method ////
@@ -373,7 +362,6 @@ function changeCount(btn, direction) {
     $input.val(newValue);
 }
 
-
 // Allow only positive whole numbers (including zero)
 $(document).on('input', '.counter-input', function () {
     let value = $(this).val();
@@ -383,4 +371,16 @@ $(document).on('input', '.counter-input', function () {
         value = Math.min(parseInt(value, 10), 99);
     }
     $(this).val(value);
+});
+
+function _toggleFlightDetails(element) {
+    if ($(element).is(':checked')) {
+        $('#flightDetailsWrapper').hide();
+    } else {
+        $('#flightDetailsWrapper').show();
+    }
+}
+
+$(document).on('change', '#smsConsent', function () {
+    $('#bookingNowBtn').prop('disabled', !this.checked);
 });

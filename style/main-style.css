@@ -3276,7 +3276,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 }
 
 .btn-div .btn.btn-sm{
-	padding:0 15px;
+  height: 45px;
 	font-size:13px;
 }
 
@@ -4864,7 +4864,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   top: 17px;
   left: 12%;
   right: 12%;
-  height: 2px;
+  height: 3px;
   background: var(--general-border-color);
   z-index: -1;
 }
@@ -4883,7 +4883,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 .booking-stages-wrapper .booking-stage .count-div {
   width: 35px;
   height: 35px;
-  border: 2px solid var(--general-border-color);
+  border: 3px solid var(--general-border-color);
   border-radius: 50%;
   background: var(--bg-white);
   color: var(--text-color);
@@ -4928,9 +4928,13 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 .main-booking-wrapper {
   width: 100%;
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   gap: 40px;
   position: relative;
+}
+
+.ride-main-book-wrapper {
+  align-items: stretch;
 }
 
 .main-summary-booking-wrapper {
@@ -4957,7 +4961,13 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   gap: 20px;
 }
 
-
+@media all and (max-width: 480px) {
+  .flight-btn{
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100%;
+  }
+}
 
 #map {
   width: 100%;
@@ -5143,9 +5153,10 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   font-size: 15px;
 }
 
-.booking-summary-div .details-div.justify-space-between .deposit-amount{
+.booking-summary-div .details-div.justify-space-between .total-amount{
   font-size: 18px;
   font-family: sub-title-font;
+  color: var(--primary-color);
 }
 
 .booking-summary-div .route-container {
@@ -5369,6 +5380,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   cursor: pointer;
   transition: 0.2s ease-in;
   background: none;
+   white-space: nowrap;
 }
 
 .bookings-fleet-wrapper .bookings-fleet .content .price-div-wrapper .select-btn-div .btn:hover{
@@ -5384,6 +5396,26 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 .bookings-fleet-wrapper .bookings-fleet.selected-fleet .select-btn-div .btn {
   background: var(--primary-color) !important;
   color: var(--text-white) !important;
+}
+
+
+
+@media all and (max-width: 1135px) {
+  .bookings-fleet-wrapper .bookings-fleet{
+    flex-direction: column;
+  }
+  .bookings-fleet-wrapper .bookings-fleet .image-div{
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 930px) {
+  .bookngs-fleet-container{
+    width: 100%;
+  }
+  .booking-summary-div {
+    width: 100%;
+  }
 }
 
 .payment-method-wrapper {
@@ -5405,6 +5437,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   border-radius: 15px;
   cursor: pointer;
   transition: 0.2s ease-in;
+  box-sizing: border-box;
 }
 
 .payment-method-wrapper .payment-method:hover {
@@ -5427,8 +5460,9 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   font-family: title-font;
   color: var(--primary-color);
   font-size: 30px;
-  line-height: 20px;
+  line-height: 35px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .payment-method-wrapper .payment-method.selected-method{
@@ -5453,6 +5487,19 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
     border-radius: 50%;
     z-index: 2;
 }
+
+
+@media all and (max-width: 630px) {
+  .payment-method-wrapper {
+    flex-direction: column;
+  }
+
+  .payment-method-wrapper .payment-method {
+    width: 100%;
+  }
+}
+
+
 
 .summary-fleet-div{
   width: 100%;
@@ -5523,6 +5570,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   flex-direction: column;
   gap: 15px;
   padding: 5px;
+  box-sizing: border-box;
 }
 
 .extra-option-wrapper .extra-option .content-div .top-content{
@@ -5535,6 +5583,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 .extra-option-wrapper .extra-option .content-div .top-content .title{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 25px;
 }
 
@@ -5556,6 +5605,24 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   font-size: 13px;
 }
 
+@media all and (max-width: 550px) {
+  .extra-option-wrapper .extra-option{
+    flex-direction: column;
+  }
+  .extra-option-wrapper .extra-option .image-div{
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .extra-option-wrapper .extra-option .content-div .top-content .title h3{
+    font-size: 16px;
+  }
+  .extra-option-wrapper .extra-option .content-div .top-content .title strong{
+    font-size: 16px;
+  }
+}
+
 #extraOptionsDiv {
   scroll-margin-top: 150px;
 }
@@ -5569,6 +5636,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   background-color: var(--filter-bg);
   border: 1px solid var(--filter-border);
   border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .counter-controls {
@@ -5577,31 +5645,21 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   justify-content: space-between;
 }
 
-  .btn-counter {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: none;
-    background-color: #f1f5f9;
-    color: #475569;
-    font-size: 16px;
-    font-family: sub-title-font;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.15s ease, opacity 0.15s ease;
-  }
-
-.btn-counter:hover:not(:disabled) {
-  background-color: #e2e8f0;
-  color: #1e293b;
-}
-
-.btn-counter:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
+.btn-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--features-bg);
+  color: #475569;
+  font-size: 16px;
+  font-family: sub-title-font;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
 }
 
 .counter-input {
@@ -5609,8 +5667,8 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   border: none;
   background: transparent;
   text-align: center;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-family: sub-title-font;
   color: var(--primary-color);
   outline: none;
 }
@@ -5621,16 +5679,174 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   margin: 0;
 }
 
-.check-box-container {
-  width: 100%;
-  padding: 20px 0px;
-}
-.check-box-container label input{
-  cursor: pointer;
+@media all and (max-width: 550px) {
+  .number-count-wrapper {
+    width: 100%;
+  }
 }
 
-.check-box-container span{
-  color:  var(--sub-body-color);
-  font-size: 15px;
+.sms-consent-card {
+  width: 100%;
+  padding: 25px;
+  background: var(--filter-bg);
+  border: 1px solid var(--filter-border);
+  border-radius: 15px;
+  box-sizing: border-box;
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sms-consent-card .consent-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sms-consent-card .icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3f1ff;
+    color: var(--primary-color);
+    border-radius: 50%;
+    font-size: 23px;
+    flex-shrink: 0;
+    border: 1px solid var(--filter-border);
+}
+
+.sms-consent-card .sms-consent-heading {
+    flex: 1;
+}
+
+.sms-consent-card .sms-consent-heading h5 {
+    color: var(--primary-color);
+    font-size: 19px;
+    font-family: sub-title-font;
+}
+
+.sms-consent-card .sms-consent-heading p {
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+.sms-consent-card .sms-consent-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 15px;
+    background: #e3f1ff;
+    color: var(--primary-color);
+    border-radius: 30px;
+    font-size: 11px;
+    font-family: sub-title-font;
+    border: 1px solid var(--filter-border);
+}
+
+.sms-consent-card .sms-consent-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+.sms-consent-card .sms-consent-checkbox input {
+    width: 19px;
+    height: 19px;
+    min-width: 19px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.sms-consent-card .sms-consent-text strong {
+   font-family: sub-title-font;
+}
+
+.sms-consent-card .sms-consent-checkbox .consent-text{
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sms-consent-card .sms-consent-checkbox .consent-text small {
+    color: #64758B;
+    font-size: 11px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.sms-consent-card .sms-consent-text small i {
+    color: #36749B;
+}
+
+.sms-consent-card .sms-consent-footer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-top: 1px solid var(--filter-border);
+  color: var(--primary-color);
+  font-size: 12px;
+  font-family: sub-title-font;
+  padding-top: 10px;
+}
+
+.sms-consent-card .sms-consent-footer i {
+    font-size: 15px;
+}
+
+
+#bookingNowBtn:disabled,
+#bookingNowBtn:disabled:hover,
+#bookingNowBtn:disabled:focus {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+@media (max-width: 600px) {
+    .sms-consent-card {
+        padding: 18px 15px;
+    }
+    .sms-consent-card .consent-header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .sms-consent-card .icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        font-size: 21px;
+    }
+    .sms-consent-card .sms-consent-heading h5 {
+        font-size: 15px;
+    }
+    .sms-consent-card .sms-consent-heading p {
+        font-size: 11px;
+    }
+    .sms-consent-card .sms-consent-badge {
+        padding: 6px 10px;
+        font-size: 9px;
+    }
+    .sms-consent-card .sms-consent-checkbox {
+        font-size: 12px;
+        gap: 9px;
+    }
+    .sms-consent-card .sms-consent-checkbox .consent-text small {
+        font-size: 10px;
+    }
+    .sms-consent-card .sms-consent-footer {
+        font-size: 10px;
+    }
+}
+
+.flight-option {
+  font-size: 14px;
+  color: var(--primary-color);
   font-family: body-font;
+  cursor: pointer;
 }
