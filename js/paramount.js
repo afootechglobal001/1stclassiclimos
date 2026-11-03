@@ -530,52 +530,53 @@ function _counDownOtp(timer) {
 }
 
 function generalButtons(props) {
-	const {
-		container = "",
-		buttons = []
-	} = props;
+    const {
+        container = "",
+        buttons = []
+    } = props;
 
-	let template = "";
-	buttons.forEach(btn => {
-		const icon = btn.icon
-			? `<i class="${btn.icon}"></i>`
-			: "";
+    let template = "";
+    buttons.forEach(btn => {
+        const icon = btn.icon
+            ? `<i class="${btn.icon}"></i>`
+            : "";
 
-		const content = btn.iconPosition === "right"
-			? `${btn.text} ${icon}`
-			: `${icon} ${btn.text}`;
+        const content = btn.iconPosition === "right"
+            ? `${btn.text} ${icon}`
+            : `${icon} ${btn.text}`;
 
-		const onClick = btn.onClick ? `onclick="${btn.onClick}"` : "";
+        const onClick = btn.onClick ? `onclick="${btn.onClick}"` : "";
+        const disabled = btn.disabled ? "disabled" : "";
 
-		if (btn.link) {
-			template += `
-				<a
-					href="${btn.link}"
-					id="${btn.id || ""}"
-					title="${btn.title || btn.text}"
-					class="btn ${btn.variant || ""} ${btn.size || ""} ${btn.width || ""} ${btn.className || ""}"
-					${onClick}
-				>
-					${content}
-				</a>
-			`;
-		} else {
-			template += `
-				<button
-					id="${btn.id || ""}"
-					title="${btn.title || btn.text}"
-					class="btn ${btn.variant || ""} ${btn.size || ""} ${btn.width || ""} ${btn.className || ""}"
-					${onClick}
-				>
-					${content}
-				</button>
-			`;
-		}
-	});
+        if (btn.link) {
+            template += `
+                <a
+                    href="${btn.link}"
+                    id="${btn.id || ""}"
+                    title="${btn.title || btn.text}"
+                    class="btn ${btn.variant || ""} ${btn.size || ""} ${btn.width || ""} ${btn.className || ""}"
+                    ${onClick}
+                >
+                    ${content}
+                </a>
+            `;
+        } else {
+            template += `
+                <button
+                    id="${btn.id || ""}"
+                    title="${btn.title || btn.text}"
+                    class="btn ${btn.variant || ""} ${btn.size || ""} ${btn.width || ""} ${btn.className || ""}"
+                    ${onClick}
+                    ${disabled}
+                >
+                    ${content}
+                </button>
+            `;
+        }
+    });
 
-	$(`#${container}`).html(template);
+    $(`#${container}`).html(template);
 }
-
 
 ///// for FAQs
 function _collapse(div_id) {

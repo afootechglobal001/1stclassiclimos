@@ -1,5 +1,5 @@
 <?php if ($page == 'rideDetailsPage') { ?>
-    <div class="main-booking-wrapper" data-aos="fade-in" data-aos-duration="1000">
+    <div class="main-booking-wrapper ride-main-book-wrapper" data-aos="fade-in" data-aos-duration="1000">
         <div class="booking-form">
             <?php _bookTabBtn('justify-flex-start') ?>
 
@@ -121,7 +121,7 @@
     </div>
 
     <div class="bottom-button-div">
-        <div class="btn-div bookings-first-page-btn" id="chhoseVehicleBtn">
+        <div class="btn-div bookings-first-page-btn slide-btn-div" id="chhoseVehicleBtn">
             <script>
                 generalButtons({
                     container: "chhoseVehicleBtn",
@@ -217,7 +217,7 @@
 
                             <div class="details-div justify-space-between">
                                 <span><i class="bi bi-receipt"></i> Total Amount</span>
-                                <h5 class="deposit-amount" id="totalVicleAmount">$0.00</h5>
+                                <h5 class="total-amount" id="totalVehicleAmount">$0.00</h5>
                             </div>
                         </div>
                     </div>
@@ -511,7 +511,6 @@
 
                                     <div class="text-field-wrapper">
                                         <div class="number-count-wrapper">
-                                            
                                             <div class="counter-controls">
                                                 <button type="button" class="btn-counter btn-decrement" onclick="changeCount(this, -1)" aria-label="Decrease">–</button>
                                                 <input type="text" class="counter-input" value="0" data-min="0" data-max="99" data-step="1" inputmode="numeric">
@@ -575,7 +574,7 @@
     </div>
 
     <div class="bottom-button-div">
-        <div class="btn-div justify-button" id="choseVehicleBtn">
+        <div class="btn-div justify-button slide-btn-div" id="choseVehicleBtn">
             <script>
                 generalButtons({
                     container: "choseVehicleBtn",
@@ -688,7 +687,7 @@
 
                             <div class="details-div justify-space-between">
                                 <span><i class="bi bi-receipt"></i> Total Amount</span>
-                                <h5 class="deposit-amount" id="totalVicleAmount">$0.00</h5>
+                                <h5 class="total-amount" id="totalVehicleAmount">$0.00</h5>
                             </div>
                         </div>
                     </div>
@@ -781,32 +780,58 @@
                             <div class="icon">
                                 <i class="bi bi-airplane"></i>
                             </div>
-                            <p>Flight Details</p>
+                            <p>Flight Information</p>
                         </div>
                     </div>
 
                     <div class="inner-content">
-                        <div class="flex-cont">
-                            <div class="text_field_container" id="airlineTypeId_container">
-                                <script>
-                                    selectField({
-                                        id: 'airlineTypeId',
-                                        title: 'Airline',
-                                        applyBorder: true,
-                                    });
-                                    _getSelectAirline('airlineTypeId');
-                                </script>
+                        <div class="text-field-wrapper">
+                            <div class="flex-cont" id="flightDetailsWrapper">
+                                <div class="text_field_container" id="airlineTypeId_container">
+                                    <script>
+                                        selectField({
+                                            id: 'airlineTypeId',
+                                            title: 'Airline',
+                                            applyBorder: true,
+                                        });
+                                        _getSelectAirline('airlineTypeId');
+                                    </script>
+                                </div>
+
+                                <div class="text_field_container" id="flightTicketId_container">
+                                    <script>
+                                        textField({
+                                            id: 'flightTicketId',
+                                            title: 'Flight #',
+                                            applyBorder: true,
+                                        });
+                                    </script>
+                                </div>
+
+                                <div class="btn-div flight-btn" id="verifyAirlineBtn">
+                                    <script>
+                                        generalButtons({
+                                            container: "verifyAirlineBtn",
+                                            buttons: [{
+                                                id: "verifyAirlineBtn",
+                                                text: "Verify",
+                                                icon: "bi bi-patch-check",
+                                                onClick: "",
+                                                size: "btn-sm",
+                                                iconPosition: "right"
+                                            }]
+                                        });
+                                    </script>
+                                </div>
                             </div>
 
-                            <div class="text_field_container" id="flightTicketId_container">
-                                <script>
-                                    textField({
-                                        id: 'flightTicketId',
-                                        title: 'Flight #',
-                                        applyBorder: true,
-                                    });
-                                </script>
-                            </div>
+                            <label class="flight-option">
+                                <input type="checkbox" id="noFlightDetails" onchange="_toggleFlightDetails(this)">
+
+                                <span class="flight-option-text">
+                                    I do not have my flight details yet
+                                </span>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -846,7 +871,7 @@
     </div>
 
     <div class="bottom-button-div">
-        <div class="btn-div justify-button" id="chhoseVehicleBtn">
+        <div class="btn-div justify-button slide-btn-div" id="chhoseVehicleBtn">
             <script>
                 generalButtons({
                     container: "chhoseVehicleBtn",
@@ -1069,15 +1094,32 @@
 
                     <div class="inner-content">
                         <div class="text-field-wrapper">
-                            <div class="text_field_container" id="discount_container">
-                                <script>
-                                    textField({
-                                        id: 'discount',
-                                        title: 'Discount Code',
-                                        icon: '<i class="bi bi-tag"></i>',
-                                        applyBorder: true,
-                                    });
-                                </script>
+                            <div class="flex-cont">
+                                <div class="text_field_container" id="discount_container">
+                                    <script>
+                                        textField({
+                                            id: 'discount',
+                                            title: 'Discount Code',
+                                            icon: '<i class="bi bi-tag"></i>',
+                                            applyBorder: true,
+                                        });
+                                    </script>
+                                </div>
+
+                                <div class="btn-div" id="verifyDiscountBtn">
+                                    <script>
+                                        generalButtons({
+                                            container: "verifyDiscountBtn",
+                                            buttons: [{
+                                                id: "verifyDiscountBtn",
+                                                text: "Apply Code",
+                                                onClick: "",
+                                                size: "btn-sm",
+                                                iconPosition: "right"
+                                            }]
+                                        });
+                                    </script>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1104,7 +1146,7 @@
 
                             <div class="details-div justify-space-between">
                                 <span><i class="bi bi-receipt"></i> Total</span>
-                                <h5 class="deposit-amount" id="totalVicleAmount">$0.00</h5>
+                                <h5 class="total-amount" id="totalVehicleAmount">$0.00</h5>
                             </div>
                         </div>
                     </div>
@@ -1113,34 +1155,62 @@
         </div>
     </div>
 
-    <div class="check-box-container" id="notificationConsent_container">
-        <label class="check-box-label">
-            <input type="checkbox" id="notificationConsent" name="notificationConsent" value="1">
-            <span>
-                By checking this box, you acknowledge that 1ST CLASSIC TRANSPORTATION INC. can send you text messages on their behalf. Msg & Data Rates apply. Msg Frequency may vary. Text HELP for more info. Reply STOP to opt out.
+    <div class="sms-consent-card">
+        <div class="consent-header">
+            <div class="icon">
+                <i class="bi bi-chat-left-text-fill"></i>
+            </div>
+
+            <div class="sms-consent-heading">
+                <h5>Text Message Consent</h5>
+                <p>Stay updated about your booking.</p>
+            </div>
+
+            <span class="sms-consent-badge">
+                <i class="bi bi-shield-check"></i> REQUIRED
+            </span>
+        </div>
+
+        <label class="sms-consent-checkbox">
+            <input type="checkbox" id="smsConsent" required>
+
+            <span class="consent-text">
+                <div>
+                    By checking this box, you acknowledge that <strong>1ST CLASSIC TRANSPORTATION INC.</strong> can send you text messages on their behalf.
+                </div>
+
+                <small>
+                    <i class="bi bi-info-circle"></i>
+                    Msg & Data Rates apply. Msg Frequency may vary. Text HELP for more info. Reply STOP to opt out.
+                </small>
             </span>
         </label>
+
+        <div class="sms-consent-footer">
+            <i class="bi bi-shield-fill-check"></i>
+            Your consent is required to complete your booking.
+        </div>
     </div>
 
     <div class="bottom-button-div">
-        <div class="btn-div justify-button" id="chhoseVehicleBtn">
+        <div class="btn-div justify-button booking-btn slide-btn-div" id="customerDetailsBtn">
             <script>
                 generalButtons({
-                    container: "chhoseVehicleBtn",
+                    container: "customerDetailsBtn",
                     buttons: [{
-                        id: "chhoseVehicleBtn",
                         text: "Customer Details",
                         icon: "bi bi-arrow-left-circle",
                         variant: "btn-secondary",
                         onClick: "_getBookingNextPage({ page: 'customerDetailsPage' });",
                     }, 
                     {
+                        id: "bookingNowBtn",
                         text: "Booking Now!",
                         icon: "bi bi-car-fill-front",
                         onClick: "",
-                        iconPosition: "right"
+                        iconPosition: "right",
+                        disabled: true
                     }]
-
                 });
             </script>
         </div>
