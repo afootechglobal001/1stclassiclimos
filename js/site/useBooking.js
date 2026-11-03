@@ -176,15 +176,13 @@ function _getSelectMeetAndGreet(fieldId) {
         ]
     };
 
-    sessionStorage.setItem("bookingMeetAndGreetData", JSON.stringify(response?.data));
-
     for (let i = 0; i < response.data.length; i++) {
         const id = response.data[i].meetAndGreetId;
         const value = response.data[i].categoryName;
         const price = response.data[i].price;
         const priceAmountText = `$${thousandSeperator(price)}`;
 
-        $('#searchList_'+ fieldId).append('<li onclick="_clickOption(\'searchList_' + fieldId + '\', \'' + id + '\', \'' + value + ' (' + priceAmountText + ')' + '\') _updateBookingPaymentSummary();">' + value + ' (' + priceAmountText + ')' + '</li>');
+        $('#searchList_'+ fieldId).append('<li onclick="_clickOption(\'searchList_' + fieldId + '\', \'' + id + '\', \'' + value + ' (' + priceAmountText + ')' + '\');">' + value + ' (' + priceAmountText + ')' + '</li>');
     }
 
     } catch (error) {
