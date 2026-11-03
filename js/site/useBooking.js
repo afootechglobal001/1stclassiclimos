@@ -162,27 +162,38 @@ function _getSelectMeetAndGreet(fieldId) {
         //// Dummy response until backend is ready //////
 
         const response = {
-        data: [
-            {
-                meetAndGreetId: 'meetAndGreet10001',
-                categoryName: 'Meet & Greet International',
-                price: 50
-            },
-            {
-                meetAndGreetId: 'meetAndGreet10002',
-                categoryName: 'Meet & Greet Domestic',
-                price: 75
-            },
-        ]
-    };
+            data: [
+                {
+                    meetAndGreetId: 'meetAndGreet10001',
+                    meetAndGreetName: 'Curbside Pickup(Outside)',
+                    price: 0
+                },
+                {
+                    meetAndGreetId: 'meetAndGreet10002',
+                    meetAndGreetName: 'Meet & Greet - International(inside)',
+                    price: 50
+                },
+                {
+                    meetAndGreetId: 'meetAndGreet10003',
+                    meetAndGreetName: 'Meet & Greet - Domestic(inside)',
+                    price: 75
+                },
+            ]
+        };
+
+        sessionStorage.setItem("bookingMeetAndGreetData", JSON.stringify(response?.data));
 
     for (let i = 0; i < response.data.length; i++) {
         const id = response.data[i].meetAndGreetId;
-        const value = response.data[i].categoryName;
+        const value = response.data[i].meetAndGreetName;
         const price = response.data[i].price;
         const priceAmountText = `$${thousandSeperator(price)}`;
 
-        $('#searchList_'+ fieldId).append('<li onclick="_clickOption(\'searchList_' + fieldId + '\', \'' + id + '\', \'' + value + ' (' + priceAmountText + ')' + '\');">' + value + ' (' + priceAmountText + ')' + '</li>');
+        $('#searchList_' + fieldId).append(
+            '<li onclick="_clickOption(\'searchList_' + fieldId + '\', \'' + id + '\', \'' + value + ' (' + priceAmountText + ')' + '\'); sessionStorage.setItem(\'selectedMeetAndGreetId\', \'' + id + '\'); _updateBookingPaymentSummary();">' +
+            value + ' (' + priceAmountText + ')' +
+            '</li>'
+        );
     }
 
     } catch (error) {
@@ -474,11 +485,12 @@ function _selectVehicle(element) {
     _scrollToExtraOptions();
 }
 
+//// Update Booking Payment Summary ////
 function _updateBookingPaymentSummary() {
     let extraOptionsTotal = 0;
     let selectedExtraOptions = [];
 
-    // Loop through extra options
+    // Get selected quantity extra options
     $(".extra-option[data-extra-option-id]").each(function () {
         const $option = $(this);
         const extraOptionId = $option.attr("data-extra-option-id");
@@ -487,9 +499,7 @@ function _updateBookingPaymentSummary() {
             item => item.extraOptionId == extraOptionId
         );
 
-        if (!optionData || optionData.optionType !== 'quantity') {
-            return;
-        }
+        if (!optionData || optionData.optionType !== 'quantity') return;
 
         const quantity = Number($option.find(".counter-input").val()) || 0;
 
@@ -508,6 +518,27 @@ function _updateBookingPaymentSummary() {
         }
     });
 
+    // Get selected Meet & Greet
+    const meetAndGreetId = sessionStorage.getItem("selectedMeetAndGreetId");
+    const meetAndGreetData = JSON.parse(sessionStorage.getItem("bookingMeetAndGreetData") || "[]");
+
+    const meetAndGreet = meetAndGreetData.find(
+        item => item.meetAndGreetId == meetAndGreetId
+    );
+
+    if (meetAndGreet) {
+        const price = Number(meetAndGreet.price) || 0;
+
+        extraOptionsTotal += price;
+
+        selectedExtraOptions.push(`
+            <div class="details-div justify-space-between">
+                <span>${meetAndGreet.meetAndGreetName}</span>
+                <h5>$${thousandSeperator(price)}</h5>
+            </div>
+        `);
+    }
+
     // Update Extra Options Summary
     if (selectedExtraOptions.length > 0) {
         $("#selectedExtraOptionsContent").html(selectedExtraOptions.join(""));
@@ -517,15 +548,14 @@ function _updateBookingPaymentSummary() {
         $("#extraOptionsSummary").hide();
     }
 
-    // Get selected vehicle price
     const selectedFleetId = sessionStorage.getItem("selectedFleetId");
-    const fleetData = JSON.parse(sessionStorage.getItem("bookingFleetData") || "[]");
+    let vehiclePrice = 0;
 
-    const vehicleData = fleetData.find(
-        item => item.fleetId == selectedFleetId
-    );
-
-    const vehiclePrice = Number(vehicleData?.price) || 0;
+    if (selectedFleetId) {
+        const fleetData = JSON.parse(sessionStorage.getItem("bookingFleetData") || "[]");
+        const vehicle = fleetData.find(item => item.fleetId == selectedFleetId);
+        vehiclePrice = Number(vehicle?.price) || 0;
+    }
 
     // Calculate overall payment
     const totalAmount = vehiclePrice + extraOptionsTotal;
@@ -716,4 +746,9 @@ function _renderBookingExtraOptions(data) {
         });
         _getSelectMeetAndGreet('meetAndGreetId');
     }
+}
+
+function _clearBookingSelectionSession() {
+    sessionStorage.removeItem("selectedFleetId");
+    sessionStorage.removeItem("selectedMeetAndGreetId");
 }
