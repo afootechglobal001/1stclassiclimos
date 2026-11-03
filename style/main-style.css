@@ -5530,6 +5530,13 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   gap: 20px;
 }
 
+#otherExtraOptionsContent{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .extra-option-wrapper .extra-option{
   display: flex;
   gap: 20px;

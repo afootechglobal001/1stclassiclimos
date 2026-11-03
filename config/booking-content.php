@@ -209,8 +209,7 @@
                     </div>
 
                     <div class="inner-content">
-                        <div class="details-wrapper" id="selectedExtraOptionsContent">
-                        </div>
+                        <div class="details-wrapper" id="selectedExtraOptionsContent"></div>
                     </div>
                 </div>
             </div>
