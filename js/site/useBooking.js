@@ -36,7 +36,6 @@ function _updateProgress(page) {
     });
 }
 
-
 function changeBookingType(bookingType) {
     // Allow only valid booking types
     const validTypes = ['airport-transfer', 'point-to-point', 'hourly', 'flat-rate'];
@@ -293,42 +292,247 @@ function _getSelectAirline(fieldId) {
     }
 }
 
+
+/// Fetch Faq List ///
+function _getBookingFleetData() {
+    try {
+        /*
+        _callFetchEndPoints({
+            url: `admin/settings/information-category/fetch-information-category?statusId=1`,
+        })
+        .then((response) => {
+            _faqListDisplay(response?.data, pageContainer);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+
+            if (error.status == 0) {
+                _showEmptyState({
+                    container: pageContainer,
+                    message: "Check your internet connection and try again",
+                });
+            } else {
+                _showEmptyState({
+                    container: pageContainer,
+                    message: error.message,
+                });
+            }
+        });
+        */
+
+        // Dummy response for testing
+        const response = {
+            data: [
+                {
+                    fleetId: 'FLT001',
+                    fleetName: 'Executive Class SUV',
+                    fleetCategory: 'Luxury SUV',
+                    fleetDescription: 'Luxury Equipped Fleet',
+                    fleetImage: 'executive-suv.jpg',
+                    passengerCapacity: 6,
+                    luggageCapacity: 6,
+                    features: [
+                        'USB Charger',
+                        'Leather Interior',
+                        'Tinted Windows',
+                        'Available In Black'
+                    ],
+                    price: 94.99,
+                    statusData: {
+                        "statusId": 1,
+                        "statusName": "ACTIVE"
+                    }
+                },
+                {
+                    fleetId: 'FLT002',
+                    fleetName: 'Executive Sedan',
+                    fleetCategory: 'Executive Class',
+                    fleetDescription: 'Premium Executive Transportation',
+                    fleetImage: 'executive-sedan.jpg',
+                    passengerCapacity: 3,
+                    luggageCapacity: 3,
+                    features: [
+                        'USB Charger',
+                        'Leather Interior',
+                        'Climate Control',
+                        'Available In Black'
+                    ],
+                    price: 84.99,
+                    statusData: {
+                        "statusId": 1,
+                        "statusName": "ACTIVE"
+                    }
+                },
+                {
+                    fleetId: 'FLT004',
+                    fleetName: 'Executive Sprinter Van',
+                    fleetCategory: 'Luxury Van',
+                    fleetDescription: 'Spacious Group Transportation',
+                    fleetImage: 'executive-class-sprinter-van.jpg',
+                    passengerCapacity: 14,
+                    luggageCapacity: 10,
+                    features: [
+                        'USB Charging Ports',
+                        'Leather Interior',
+                        'Climate Control',
+                        'Spacious Luggage Area'
+                    ],
+                    price: 159.99,
+                    statusData: {
+                        "statusId": 1,
+                        "statusName": "ACTIVE"
+                    }
+                }
+            ]
+        };
+        const bookingFleetData = response?.data || [];
+        _renderBookingFleetData(bookingFleetData);
+        sessionStorage.setItem("bookingFleetData", JSON.stringify(bookingFleetData));
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+    
+/// Render Booking Fleet Data ///
+function _renderBookingFleetData(data) {
+    const content = data.map((item) => {
+        const features = item.features.map((feature) => {
+            return `
+                <div class="feature">
+                    <i class="bi bi-check-circle"></i>
+                    <p><span>${feature}</span></p>
+                </div>
+            `;
+        }).join("");
+
+        return `
+            <div class="bookings-fleet" onclick="_selectVehicle(this)" data-fleet-id="${item?.fleetId}">
+                <div class="image-div">
+                    <img src="${websiteUrl}/uploaded_files/fleets/${item?.fleetImage}" alt="${item?.fleetName}">
+                </div>
+
+                <div class="content">
+                    <div class="fleet-content">
+                        <h2>${item?.fleetName}</h2>
+                        <p>${item?.fleetDescription}</p>
+
+                        <div class="feature-wrapper">
+                            <div class="feature">
+                                <i class="bi bi-people"></i>
+                                <p><span>${item?.passengerCapacity}</span> Seats</p>
+                            </div>
+
+                            <div class="feature">
+                                <i class="bi bi-suitcase2"></i>
+                                <p><span>${item?.luggageCapacity}</span> Suitcase</p>
+                            </div>
+
+                            ${features}
+                        </div>
+                    </div>
+
+                    <div class="price-div-wrapper">
+                        <div class="price-div">
+                            <h3>$${thousandSeperator(item?.price)}</h3>
+                        </div>
+
+                        <div class="select-btn-div">
+                            <button class="btn" type="button" title="Select Vehicle">
+                                <i class="bi bi-car-front-fill"></i> Select Vehicle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join("");
+    $("#boookingsFleetContent").html(content);
+}
+
+//// Select Vehicle ////
 function _selectVehicle(element) {
     const $card = $(element).closest(".bookings-fleet");
+    const fleetId = $card.attr("data-fleet-id");
 
-    // Reset all vehicles
+    const fleetData = JSON.parse(sessionStorage.getItem("bookingFleetData") || "[]");
+
+    const vehicleData = fleetData.find(item => item.fleetId == fleetId);
+
+    if (!vehicleData) return;
+
     $(".bookings-fleet").removeClass("selected-fleet");
-    $(".bookings-fleet .select-btn-div .btn")
-        .html('<i class="bi bi-car-front-fill"></i> Select Vehicle')
-        .removeClass("is-selected");
 
-    // Select clicked vehicle
+    $(".bookings-fleet .select-btn-div .btn").html('<i class="bi bi-car-front-fill"></i> Select Vehicle').removeClass("is-selected");
+
     $card.addClass("selected-fleet");
-    $card.find(".select-btn-div .btn")
-        .html('<i class="bi bi-check-circle-fill"></i> Selected')
-        .addClass("is-selected");
 
-    // Get vehicle details
-    const vehicleName = $card.find(".fleet-content h2").text().trim();
-    const rawPrice = $card.find(".price-div h3").text().trim();
+    $card.find(".select-btn-div .btn").html('<i class="bi bi-check-circle-fill"></i> Selected').addClass("is-selected");
 
-    const selectedVehicleData = {
-        name: vehicleName,
-        price: rawPrice,
-        numericPrice: parseFloat(rawPrice.replace(/[^0-9.]/g, "")) || 0
-    };
+    sessionStorage.setItem("selectedFleetId", fleetId);
 
-    _updateSelectedPrice(selectedVehicleData);
+    _updateBookingPaymentSummary();
     _scrollToExtraOptions();
 }
 
-// Separate helper function to update summary UI & calculate deposit
-function _updateSelectedPrice(vehicleData) {
-    const totalAmount = vehicleData.numericPrice;
+function _updateBookingPaymentSummary() {
+    let extraOptionsTotal = 0;
+    let selectedExtraOptions = [];
 
-    /// Update Summary UI
-    $("#selectedVehiclePrice").html('$' + `${totalAmount}`);
-    $("#totalVehicleAmount").html('$' + `${totalAmount}`);
+    // Loop through extra options
+    $(".extra-option[data-extra-option-id]").each(function () {
+        const $option = $(this);
+        const extraOptionId = $option.attr("data-extra-option-id");
+
+        const optionData = bookingExtraOptionsData.find(
+            item => item.extraOptionId == extraOptionId
+        );
+
+        if (!optionData || optionData.optionType !== 'quantity') {
+            return;
+        }
+
+        const quantity = Number($option.find(".counter-input").val()) || 0;
+
+        if (quantity > 0) {
+            const price = Number(optionData.price) || 0;
+            const total = quantity * price;
+
+            extraOptionsTotal += total;
+
+            selectedExtraOptions.push(`
+                <div class="details-div justify-space-between">
+                    <span>${optionData.extraOptionName} (${quantity} × $${thousandSeperator(price)})</span>
+                    <h5>$${thousandSeperator(total)}</h5>
+                </div>
+            `);
+        }
+    });
+
+    // Update Extra Options Summary
+    if (selectedExtraOptions.length > 0) {
+        $("#selectedExtraOptionsContent").html(selectedExtraOptions.join(""));
+        $("#extraOptionsSummary").show();
+    } else {
+        $("#selectedExtraOptionsContent").empty();
+        $("#extraOptionsSummary").hide();
+    }
+
+    // Get selected vehicle price
+    const selectedFleetId = sessionStorage.getItem("selectedFleetId");
+    const fleetData = JSON.parse(sessionStorage.getItem("bookingFleetData") || "[]");
+
+    const vehicleData = fleetData.find(
+        item => item.fleetId == selectedFleetId
+    );
+
+    const vehiclePrice = Number(vehicleData?.price) || 0;
+
+    // Calculate overall payment
+    const totalAmount = vehiclePrice + extraOptionsTotal;
+
+    // Update Payment Summary
+    $("#selectedVehiclePrice").html('$' + thousandSeperator(vehiclePrice));
+    $("#totalVehicleAmount").html('$' + thousandSeperator(totalAmount));
 }
 
 //// Select Payment Method ////
@@ -339,6 +543,7 @@ function _selectPaymentMethod(element) {
     sessionStorage.setItem("selectedPaymentMethod", paymentMethod);
 }
 
+/// Scroll to Extra Options Section ////
 function _scrollToExtraOptions() {
     $("#extraOptionsDiv").get(0).scrollIntoView({
         behavior: "smooth",
@@ -347,19 +552,22 @@ function _scrollToExtraOptions() {
 }
 
 // Handle increment and decrement buttons
-function changeCount(btn, direction) {
-    const $wrapper = $(btn).closest('.counter-controls');
-    const $input = $wrapper.find('.counter-input');
+function changeCount(button, change) {
+    const $option = $(button).closest(".extra-option");
+    const $input = $option.find(".counter-input");
 
-    const MIN = parseInt($input.data('min'), 10);
-    const MAX = parseInt($input.data('max'), 10);
-    const STEP = parseInt($input.data('step'), 10);
+    const min = Number($input.attr("data-min")) || 0;
+    const max = Number($input.attr("data-max")) || 99;
+    const step = Number($input.attr("data-step")) || 1;
 
-    let currentValue = parseInt($input.val(), 10);
-    if (isNaN(currentValue)) currentValue = MIN;
-    let newValue = currentValue + (STEP * direction);
-    newValue = Math.min(Math.max(newValue, MIN), MAX);
+    let currentValue = Number($input.val()) || 0;
+    let newValue = currentValue + (change * step);
+
+    newValue = Math.max(min, Math.min(max, newValue));
+
     $input.val(newValue);
+
+    _updateBookingPaymentSummary();
 }
 
 // Allow only positive whole numbers (including zero)
@@ -373,6 +581,7 @@ $(document).on('input', '.counter-input', function () {
     $(this).val(value);
 });
 
+/// Toggle Flight Details Section ///
 function _toggleFlightDetails(element) {
     if ($(element).is(':checked')) {
         $('#flightDetailsWrapper').hide();
@@ -381,6 +590,131 @@ function _toggleFlightDetails(element) {
     }
 }
 
+//// Enable/Disable Booking Now Button Based on SMS Consent ////
 $(document).on('change', '#smsConsent', function () {
     $('#bookingNowBtn').prop('disabled', !this.checked);
 });
+
+
+/// Fetch Booking Extra Options ///
+function _getBookingExtraOptions() {
+    try {
+        // Dummy response for testing
+        const response = {
+            data: [
+                {
+                    extraOptionId: 'EXT001',
+                    extraOptionName: 'Meet and Greet',
+                    extraOptionDescription: 'Driver will meet you inside the terminal with a personalized name sign.',
+                    extraOptionImage: 'extra-meet-and-greet.jpg',
+                    optionType: 'select',
+                    price: 25.00,
+                },
+                {
+                    extraOptionId: 'EXT002',
+                    extraOptionName: 'Pet Travel Service',
+                    extraOptionDescription: 'Pet-friendly vehicle preparation for comfortable travel with your pet.',
+                    extraOptionImage: 'extra-pet-travel-service.jpg',
+                    optionType: 'quantity',
+                    price: 15.00,
+                    maxQuantity: 3,
+                },
+                {
+                    extraOptionId: 'EXT003',
+                    extraOptionName: 'Child Car Seat',
+                    extraOptionDescription: 'Child car seat suitable for children aged 0–36 months.',
+                    extraOptionImage: 'extra-child-car-seat.jpg',
+                    optionType: 'quantity',
+                    price: 25.00,
+                    maxQuantity: 3
+                },
+                {
+                    extraOptionId: 'EXT004',
+                    extraOptionName: 'Champagne',
+                    extraOptionDescription: '0.75L bottle of French Brut Champagne.',
+                    extraOptionImage: 'extra-champagne.jpg',
+                    optionType: 'quantity',
+                    price: 110.00,
+                    maxQuantity: 4
+                }
+            ]
+        };
+
+        bookingExtraOptionsData = response?.data || [];
+        _renderBookingExtraOptions(bookingExtraOptionsData);
+
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+let bookingExtraOptionsData = [];
+/// Render Booking Extra Options ///
+function _renderBookingExtraOptions(data) {
+    let meetAndGreetContent = '';
+    let otherOptionsContent = '';
+
+    data.forEach((item) => {
+        if (item.optionType === 'select') {
+            meetAndGreetContent = `
+                <div class="extra-option" id="meetAndGreetExtraOption" data-extra-option-id="${item?.extraOptionId}">
+                    <div class="image-div">
+                        <img src="${websiteUrl}/uploaded_files/extra-options/${item?.extraOptionImage}" alt="${item?.extraOptionName}">
+                    </div>
+
+                    <div class="content-div">
+                        <div class="top-content">
+                            <div class="title"><h3>${item?.extraOptionName}</h3></div>
+                            <p>${item?.extraOptionDescription}</p>
+                        </div>
+
+                        <div class="text-field-wrapper select-wrapper">
+                            <div class="text_field_container" id="meetAndGreetId_container"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else if (item.optionType === 'quantity') {
+            otherOptionsContent += `
+                <div class="extra-option" data-extra-option-id="${item?.extraOptionId}">
+                    <div class="image-div">
+                        <img src="${websiteUrl}/uploaded_files/extra-options/${item?.extraOptionImage}" alt="${item?.extraOptionName}">
+                    </div>
+
+                    <div class="content-div">
+                        <div class="top-content">
+                            <div class="title">
+                                <h3>${item?.extraOptionName}</h3>
+                                <strong>($${thousandSeperator(item?.price)})</strong>
+                            </div>
+                            <p>${item?.extraOptionDescription}</p>
+                        </div>
+
+                        <div class="text-field-wrapper">
+                            <div class="number-count-wrapper">
+                                <div class="counter-controls">
+                                    <button type="button" class="btn-counter btn-decrement" onclick="changeCount(this, -1)" aria-label="Decrease">–</button>
+                                    <input type="text" class="counter-input" value="0" data-min="0" data-max="${item?.maxQuantity}" data-step="1" inputmode="numeric" data-extra-option-id="${item?.extraOptionId}">
+                                    <button type="button" class="btn-counter btn-increment" onclick="changeCount(this, 1)" aria-label="Increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    });
+
+    $("#meetAndGreetExtraOption").html(meetAndGreetContent);
+    $("#otherExtraOptionsContent").html(otherOptionsContent);
+
+    // Initialize Meet and Greet select field
+    if (meetAndGreetContent) {
+        selectField({
+            id: 'meetAndGreetId',
+            title: 'Meet & Greet',
+            icon: '<i class="bi bi-person-badge"></i>',
+        });
+        _getSelectMeetAndGreet('meetAndGreetId');
+    }
+}
