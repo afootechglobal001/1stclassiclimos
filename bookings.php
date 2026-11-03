@@ -108,6 +108,7 @@
                     });
                     _updateProgress(savedPage);
                     changeBookingType(bookingType);
+                    _clearBookingSelectionSession();
                 });
             </script>
         </section>
