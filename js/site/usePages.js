@@ -160,10 +160,8 @@ function _getPageList(options) {
                 category: "Luxury Sedan",
                 image: "executive-sedan.jpg",
                 passengers: 4,
-                transmission: "Automatic",
                 luggage: 2,
                 price: "84.99",
-                rateType: "Hourly Rate",
                 url: "executive-class-sedan"
             },
             {
@@ -171,10 +169,8 @@ function _getPageList(options) {
                 category: "Luxury SUV",
                 image: "executive-suv.jpg",
                 passengers: 6,
-                transmission: "Automatic",
                 luggage: 6,
                 price: "94.99",
-                rateType: "Hourly Rate",
                 url: "executive-class-suv"
             },
             {
@@ -182,10 +178,8 @@ function _getPageList(options) {
                 category: "Luxury Van",
                 image: "executive-class-sprinter-van.jpg",
                 passengers: 14,
-                transmission: "Automatic",
                 luggage: 14,
                 price: "159.99",
-                rateType: "Hourly Rate",
                 url: "executive-class-sprinter-van"
             },
             {
@@ -193,11 +187,33 @@ function _getPageList(options) {
                 category: "Luxury Limo",
                 image: "executive-class-sprinter-van.jpg",
                 passengers: 12,
-                transmission: "Automatic",
                 luggage: 12,
                 price: "179.99",
-                rateType: "Hourly Rate",
                 url: "executive-class-sprinter-limo"
+            }
+        ];
+
+        const dummyServiceData = [
+            {
+                pageTitle: "Airport Transportation",
+                pageUrl: 'airport-transportation',
+                description: "Book an Airport Transportation, Car, Sedan, SUV, and Van service for airport transfers to and from San Francisco (SFO), Oakland (OAK), San Jose (SJC), and other major airports.",
+                seoFlyer: 'service-2.jpg',
+                updatedTime: '2026-10-15 14:00:00',
+            },
+            {
+                pageTitle: "Corporate Transportation Black Car Services",
+                description: "Book a Corporate and Private Jet Aviation FBO Black Car Transportation Service for corporate business travelers, executives, and private aviation passengers.",
+                seoFlyer: 'service-1.jpg',
+                pageUrl: "corporate-transportation",
+                updatedTime: '2026-10-15 14:00:00',
+            },
+            {
+                pageTitle: "Point to Point Transportation Limousine Car Service",
+                description: "Enjoy convenient point-to-point transportation with our professional limousine and black car services. Perfect for business meetings, personal trips, special events, and everyday travel.",
+                seoFlyer: 'service-3.jpg',
+                pageUrl: "point-to-point-transportation",
+                updatedTime: '2026-10-15 14:00:00',
             }
         ];
         
@@ -205,6 +221,77 @@ function _getPageList(options) {
         if (limit !== undefined && limit !== null && limit !== '') {
             fleetData = fleetData.slice(0, Number(limit));
         }
+
+        let serviceData = dummyServiceData;
+        if (limit !== undefined && limit !== null && limit !== '') {
+            serviceData = serviceData.slice(0, Number(limit));
+        }
+
+        const dummyPackageDealsData = [
+            {
+                pageTitle: "Private San Francisco City Limo Sightseeing and Tours",
+                pageUrl: "private-san-francisco-city-tour",
+                seoDescription: "Enjoy a private limousine sightseeing tour of San Francisco. Explore popular attractions, iconic landmarks, and beautiful city views with professional chauffeur service from San Francisco, Oakland, San Jose, Sacramento, and Napa.",
+                seoFlyer: "private-san-francisco.jpeg",
+                price: "393.24",
+                duration: "4 Hours",
+                updatedTime: "2026-10-15 14:00:00",
+            },
+            {
+                pageTitle: "Private Sports Events Limousine and Transportation",
+                pageUrl: "private-sports-events",
+                seoDescription: "Enjoy comfortable and convenient limousine transportation to sporting events across San Francisco, Oakland, Santa Clara, Sacramento, and beyond. Travel with friends, family, or business associates in style.",
+                seoFlyer: "private-sports-events.jpeg",
+                price: "550.54",
+                duration: "6 Hours",
+                updatedTime: "2026-10-15 14:00:00",
+            },
+            {
+                pageTitle: "San Francisco City Limo Sightseeing and Tours",
+                pageUrl: "san-francisco-city-sightseeing",
+                seoDescription: "Discover the beauty of San Francisco with a private chauffeur-driven sightseeing experience. Visit famous attractions, enjoy scenic routes, and explore the city at your own pace.",
+                seoFlyer: "francisco-city-limo.jpeg",
+                price: "393.24",
+                duration: "4 Hours",
+                updatedTime: "2026-10-15 14:00:00",
+            },
+            {
+                pageTitle: "Private Russian River Valley Limousine Wine Tasting Tour",
+                pageUrl: "russian-river-valley-wine-tour",
+                seoDescription: "Experience a private Russian River Valley wine tasting tour with luxury limousine transportation. Explore beautiful vineyards, enjoy scenic wine country views, and visit selected wineries in comfort and style.",
+                seoFlyer: "private-russian-river.jpeg",
+                price: "550.54",
+                duration: "6 Hours",
+                updatedTime: "2026-10-15 14:00:00",
+            }
+        ];
+
+        const dummyWineTourData = [
+            {
+                pageTitle: "Napa Valley Wine Country",
+                pageUrl: "napa-valley-wine-country",
+                seoDescription: "Book a Limousine Transportation for a Private Napa Valley Wine Tasting Tour from San Francisco, Sacramento, Sonoma, Santa Rosa, Oakland, Walnut Creek, and beyond.",
+                seoFlyer: "napa-valley-limousine-wine-tours.jpeg",
+            },
+            {
+                pageTitle: "Sonoma Valley Wine Country",
+                pageUrl: "sonoma-valley-wine-country",
+                seoDescription: "Rent a Limousine for a Private Sonoma Valley Wine Tasting Tour from San Francisco Bay Area, Sacramento, Santa Rosa, Napa, Oakland, Walnut Creek, and beyond.",
+                seoFlyer: "sonoma-valley-wine-country.jpg",
+            },
+            {
+                pageTitle: "Livermore Valley Wine Country",
+                pageUrl: "livermore-valley-wine-country",
+                seoDescription: "Rent a Limousine for a Private Livermore Valley Wine Tasting Tour from San Francisco Bay Area, San Jose, Oakland, Walnut Creek, and the surrounding cities.",
+                seoFlyer: "livermore-valley-wine-country.jpg",
+            },
+            {
+                pageTitle: "Russian River Valley Wine Country",
+                pageUrl: "russian-river-valley-wine-country",
+                seoDescription: "Experience a private Russian River Valley wine tasting tour with luxury limousine transportation. Explore beautiful vineyards, enjoy scenic wine country views, and visit selected wineries in comfort and style.",
+                seoFlyer: "russian-river-valley-wine-country.jpg",
+            }
+        ];
 
         // Remove this when the backend endpoint is ready.
         if (pageContainer === 'footerServiceLocationContent') {
@@ -273,17 +360,56 @@ function _getPageList(options) {
 
             _pageListDisplay(dummyServiceLocations, pageContainer);
             return;
-        } else if (pageContainer === 'pageMainBlogPageContainer') {
+        } 
+        if (pageContainer === 'pageMainBlogPageContainer') {
             _pageMainBlogData(dummyBlogData, pageContainer);
             return;
-        } else if (pageContainer === 'indexBlogPageContainer' || pageContainer === 'allRelatedBlogPageContainer') {
+        }
+        if (pageContainer === 'indexBlogPageContainer' || pageContainer === 'allRelatedBlogPageContainer') {
             _indexBlogData(dummyBlogData, pageContainer);
-            return;
-        } else if (pageContainer === 'siteServiceLocationContent') {
+        }
+        if (pageContainer == 'relatedPageBlogContent') {
+            _pageRelatedBlogData(dummyBlogData, pageContainer);   
+            return; 
+        }
+        if (pageContainer == 'relatedBlogDetailPageContainer') {
+            _pageRelatedBlogDetailData(dummyBlogData, pageContainer);   
+            return; 
+        }
+        if (pageContainer === 'siteServiceLocationContent') {
             _initSiteServiceLocationsData(dummyServiceLocations, paginationContainer, pageContainer);
             return;
-        } else if (pageContainer === 'fleetPageContent' || pageContainer === 'indexFleetPageContent') {
+        }
+        if (pageContainer === 'fleetPageContent' || pageContainer === 'indexFleetPageContent') {
             _mainPageFleetData(fleetData, pageContainer);
+            return;
+        }
+        if (pageContainer === 'indexServicePageContent') {
+            _indexPageServiceData(serviceData, pageContainer);
+            return;
+        }
+        if (pageContainer === 'servicePageContent') {
+            _mainPageServiceData(serviceData, pageContainer);
+            return;
+        }
+        if (pageContainer === 'relatedChartterPageContainer') {
+            _relatedChartterServiceData(serviceData, pageContainer);
+            return;
+        }
+        if (pageContainer === 'relatedServicePageContent') {
+            _relatedServiceData(serviceData, pageContainer);
+            return;
+        }
+        if (pageContainer === 'relatedFleetDetailPageContainer') {
+            _pageRelatedFleetDetailData(fleetData, pageContainer);
+            return;
+        }
+        if (pageContainer === 'tourPackagesPageContainer') {
+            _pageTourPackagesData(dummyPackageDealsData, pageContainer);
+            return;
+        }
+        if (pageContainer === 'wineTourPageContent') {
+            _pageWineToursData(dummyWineTourData, pageContainer);
             return;
         }
     } catch (error) {
@@ -343,22 +469,22 @@ function _indexBlogData(data, pageContainer) {
 
         return `
 			<div class="blog-div">
-                <a href="${websiteUrl}/blog/${item.pageUrl}" title="${item.pageTitle}">
+                <a href="${websiteUrl}/blog/${item?.pageUrl}" title="${item?.pageTitle}">
 				<div class="blog-inner-div">
 					<div class="title">${item.categoryData?.categoryName}</div>
 					<div class="image-div">
-						<img src="${blogPixPath}/${item.seoFlyer}"
-						alt="${item.pageTitle}" />
+						<img src="${blogPixPath}/${item?.seoFlyer}"
+						alt="${item?.pageTitle}" />
 					</div>
 
 					<div class="text-div">
 						<div class="count">
-							<i class="bi-calendar3"></i> ${_fetchFormatDate(item.updatedTime)}
+							<i class="bi-calendar3"></i> ${_fetchFormatDate(item?.updatedTime)}
 							<span>|</span>
-							<i class="bi-eye-fill"></i> ${item.viewCount} VIEWS
+							<i class="bi-eye-fill"></i> ${item?.viewCount} VIEWS
 						</div>
 
-						<h3>${item.pageTitle}</h3>
+						<h3>${item?.pageTitle}</h3>
 						<p>
 							${item?.seoDescription.substring(0, 120)}
 							${item?.seoDescription.length > 120 ? '...' : ''}
@@ -371,6 +497,69 @@ function _indexBlogData(data, pageContainer) {
 	
 	// First inject the HTML
 	$(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Related Blog List ///
+function _pageRelatedBlogData(data, pageContainer) {
+	const content = data.map((item) => {
+	return `
+		<a href="${websiteUrl}/blog/${item.pageUrl}" title="${item.pageTitle}">
+			<div class="related-post">
+				<div class="image-div">
+					<img src="${blogPixPath}/${item.seoFlyer}"
+					alt="${item.pageTitle}" />
+				</div>
+				<div class="cont-div">
+					<h3>${item.pageTitle}</h3>
+					<div class="comment">
+						<i class="bi-clock"></i> 
+						<span>${_fetchFormatDate(item.updatedTime)}</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	`;
+  }).join("");
+  $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Related Blog Detail List ///
+function _pageRelatedBlogDetailData(data, pageContainer) {
+	const content = data.map((item) => {
+
+        return `
+        <div class="cg-carousel__slide js-carousel__slide" data-aos="fade-left" data-aos-duration="1200">
+			<div class="blog-div carousel-blog-div">
+                <a href="${websiteUrl}/blog/${item?.pageUrl}" title="${item?.pageTitle}">
+				<div class="blog-inner-div">
+					<div class="title">${item.categoryData?.categoryName}</div>
+					<div class="image-div">
+						<img src="${blogPixPath}/${item?.seoFlyer}"
+						alt="${item?.pageTitle}" />
+					</div>
+
+					<div class="text-div">
+						<div class="count">
+							<i class="bi-calendar3"></i> ${_fetchFormatDate(item?.updatedTime)}
+							<span>|</span>
+							<i class="bi-eye-fill"></i> ${item?.viewCount} VIEWS
+						</div>
+
+						<h3>${item?.pageTitle}</h3>
+						<p>
+							${item?.seoDescription.substring(0, 120)}
+							${item?.seoDescription.length > 120 ? '...' : ''}
+						</p>
+					</div>
+				</div></a>
+			</div>
+        </div>
+		`;
+	}).join("");
+	
+	// First inject the HTML
+    $(`#${pageContainer}`).html(content);
+    _call_carousel(1);
 }
 
 //// Initialize Fetch Footer Service Location ////
@@ -792,7 +981,7 @@ function _mainPageFleetData(data, pageContainer) {
                         </div>
                         <div class="feature">
                             <i class="bi bi-sliders"></i>
-                            <span>${item?.transmission}</span>
+                            <span>Automatic</span>
                         </div>
                         <div class="feature">
                             <i class="bi bi-luggage"></i>
@@ -800,7 +989,7 @@ function _mainPageFleetData(data, pageContainer) {
                         </div>
                     </div>
 
-                    <div class="price">$${item?.price}  <span> / ${item?.rateType}</span></div>
+                    <div class="price">$${item?.price}  <span> / Hourly Rate</span></div>
                     <a href="${websiteUrl}/${item?.url}" title="${item?.fleetName}">
                         <button class="btn" title="View Vehicle"><i class="bi bi-eye"></i> View Vehicle</button>
                     </a>
@@ -811,4 +1000,573 @@ function _mainPageFleetData(data, pageContainer) {
 	
 	// First inject the HTML
 	$(`#${pageContainer}`).html(content);
+}
+
+/// Fetch Each Page Details ///
+function _getEachPageDetails(options) {
+    const {
+        pageCategory = "",
+        limit = '',
+        pageId = '',
+    } = options;
+
+    try {
+        //// Dummy Blog Response //////
+        let response = null;
+
+        if (pageCategory === "BLOG") {
+            response = {
+                data:
+                    {
+                    pageId: 'PAGE02620260822012240',
+                    pageUrl: 'monterey-airport-limo-black-car-service',
+                    pageTitle: 'Monterey Airport Limo and Black Car Service',
+                    seoFlyer: 'monterey-airport-limo.jpeg',
+                    seoDescription: 'Book airport transportation from Monterey to San Francisco International Airport (SFO), Oakland International Airport (OAK), Sacramento, and other destinations with professional chauffeurs and luxury sedans, SUVs, and limousines.',
+                    pageContent: `
+                        <h2>Monterey Airport Limo and Black Car Service</h2>
+
+                        <p>Traveling to or from Monterey, California? Make your airport transportation comfortable, convenient, and stress-free with 1st Classic Chauffeur Services. We provide professional airport limo and black car services for individuals, families, business travelers, and groups looking for reliable transportation throughout California.</p>
+
+                        <p>Whether you are heading to an important business meeting, catching an early morning flight, or returning home after a long journey, our professional chauffeurs are committed to providing a smooth and comfortable travel experience. Enjoy luxury vehicles, courteous service, and dependable airport transfers tailored to your schedule.</p>
+
+                        <h2>Professional Airport Transportation from Monterey</h2>
+
+                        <p>Getting to the airport on time is essential, especially when you have a scheduled flight to catch. Our Monterey airport transportation service offers a convenient alternative to driving yourself, dealing with airport parking, or relying on unpredictable transportation options.</p>
+
+                        <p>We provide private airport transfers from Monterey to major airports and destinations across California. Our chauffeurs focus on punctual pickups, comfortable journeys, and professional customer service from the moment your trip begins.</p>
+
+                        <h3>Airport Transfers to Major California Airports</h3>
+
+                        <p>1st Classic Chauffeur Services provides airport transportation connecting Monterey with several major airports, including:</p>
+
+                        <ul>
+                            <li><strong>San Francisco International Airport (SFO):</strong> Enjoy convenient private transportation between Monterey and San Francisco International Airport for domestic and international flights.</li>
+
+                            <li><strong>Oakland International Airport (OAK):</strong> Travel comfortably between Monterey and Oakland with a professional chauffeur handling your transportation.</li>
+
+                            <li><strong>San Jose Mineta International Airport (SJC):</strong> Book a private black car or luxury SUV for convenient transfers to and from San Jose International Airport.</li>
+
+                            <li><strong>Sacramento International Airport (SMF):</strong> Arrange comfortable long-distance airport transportation between Monterey and Sacramento.</li>
+                        </ul>
+
+                        <h2>Luxury Black Car and Limo Service in Monterey</h2>
+
+                        <p>Your transportation experience should be just as enjoyable as your destination. Our luxury black car and limousine services are designed for passengers who value comfort, privacy, convenience, and professional chauffeur service.</p>
+
+                        <p>Whether you are traveling alone or with a group, we offer different vehicle options to accommodate your transportation requirements. From executive sedans to spacious SUVs and luxury limousines, you can select a vehicle that suits your journey.</p>
+
+                        <h3>Choose the Right Vehicle for Your Journey</h3>
+
+                        <p>Our transportation options are suitable for different travel needs:</p>
+
+                        <ul>
+                            <li><strong>Luxury Sedans:</strong> Ideal for individuals, couples, and executive business travelers who prefer a comfortable and private ride.</li>
+
+                            <li><strong>Luxury SUVs:</strong> A great option for families, small groups, and passengers requiring additional luggage space.</li>
+
+                            <li><strong>Limousines:</strong> Perfect for special occasions, private transportation, and passengers looking for an elevated travel experience.</li>
+
+                            <li><strong>Group Transportation:</strong> Spacious transportation solutions for corporate groups, events, and larger parties.</li>
+                        </ul>
+
+                        <h2>Why Choose 1st Classic Chauffeur Services?</h2>
+
+                        <p>Choosing the right airport transportation provider can make a significant difference in your travel experience. At 1st Classic Chauffeur Services, we focus on delivering dependable transportation with attention to comfort, professionalism, and customer satisfaction.</p>
+
+                        <h3>Professional and Experienced Chauffeurs</h3>
+
+                        <p>Our chauffeurs understand the importance of punctuality, courtesy, and safe driving. From pickup to drop-off, you can expect professional service throughout your journey.</p>
+
+                        <h3>Comfortable and Well-Maintained Vehicles</h3>
+
+                        <p>Enjoy your ride in comfortable vehicles designed to provide a relaxing transportation experience. Our fleet offers options for different passenger capacities and travel requirements.</p>
+
+                        <h3>Convenient Advance Reservations</h3>
+
+                        <p>Planning your airport transportation ahead of time helps make your travel arrangements easier. You can schedule your pickup based on your flight details and preferred travel time.</p>
+
+                        <h3>Private and Personalized Transportation</h3>
+
+                        <p>Unlike shared transportation services, private chauffeur transportation provides a more personalized experience. Your journey is arranged around your reservation, pickup location, and destination.</p>
+
+                        <h2>Airport Transportation for Business and Leisure Travelers</h2>
+
+                        <p>Monterey attracts business professionals, tourists, families, and visitors throughout the year. Whatever brings you to the area, reliable transportation helps you move between airports, hotels, offices, and other destinations conveniently.</p>
+
+                        <p>Business travelers can enjoy private transportation for corporate meetings, conferences, airport transfers, and executive travel. Leisure travelers can arrange comfortable rides for hotel transfers, family trips, sightseeing, and special occasions.</p>
+
+                        <h2>How to Book Your Monterey Airport Limo Service</h2>
+
+                        <p>Arranging your airport transportation with 1st Classic Chauffeur Services is straightforward. Follow these steps to plan your journey:</p>
+
+                        <ol>
+                            <li><strong>Enter Your Pickup Location:</strong> Provide your pickup address in Monterey or your preferred starting location.</li>
+
+                            <li><strong>Choose Your Destination:</strong> Enter your airport, hotel, business address, or other destination.</li>
+
+                            <li><strong>Select Your Travel Date and Time:</strong> Provide your preferred pickup date and time to help us arrange your transportation.</li>
+
+                            <li><strong>Choose Your Vehicle:</strong> Select a suitable vehicle based on your passenger count, luggage, and travel preferences.</li>
+
+                            <li><strong>Confirm Your Reservation:</strong> Review your booking details and complete your reservation.</li>
+                        </ol>
+
+                        <h2>Frequently Asked Questions</h2>
+
+                        <h3>Do you provide airport transportation from Monterey to SFO?</h3>
+
+                        <p>Yes. You can arrange private airport transportation between Monterey and San Francisco International Airport (SFO) through 1st Classic Chauffeur Services.</p>
+
+                        <h3>Can I book a black car service from Monterey to Oakland Airport?</h3>
+
+                        <p>Yes. Our airport transportation services include private transfers between Monterey and Oakland International Airport (OAK).</p>
+
+                        <h3>What types of vehicles are available?</h3>
+
+                        <p>Depending on your transportation requirements, you can choose from luxury sedans, SUVs, limousines, and group transportation options.</p>
+
+                        <h3>Can I reserve airport transportation in advance?</h3>
+
+                        <p>Yes. We recommend arranging your reservation in advance so your pickup details and transportation requirements can be properly coordinated.</p>
+
+                        <h3>Do you offer transportation for corporate travelers?</h3>
+
+                        <p>Yes. Our chauffeur services are suitable for business professionals requiring private airport transfers, executive transportation, and corporate travel arrangements.</p>
+
+                        <h2>Book Your Monterey Airport Transportation Today</h2>
+
+                        <p>Make your next airport journey more comfortable with 1st Classic Chauffeur Services. Whether you need a luxury black car, private airport transfer, limousine, or group transportation, we are ready to help you plan your trip.</p>
+
+                        <p>Enjoy professional chauffeur service, comfortable vehicles, and convenient transportation from Monterey to major airports and destinations throughout California.</p>
+
+                        <p>Contact 1st Classic Chauffeur Services today or make your reservation online to arrange your next ride.</p>
+                    `,
+                    updatedTime: '2026-10-20 10:30:00',
+                    viewCount: 245,
+                    createdByData: {
+                        fullname: 'Admin',
+                        emailAddress: 'admin@1stclassiclimos.com'
+                    },
+                    updatedByData: null,
+                    categoryData: {
+                        categoryId: 'CAT004',
+                        categoryName: 'SERVICE LOCATION'
+                    },
+                    pagePicturesData: [
+                        { sn: 1, pagePix: 'monterey-airport-limo.jpeg' },
+                        { sn: 2, pagePix: 'corporate-chauffeur-services.webp' },
+                    ]
+                }
+            };
+        }
+
+        if (pageCategory == 'FLEET') {
+            response = {
+                data: {
+                    pageId: 'PAGE02620260822012240',
+                    pageUrl: 'executive-class-sedan',
+                    pageTitle: 'Executive Class Sedan',
+                    seoFlyer: 'executive-sedan.jpg',
+                    seoDescription: 'Travel in comfort and sophistication with our Executive Class Sedan chauffeur service. Ideal for business travel, airport transfers, corporate transportation, and private rides throughout the Bay Area and California.',
+                    pageContent: `
+                        <p>A great choice for hourly charter, business travel, airport transfers, and point-to-point transportation. The Executive Class Sedan is also perfect for wedding anniversary outings, special events, and other occasions where comfort, privacy, and style matter.</p>
+                        <h2>Executive Class Sedan Overview</h2>
+                        <p>Enjoy a comfortable and refined travel experience with our Executive Class Sedan. Designed for individuals and small groups, this vehicle combines a luxurious leather interior with convenient entertainment features, making it suitable for both business and personal transportation.</p>
+                        <ul>
+                            <li><strong>Maximum Passenger Capacity:</strong> Up to 3 Passengers.</li>
+                            <li><strong>Available Color:</strong> Black.</li>
+                            <li><strong>Windows:</strong> Limo Tinted Windows for added privacy.</li>
+                            <li><strong>Interior:</strong> Luxurious Leather Interior.</li>
+                            <li><strong>Music Connectivity:</strong> iPhone and Android Phone Music Adapter.</li>
+                            <li><strong>Hourly Rate:</strong> $74.99 plus Tax and Chauffeur Gratuity.</li>
+                            <li><strong>Minimum Booking:</strong> 3 Hours.</li>
+                        </ul>
+                        <h2>Book Your Executive Class Sedan</h2>
+                        <p>Whether you need transportation for a business meeting, airport transfer, hourly charter, anniversary celebration, or special event, our Executive Class Sedan offers a comfortable and private way to travel.</p>
+                        <p>Reserve your vehicle with 1st Classic Chauffeur Services and enjoy professional chauffeur transportation tailored to your schedule.</p>
+                    `,  
+                    passengers: 4,
+                    luggage: 2,
+                    price: "84.99",
+                    pagePicturesData: [
+                        { sn: 1, pagePix: 'executive-sedan.jpg' },
+                        { sn: 2, pagePix: 'FLEET001-16326547cf1f7e.jpg' },
+                        { sn: 3, pagePix: 'FLEET001-26326547cf21c3.jpg' },
+                    ]
+                },
+            };
+        }
+
+        if (pageCategory === "SERVICE") {
+            response = {
+                data:
+                    {
+                    pageId: 'PAGE026202608220122',
+                    pageUrl: 'airport-transportation',
+                    pageTitle: 'Airport Transportation Limousine Black Car Service',
+                    seoFlyer: 'service-2.jpg',
+                    seoDescription: 'Book an Airport Transportation, Car, Sedan, SUV, and Van services for Airport Transfer To and From San Francisco (SFO), Oakland, San Jose (SJC), Sacramento (SMF).',
+                    pageContent: `
+                        <h2>Professional Airport Transportation, Limousine and Black Car Service</h2>
+
+                        <p>Enjoy comfortable, reliable, and professional transportation with 1st Classic Chauffeur Services. We provide private airport transfers, luxury limousine services, and black car transportation for individuals, families, business executives, and groups. Whether you are traveling to the airport, attending a corporate event, or planning a special occasion, we offer convenient transportation tailored to your needs.</p>
+
+                        <h2>Reliable Airport Transportation Services</h2>
+
+                        <p>Make your airport journeys easier with professional chauffeur transportation. Whether you need an airport pickup or drop-off, our private transportation services provide a comfortable alternative to driving yourself or dealing with airport parking. We serve major airports, hotels, business locations, and other destinations, helping you travel conveniently and on schedule.</p>
+
+                        <h2>Luxury Limousine and Black Car Services</h2>
+
+                        <p>Travel in style with our luxury limousine and black car services. Our transportation options are designed for passengers who value comfort, privacy, and professional service. From executive sedans and spacious SUVs to luxury limousines, we have transportation solutions for different occasions and passenger requirements.</p>
+
+                        <ul>
+                            <li><strong>Airport Transfers:</strong> Private transportation to and from airports.</li>
+                            <li><strong>Black Car Service:</strong> Comfortable and private transportation for personal and business travel.</li>
+                            <li><strong>Limousine Service:</strong> Elegant transportation for special occasions and events.</li>
+                            <li><strong>Corporate Transportation:</strong> Professional chauffeur services for executives, meetings, and business engagements.</li>
+                            <li><strong>Group Transportation:</strong> Convenient transportation for families, groups, and corporate events.</li>
+                        </ul>
+
+                        <h2>Why Choose 1st Classic Chauffeur Services?</h2>
+
+                        <p>We understand that dependable transportation is an important part of every journey. Our focus is to provide a comfortable and convenient experience through professional service and suitable luxury vehicles.</p>
+
+                        <ul>
+                            <li><strong>Professional Chauffeurs:</strong> Courteous and experienced transportation professionals.</li>
+                            <li><strong>Luxury Vehicles:</strong> Comfortable sedans, SUVs, and limousines for different travel needs.</li>
+                            <li><strong>Private Transportation:</strong> Personalized rides based on your pickup and destination.</li>
+                            <li><strong>Convenient Reservations:</strong> Schedule your transportation ahead of your travel date.</li>
+                        </ul>
+
+                        <h2>Book Your Airport Transportation or Private Chauffeur Service</h2>
+
+                        <p>Whether you need a reliable airport transfer, luxury black car, limousine, or corporate transportation, 1st Classic Chauffeur Services is ready to help. Choose your pickup location, destination, travel date, and preferred vehicle to arrange your next journey.</p>
+
+                        <p>Make your reservation today and experience comfortable, convenient, and professional chauffeur transportation.</p>
+                    `,
+                    updatedTime: '2026-10-20 10:30:00',
+                    pagePicturesData: [
+                        { sn: 1, pagePix: 'service-2.jpg' },
+                        { sn: 2, pagePix: 'service-3.jpg' },
+                    ]
+                }
+            };
+        }
+
+        //// Call Endpoint //////
+        // _callFetchEndPoints({
+        //     url: `site/fetch-page?pageCategory=${pageCategory}&pageId=${pageId}&limit=${limit || ''}`,
+        // })
+        // .then((response) => {
+
+            const data = response?.data;
+
+            if (!data) {
+                _actionAlert("Page details not found", false);
+                return;
+            }
+
+            const pageTitle = data.pageTitle ?? '';
+            const seoDescription = data.seoDescription ?? '';
+            const pageContent = data.pageContent ?? '';
+            const seoFlyer = data.seoFlyer ?? '';
+            const updatedTime = data.updatedTime ?? '';
+            const viewCount = data.viewCount ?? 0;
+            const createdByName = data.createdByData?.fullname ?? data.updatedByData?.fullname ?? '';
+            const createdByEmail = data.createdByData?.emailAddress ?? data.updatedByData?.emailAddress ?? '';
+            const categoryName = data.categoryData?.categoryName ?? '';
+            const passengers = data?.passengers ?? '';
+            const luggage = data?.luggage ?? '';
+            const price = data?.price ?? '';
+        
+            let pixPath = '';
+            if (pageCategory == 'SERVICE') {
+                pixPath = servicePixPath;
+            } else if (pageCategory == 'FLEET') {
+                pixPath = fleetPixPath;
+            } else if (pageCategory == 'BLOG') {
+                pixPath = blogPixPath;
+            }
+
+            $('#pageTitle').html(pageTitle);
+			$('#seoDescription').html(seoDescription);
+			$('#pageContent').html(pageContent);
+			$('#createdByName').html(createdByName);
+			$('#createdByEmail').html(createdByEmail);
+			$('#updatedTime').html(_fetchFormatDate(updatedTime));
+            $('#viewCount').html(viewCount);
+            $('#categoryName').html(categoryName);
+            $('#passengers').html(passengers);
+            $('#luggage').html(luggage);
+            $('#price').html('$'+price);    
+            
+			$('#seoFlyer').attr('src',`${pixPath}/${seoFlyer}?t=${new Date().getTime()}`);
+			updateReadingTime();
+			
+			const picturesArray = data?.pagePicturesData ?? [];
+			let pixHtml = '';
+
+			for (let item of picturesArray) {
+				pixHtml += `
+					<div class="each-img-div" title="Click to Preview" id="img${item?.sn}"
+						onclick="_viewPreviewImage('img${item.sn}', 'pagePreviewPix')">
+						<img src="${pagesPixPath}/${item?.pagePix}"
+						alt="${pageTitle}" />
+					</div>
+				`;
+			}
+			$('#fetchPagePictures').html(pixHtml);
+			if (picturesArray.length>0) {
+				$('.bottom-img-div').show();
+			} else {
+				$(".bottom-img-div").hide();
+			}
+
+        // })
+        // .catch((error) => {
+        //     console.error("Error:", error);
+        //     if (error.status == 0) {
+        //         _actionAlert("Check your internet connection and try again", false);
+        //     } else {
+        //         _actionAlert(error.message, false);
+        //     }
+        // });
+
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+/// Initialize Fetch Service List ///
+function _indexPageServiceData(data, pageContainer) {
+    const content = data.map((item) => {
+
+        return `
+            <div class="service-div" data-aos="fade-up" data-aos-duration="1000">
+                <a href="${websiteUrl}/${item?.pageUrl}" title="Learn More About ${item?.pageTitle}">
+                    <div class="image-div">
+                        <img src="${servicePixPath}/${item?.seoFlyer}" alt="${item?.pageTitle}">
+                    </div>
+                    <div class="icon-div">
+                        <img src="${websiteUrl}/all-images/images/icon.png" alt="Icon" />
+                    </div>
+                    <div class="content-div">
+                        <h3>${item?.pageTitle}</h3>
+                        <p>${item?.description}</p>
+                        
+                            <button class="btn" title="Read More">
+                                Read More
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        
+                    </div>
+                </a>
+            </div>
+        `;
+    }).join("");
+    // First inject the HTML
+    $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Main Service List ///
+function _mainPageServiceData(data, pageContainer) {
+    const content = data.map((item) => {
+
+        return `
+            <div class="service-div main-service-div" data-aos="fade-up" data-aos-duration="1000">
+                <a href="${websiteUrl}/${item?.pageUrl}" title="Learn More About ${item?.serviceName}">
+                    <div class="image-div">
+                        <img src="${servicePixPath}/${item?.seoFlyer}" alt="${item?.pageTitle}">
+                    </div>
+                    <div class="icon-div">
+                        <img src="${websiteUrl}/all-images/images/icon.png" alt="Icon" />
+                    </div>
+                    <div class="content-div">
+                        <h3>${item?.pageTitle}</h3>
+                        <p>${item?.description}</p>
+                        
+                            <button class="btn" title="Read More">
+                                Read More
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        
+                    </div>
+                </a>
+            </div>
+        `;
+    }).join("");
+    // First inject the HTML
+    $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Main Service List ///
+function _relatedChartterServiceData(data, pageContainer) {
+    const content = data.map((item) => {
+        return `
+            <div class="cg-carousel__slide js-carousel__slide" data-aos="fade-left" data-aos-duration="1200">
+                <div class="service-div main-service-div" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="${websiteUrl}/${item?.pageUrl}" title="Learn More About ${item?.serviceName}">
+                        <div class="image-div">
+                            <img src="${servicePixPath}/${item?.seoFlyer}" alt="${item?.pageTitle}">
+                        </div>
+                        <div class="icon-div">
+                            <img src="${websiteUrl}/all-images/images/icon.png" alt="Icon" />
+                        </div>
+                        <div class="content-div">
+                            <h3>${item?.pageTitle}</h3>
+                            <p>${item?.description}</p>
+                            
+                            <button class="btn" title="Read More">
+                                Read More
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </a>
+                </div>
+            </div> 
+        `;
+    }).join("");
+    // First inject the HTML
+    $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Related Service List ///
+function _relatedServiceData(data, pageContainer) {
+	const content = data.map((item) => {
+		return `
+		<a href="${websiteUrl}/${item?.pageUrl ?? ''}" title="${item?.pageTitle}">
+			<div class="related-post">
+				<div class="image-div">
+					<img src="${servicePixPath}/${item?.seoFlyer}"
+					alt="${item?.pageTitle}" />
+				</div>
+				<div class="cont-div">
+					<h3>${item?.pageTitle}</h3>
+					<div class="comment">
+						<i class="bi-clock"></i> 
+						<span>${_fetchFormatDate(item.updatedTime)}</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	`;
+  }).join("");
+  $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Related Fleet Detail List ///
+function _pageRelatedFleetDetailData(data, pageContainer) {
+	const content = data.map((item) => {
+
+       return `
+        <div class="cg-carousel__slide js-carousel__slide" data-aos="fade-left" data-aos-duration="1200">
+			<div class="fleet-div carousel-fleet-div">
+                <div class="image-div">
+                    <img src="${fleetPixPath}/${item?.image}" alt="${item?.fleetName}">
+                    <span class="category">${item?.category}</span>
+                    <h3>${item?.fleetName}</h3>
+                </div>
+
+                <div class="fleet-content">
+                    <div class="fleet-features">
+                        <div class="feature">
+                            <i class="bi bi-people"></i>
+                            <span>${item?.passengers} Passengers</span>
+                        </div>
+                        <div class="feature">
+                            <i class="bi bi-sliders"></i>
+                            <span>Automatic</span>
+                        </div>
+                        <div class="feature">
+                            <i class="bi bi-luggage"></i>
+                            <span>${item?.luggage} Suitcase</span>
+                        </div>
+                    </div>
+
+                    <div class="price">$${item?.price}  <span> / Hourly Rate</span></div>
+                    <a href="${websiteUrl}/${item?.url}" title="${item?.fleetName}">
+                        <button class="btn" title="View Vehicle"><i class="bi bi-eye"></i> View Vehicle</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+		`;
+	}).join("");
+	
+	// First inject the HTML
+    $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Tour Packages List ///
+function _pageTourPackagesData(data, pageContainer) {
+    const content = data.map((item) => {
+
+        return `
+            <div class="tour-packages-div" data-aos="fade-in" data-aos-duration="800">
+                <div class="title">
+                    From <span>$${item?.price}</span> |
+                    <div class="text no-border">${item?.duration}</div>
+                </div>
+
+                <div class="img-div">
+                    <img 
+                        src="${tourPackagePixPath}/${item?.seoFlyer}" 
+                        alt="${item?.pageTitle}"
+                    />
+                </div>
+
+                <div class="text-div">
+                    <div class="div-in">
+                        <h2>${item?.pageTitle}</h2>
+                        <p>
+                            ${item?.seoDescription.substring(0, 120)}
+							${item?.seoDescription.length > 120 ? '...' : ''}
+                        </p>
+
+                        <a href="/tour-packages/${item?.pageUrl}" title="${item?.pageTitle}">
+                            <button class="btn" title="${item?.pageTitle}">
+                                READ MORE <i class="bi-arrow-right"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join("");
+
+    // First inject the HTML
+    $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Main Service List ///
+function _pageWineToursData(data, pageContainer) {
+    const content = data.map((item) => {
+        return `
+            <div class="service-div main-service-div main-page-wine-tour" data-aos="fade-up" data-aos-duration="1000">
+                <a href="${websiteUrl}/${item?.pageUrl}" title="Learn More About ${item?.pageTitle}">
+                    <div class="image-div">
+                        <img src="${wineTourPixPath}/${item?.seoFlyer}" alt="${item?.pageTitle}">
+                    </div>
+                    <div class="icon-div">
+                        <img src="${websiteUrl}/all-images/images/icon.png" alt="Icon" />
+                    </div>
+                    <div class="content-div">
+                        <h3>${item?.pageTitle}</h3>
+                        <p>
+                            ${item?.seoDescription.substring(0, 120)}
+							${item?.seoDescription.length > 120 ? '...' : ''}
+                        </p>
+                        
+                        <button class="btn" title="Read More">
+                            Read More
+                            <i class="bi bi-arrow-right-circle"></i>
+                        </button>
+                    </div>
+                </a>
+            </div>
+        `;
+    }).join("");
+    // First inject the HTML
+    $(`#${pageContainer}`).html(content);
 }

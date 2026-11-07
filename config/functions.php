@@ -390,7 +390,7 @@ function _whyChooseUsSection($extraClass = '', $websiteUrl, $appName)  { ?>
 <?php
 function _sideHotLinks($websiteUrl)  { ?>
     <div class="div-in">
-        <h3>Hot Links</h3>
+        <h3>HOT LINKS</h3>
 
         <div class="related-services-cont" id="relatedServicesCont">
             <a href="<?php echo $websiteUrl ?>/airport-transportation-limousine-car-service">
