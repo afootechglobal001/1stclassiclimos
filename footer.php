@@ -153,7 +153,7 @@
                     <a href="<?php echo $websiteUrl?>/service-locations" title="Service Locations">
                         <li>Service Locations</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Book A Ride Now">
+                    <a href="<?php echo $websiteUrl?>/bookings" title="Book A Ride Now">
                         <li>Book A Ride Now</li>
                     </a>
                     <a href="<?php echo $websiteUrl?>/#" title="Account SignUp/Login">
@@ -165,7 +165,7 @@
                     <a href="<?php echo $websiteUrl?>/contact-us" title="Contact Us">
                         <li>Contact Us</li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Wine Tour">
+                    <a href="<?php echo $websiteUrl?>/wine-country-region-of-northern-california" title="Wine Tour">
                         <li>Wine Tour</li>
                     </a>
                     <a href="<?php echo $websiteUrl?>/blog" title="Blog & Articles">
@@ -192,7 +192,7 @@
                     <a href="<?php echo $websiteUrl?>/airport-transportation-limousine-car-service" title="Services">
                         <li>Services </li>
                     </a>
-                    <a href="<?php echo $websiteUrl?>/#" title="Package Deals">
+                    <a href="<?php echo $websiteUrl?>/tour-special-package-deals" title="Package Deals">
                         <li>Package Deals</li>
                     </a>
                 </ul>

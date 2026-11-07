@@ -246,7 +246,20 @@ $(document).ready(function () {
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Update Reading time ///
+function updateReadingTime() {
+  let wordsPerMinute = 200;
+  let content = $("#pageContent").text().trim();
 
+  if (content.length > 0) {
+      let words = content.split(/\s+/).filter(Boolean).length;
+      let minutes = Math.max(1, Math.ceil(words / wordsPerMinute));
+
+      $("#pageContentRead").text(`${minutes} min read`);
+  } else {
+      $("#pageContentRead").text("1 min read");
+  }
+}
 //// Toggle Service Locations ////
 function _toggleServiceLocation() {
   const button = $('#toggleServiceLocationBtn');

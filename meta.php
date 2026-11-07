@@ -20,10 +20,8 @@
 <script src="<?php echo $websiteUrl ?>/js/aos.js?v=<?php echo $codeVersion ?>"></script>
 <script src="<?php echo $websiteUrl?>/js/tablePaginator.js?v=<?php echo $codeVersion?>"></script>
 
-<link href="<?php echo $websiteUrl ?>/slide-property/product-carousel/carousel.css" rel="stylesheet" type="text/css" />
-<script src="<?php echo $websiteUrl ?>/slide-property/product-carousel/carousel.js?v=<?php echo $codeVersion ?>" type="text/javascript"></script>
-
-<link href="<?php echo $websiteUrl ?>/slide-property/engine/style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $websiteUrl?>/slide-property/product-carousel/carousel.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo $websiteUrl?>/slide-property/product-carousel/carousel.js" type="text/javascript"></script>
 
 <script src="<?php echo $websiteUrl ?>/js/site/usePages.js?v=<?php echo $codeVersion ?>"></script>
 <script src="<?php echo $websiteUrl ?>/js/site/useBooking.js?v=<?php echo $codeVersion ?>"></script>

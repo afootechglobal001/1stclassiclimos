@@ -1,4 +1,5 @@
 <?php include '../../config/constants.php'; ?>
+<?php include '../../config/functions.php'; ?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http: //www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -41,17 +42,30 @@
                 <div class="text-content-div">
                     <h1 id="pageTitle">Loading...</h1>
                     <div class="count">
-                        <i class="bi-person"></i> By: 
-                        <span><strong id="createdByName">Loading...</strong></span>
-                        &nbsp;|&nbsp;
-                        <i class="bi-calendar3"></i> Date: 
-                        <span><strong id="updatedTime">Loading...</strong></span>
-                        &nbsp;|&nbsp;
-                        <i class="bi-eye"></i> Views: 
-                        <span><strong id="viewCount">Loading...</strong></span>
-                        &nbsp;|&nbsp;
-                        <i class="bi-clock"></i> Reading Time: 
-                        <span><strong id="pageContentRead">Loading...</strong></span>
+                        <div>
+                            <i class="bi-person"></i> By
+                            <span><strong id="createdByName">Loading...</strong></span>
+                        </div> |
+                       
+                        <div>
+                            <i class="bi-calendar3"></i> 
+                            <span><strong id="updatedTime">Loading...</strong></span>
+                        </div> |
+
+                        <div>
+                            <i class="bi-eye"></i>
+                            <span><strong id="viewCount">Loading...</strong></span>
+                        </div> |
+
+                        <div>
+                            <i class="bi-clock"></i>
+                            <span><strong id="pageContentRead">Loading...</strong></span>
+                        </div> |
+                        
+                        <div>
+                            <i class="bi-tag"></i>
+                            <span><strong id="categoryName">Loading...</strong></span>
+                        </div>
                     </div>
                     <p class="intro" id="seoDescription">Loading...</p>
                 </div>
@@ -100,20 +114,78 @@
                                         pageContainer: "relatedPageBlogContent"
                                     })
                                 </script>   
-                                
-                                <div class="content-loading-div">
-                                    <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
-                                </div>
                             </div>
                         </div>
+
+                        <?php _sideHotLinks($websiteUrl); ?>
                     </div>
                 </div>
             </div>
             <script>
-            _getEachPageDetails({
-                pageCategory: "BLOG",
-                pageId: "<?php echo $pageId ?>"
-            })
+                _getEachPageDetails({
+                    pageCategory: "BLOG",
+                    pageId: "<?php echo $pageId ?>"
+                })
+            </script>
+        </section>
+
+        <section class="body-div">
+            <div class="body-div-in">
+                <div class="main-pages-back-div">
+                    <div class="nav-title-div">
+                        <div class="general-title related-title">
+                            <div class="top-title">
+                                <i class="bi-car-front-fill"></i>
+                                <span><strong>Related News</strong></span>
+                            </div>
+
+                            <div class="main-title">
+                                <h2>Related Blog And <strong>Articles</strong></h2>
+                            </div>
+                        </div>
+
+                        <div class="slide-btn">
+                            <button class="btn" title="Previous" id="js-carousel__prev_1"><i class="bi-chevron-double-left"></i></button>
+                            <button class="btn" title="Next" id="js-carousel__next_1"><i class="bi-chevron-double-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="cg-carousel">
+                        <div class="cg-carousel__container" id="js-carousel_1">
+                            <div class="cg-carousel__track js-carousel__track" id="relatedBlogDetailPageContainer">
+                                <script>
+                                    _getPageList({
+                                        pageCategory: "BLOG",
+                                        pageContainer: "relatedBlogDetailPageContainer"
+                                    })
+                                </script>   
+                            </div>                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                window['carousel_options_1'] = ({
+                    items: 3,
+                    margin: 30,
+                    loop: true,
+                    dots: true,
+                    autoplayHoverPause: true,
+                    smartSpeed: 650,
+                    autoplay: true,
+                    breakpoints: {
+                        700: {
+                            slidesPerView: 1,
+                        },
+                        900: {
+                            slidesPerView: 2,
+                        },
+                        1400: {
+                            slidesPerView: 3,
+                        }
+                    }
+                });
             </script>
         </section>
 

@@ -66,9 +66,14 @@ $userDeviceId = getBrowserId();
     var servicePixPath = websiteUrl + '/uploaded_files/services'; /// For Services Picture Path //
     var pagesPixPath = websiteUrl + '/uploaded_files/pagePictures'; /// For Pages Pictures Path //
     var fleetPixPath = websiteUrl + '/uploaded_files/fleets'; /// For Fleet Pictures Path //
+    var tourPackagePixPath = websiteUrl + '/uploaded_files/tour-packages'; /// For Tour Packages Pictures Path //
+    var wineTourPixPath = websiteUrl + '/uploaded_files/wine-tour'; /// For Wine Tours Pictures Path //
     
     var pageCategory = {
         SERVICE: 'SERVICE',
         BLOG: 'BLOG',
+        FLEET: 'FLEET',
+        TOUR_PACKAGES: 'TOUR_PACKAGES', 
+        WINE_TOURS: 'WINE_TOURS',
     }
 </script>

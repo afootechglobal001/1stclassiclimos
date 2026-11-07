@@ -124,9 +124,9 @@
                         </ul>
                     </li>
 
-                    <a href="<?php echo $websiteUrl?>/#" title="Package Deals">
+                    <a href="<?php echo $websiteUrl?>/tour-special-package-deals" title="Package Deals">
                         <li
-                            class="package-deals-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/package-deals")) {?> active <?php }?>">
+                            class="package-deals-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/tour-special-package-deals")) {?> active <?php }?>">
                             Package Deals
                         </li>
                     </a>
@@ -138,9 +138,9 @@
                         </li>
                     </a>
 
-                    <a href="<?php echo $websiteUrl?>/reviews" title="Wine Tour">
+                    <a href="<?php echo $websiteUrl?>/wine-country-region-of-northern-california" title="Wine Tour">
                         <li
-                            class="wine-tour-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/wine-tour")) {?> active <?php }?>">
+                            class="wine-tour-li <?php if (strstr($websiteAutoUrl, "$websiteUrl/wine-country-region-of-northern-california")) {?> active <?php }?>">
                             Wine Tour
                         </li>
                     </a>
@@ -149,9 +149,9 @@
                         More <i class="bi-chevron-double-down"></i>
                         <div class="mini-nav-div animated animated">
                             <div class="li" id="li"><strong>MORE</strong></div>
-                            <a href="<?php echo $websiteUrl?>/#" title="Fleets">
+                            <a href="<?php echo $websiteUrl?>/fleet" title="Fleets">
                             <div class="li">Fleets</div></a>
-                            <a href="<?php echo $websiteUrl?>/#" title="Wine Tour">
+                            <a href="<?php echo $websiteUrl?>/wine-country-region-of-northern-california" title="Wine Tour">
                             <div class="li wine-li">Wine Tour</div></a>
                         </div>
                     </li>
