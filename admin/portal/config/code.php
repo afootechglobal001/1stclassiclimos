@@ -1,4 +1,4 @@
-<?php include '../../config/constants.php';?>
+<?php include '../../../config/constants.php';?>
 <script src="<?php echo $websiteUrl?>/portal/js/session_validation.js"></script>
 
 <?php
@@ -11,6 +11,16 @@ switch ($action){
 		$ids=$_POST['ids'];
 		$pageCategory=$_POST['pageCategory'];
 		require_once('dashboard-content.php');
+		require_once('staff-content.php');
+		require_once('service-content.php');
+		require_once('blog-content.php');
+		require_once('faq-content.php');
+		require_once('settings-content.php');
+		require_once('role-content.php');
+		require_once('pages-content.php');
+		require_once('page-details.php');
+		require_once('information-category-content.php');
+		require_once('account-report/account-report-content.php');
 	break;
 
 	case 'get_form':
@@ -19,6 +29,173 @@ switch ($action){
 		$pageCategory=$_POST['pageCategory'];
 		$modalLayer=$_POST['modalLayer'];
 		require_once('dashboard-content.php');
+		require_once('staff-content.php');
+		require_once('service-content.php');
+		require_once('blog-content.php');
+		require_once('faq-content.php');
+		require_once('settings-content.php');
+		require_once('role-content.php');
+		require_once('pages-content.php');
+		require_once('page-details.php');
+		require_once('information-category-content.php');
+		require_once('account-report/account-report-content.php');
+		require_once('customers-content.php');
+	break;
+
+	case 'uploadPagePix':
+		$pageCategory = $_POST['pageCategory'] ?? '';
+		$newSeoFlyer = $_POST['newSeoFlyer'] ?? '';
+		$seoFlyer = $_POST['seoFlyer'] ?? '';
+	
+		///// Validate SEO Flyer /////
+		if (!empty($seoFlyer)) {
+    		$seoFlyer = preg_replace('#^data:image/\w+;base64,#i', '', $seoFlyer);
+			$seoFlyer = str_replace(' ', '+', $seoFlyer);
+			$seoFlyer = base64_decode($seoFlyer);
+		}
+		
+		if ($pageCategory==="blog") {
+			$uploadPagesPictureDir = "../../uploaded_files/blog/";
+		} else if ($pageCategory==="service") {
+			$uploadPagesPictureDir = "../../uploaded_files/services/";
+		} else if ($pageCategory==="gallery") {
+			$uploadPagesPictureDir = "../../uploaded_files/gallery/";
+		}
+
+		//// Create Directory If Not Exists ////
+		if (!empty($newSeoFlyer) && !empty($seoFlyer)) {
+			file_put_contents($uploadPagesPictureDir . $newSeoFlyer, $seoFlyer);
+		}
+    break;
+
+	case 'uploadPagePictures':
+		$pagePixNames=$_POST['pagePixNames'];
+
+		if($pagePixNames!=''){
+			$myArray = explode(',', $pagePixNames);
+				$i=0;
+				foreach($myArray as $picture){
+					move_uploaded_file($_FILES["pagePixArr"]["tmp_name"][$i], '../../uploaded_files/pagePictures/' . $picture);
+					$i++;
+				}
+		}
+	break;
+
+	case 'deleteOldPagePictures':
+		$oldPagePix=$_POST['oldPagePix'];
+
+		$uploadDir = "../../uploaded_files/pagePictures/";
+
+		// Delete old image only if it's not the default
+		if (!empty($oldPagePix) && file_exists($uploadDir . $oldPagePix)) {
+			unlink($uploadDir . $oldPagePix);
+		}
+	break;
+
+	case 'uploadProfessionImagePix':
+		$newProfessionImage = $_POST['newProfessionImage'] ?? '';
+		$professionImage = $_POST['professionImage'] ?? '';
+		$newProfessionIcon = $_POST['newProfessionIcon'] ?? '';
+		$professionIcon = $_POST['professionIcon'] ?? '';
+	
+		///// Validate SEO Flyer /////
+		if (!empty($professionImage)) {
+    		$professionImage = preg_replace('#^data:image/\w+;base64,#i', '', $professionImage);
+			$professionImage = str_replace(' ', '+', $professionImage);
+			$professionImage = base64_decode($professionImage);
+		}
+
+		///// Validate SEO Flyer /////
+		if (!empty($professionIcon)) {
+    		$professionIcon = preg_replace('#^data:image/\w+;base64,#i', '', $professionIcon);
+			$professionIcon = str_replace(' ', '+', $professionIcon);
+			$professionIcon = base64_decode($professionIcon);
+		}
+		
+		$uploadProfessionImageDir = "../../uploaded_files/professionImages/";
+		$uploadProfessionIconDir = "../../uploaded_files/professionIcon/";
+		
+		//// Create Directory If Not Exists ////
+		if (!empty($newProfessionImage) && !empty($professionImage)) {
+			file_put_contents($uploadProfessionImageDir . $newProfessionImage, $professionImage);
+		}
+
+		//// Create Directory If Not Exists ////
+		if (!empty($newProfessionIcon) && !empty($professionIcon)) {
+			file_put_contents($uploadProfessionIconDir . $newProfessionIcon, $professionIcon);
+		}
+    break;
+
+	case 'createPagesFolder':
+		$pageCategory = strtolower(trim($_POST['pageCategory']));
+		$pageId = trim($_POST['pageId']);
+		$pageUrl = trim(strtolower($_POST['pageUrl']));
+		$oldPageUrl = trim(strtolower($_POST['oldPageUrl']));
+		$pageTitle = trim($_POST['pageTitle']);
+		$seoKeywords = $_POST['seoKeywords'];
+		$seoDescription = $_POST['seoDescription'];
+		$newSeoFlyer = $_POST['newSeoFlyer'];
+		$pageSeoPix = $newSeoFlyer;
+
+		// common text content
+		$txt .= "<?php \$pageId='$pageId';?>\n";
+		$txt .= "<?php \$pageUrl='$pageUrl';?>\n";
+		$txt .= "<?php \$pageTitle='$pageTitle';?>\n";
+		$txt .= "<?php \$seoKeywords='$seoKeywords';?>\n";
+		$txt .= "<?php \$seoDescription='$seoDescription';?>\n";
+		$txt .= "<?php \$pageSeoPix='$pageSeoPix';?>\n";
+
+		//// include page details file ////
+		if ($pageCategory == 'portfolio'){
+			$txt .= "<?php include " . "'../../$pageCategory" . "_details.php';?>";
+		} else {
+			$txt .= "<?php include " . "'../$pageCategory" . "_details.php';?>";
+		}
+
+		/// check if old page url is empty to create new folder////
+		if (empty($oldPageUrl) || $oldPageUrl===null) {
+			////////// Create Page Folder //////////
+			if ($pageCategory == 'blog') {
+				mkdir('../../blog/' . $pageUrl);
+				$myfile = fopen("../../blog/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");
+			} else if ($pageCategory == 'service') {
+				mkdir('../../services/' . $pageUrl);
+				$myfile = fopen("../../services/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");
+			} else if ($pageCategory == 'gallery') {
+				mkdir('../../gallery/' . $pageUrl);
+				$myfile = fopen("../../gallery/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");	
+			}
+			fwrite($myfile, $txt);
+			fclose($myfile);
+		} else {
+			if ($pageCategory == 'blog') {
+				//// delete file with folders ////
+				array_map('unlink', glob("../../blog/$oldPageUrl/*.*"));
+				rmdir("../../blog/$oldPageUrl");
+
+				//// recreate new file with folders ////
+				mkdir('../../blog/' . $pageUrl);
+				$myfile = fopen("../../blog/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");
+			} else if ($pageCategory == 'service') {
+				//// delete file with folders ////
+				array_map('unlink', glob("../../services/$oldPageUrl/*.*"));
+				rmdir("../../services/$oldPageUrl");
+
+				//// recreate new file with folders ////
+				mkdir('../../services/' . $pageUrl);
+				$myfile = fopen("../../services/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");
+			} else if ($pageCategory == 'gallery') {
+				//// delete file with folders ////
+				array_map('unlink', glob("../../gallery/$oldPageUrl/*.*"));
+				rmdir("../../gallery/$oldPageUrl");
+
+				//// recreate new file with folders ////
+				mkdir('../../gallery/' . $pageUrl);
+				$myfile = fopen("../../gallery/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");	
+			}
+			fwrite($myfile, $txt);
+			fclose($myfile);
+		}
 	break;
 }
 ?>

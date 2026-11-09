@@ -56,7 +56,7 @@
                             <h3>SEARCH</h3>
                             <div class="text_field_container">
                                 <input class="text_field" id="searchContent"
-                                    onkeyup="_filtersPages(this.value, 'wineTourPageContent', 'fleet-div');" type="text"
+                                    onkeyup="_filtersPages(this.value, 'wineTourPageContent', 'main-page-wine-tour');" type="text"
                                     placeholder="" />
                                 <div class="placeholder">Type Here To Search</div>
                             </div>

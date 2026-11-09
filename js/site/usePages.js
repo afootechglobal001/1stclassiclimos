@@ -229,8 +229,9 @@ function _getPageList(options) {
 
         const dummyPackageDealsData = [
             {
-                pageTitle: "Private San Francisco City Limo Sightseeing and Tours",
-                pageUrl: "private-san-francisco-city-tour",
+                pageId: "PAGE026202608220110",
+                pageTitle: "Private Sonoma Valley Limousine Wine Tasting Tour",
+                pageUrl: "sonoma-valley-limousine-wine-tour",
                 seoDescription: "Enjoy a private limousine sightseeing tour of San Francisco. Explore popular attractions, iconic landmarks, and beautiful city views with professional chauffeur service from San Francisco, Oakland, San Jose, Sacramento, and Napa.",
                 seoFlyer: "private-san-francisco.jpeg",
                 price: "393.24",
@@ -238,6 +239,7 @@ function _getPageList(options) {
                 updatedTime: "2026-10-15 14:00:00",
             },
             {
+                pageId: "PAGE026202608220111",
                 pageTitle: "Private Sports Events Limousine and Transportation",
                 pageUrl: "private-sports-events",
                 seoDescription: "Enjoy comfortable and convenient limousine transportation to sporting events across San Francisco, Oakland, Santa Clara, Sacramento, and beyond. Travel with friends, family, or business associates in style.",
@@ -247,6 +249,7 @@ function _getPageList(options) {
                 updatedTime: "2026-10-15 14:00:00",
             },
             {
+                pageId: "PAGE026202608220112",
                 pageTitle: "San Francisco City Limo Sightseeing and Tours",
                 pageUrl: "san-francisco-city-sightseeing",
                 seoDescription: "Discover the beauty of San Francisco with a private chauffeur-driven sightseeing experience. Visit famous attractions, enjoy scenic routes, and explore the city at your own pace.",
@@ -256,6 +259,7 @@ function _getPageList(options) {
                 updatedTime: "2026-10-15 14:00:00",
             },
             {
+                pageId: "PAGE026202608220113",
                 pageTitle: "Private Russian River Valley Limousine Wine Tasting Tour",
                 pageUrl: "russian-river-valley-wine-tour",
                 seoDescription: "Experience a private Russian River Valley wine tasting tour with luxury limousine transportation. Explore beautiful vineyards, enjoy scenic wine country views, and visit selected wineries in comfort and style.",
@@ -404,12 +408,16 @@ function _getPageList(options) {
             _pageRelatedFleetDetailData(fleetData, pageContainer);
             return;
         }
-        if (pageContainer === 'tourPackagesPageContainer') {
-            _pageTourPackagesData(dummyPackageDealsData, pageContainer);
+        if (pageContainer === 'packagesDealsPageContainer') {
+            _pagePackageDealsData(dummyPackageDealsData, pageContainer);
             return;
         }
         if (pageContainer === 'wineTourPageContent') {
             _pageWineToursData(dummyWineTourData, pageContainer);
+            return;
+        }
+        if (pageContainer === 'relatedPackgaeDealsDetailPageContainer') {
+            _relatedPackageDealsData(dummyPackageDealsData, pageContainer);
             return;
         }
     } catch (error) {
@@ -1254,6 +1262,146 @@ function _getEachPageDetails(options) {
             };
         }
 
+        if (pageCategory === "PACKAGE_DEALS") {
+            response = {
+                data:
+                    {
+                    pageId: 'PAGE0262026082201113',
+                    pageUrl: 'sonoma-valley-limousine-wine-tour',
+                    pageTitle: 'Private Sonoma Valley Limousine Wine Tasting Tour',
+                    seoFlyer: 'private-san-francisco.jpeg',
+                    seoDescription: 'Book a private Napa Valley limousine wine tasting tour from San Francisco, Oakland, and the San Francisco Bay Area. Enjoy luxury transportation, professional chauffeurs, and unforgettable visits to Napa Valley vineyards and wineries.',
+                    pageContent: `
+                        <h2>Private Napa Valley Limousine Wine Tasting Tours</h2>
+
+                        <p>Experience the ultimate private Napa Valley wine tasting tour with 1st Classic Chauffeur Services. Discover the beautiful vineyards, world-renowned wineries, and breathtaking landscapes of Napa Valley while enjoying the comfort, privacy, and convenience of luxury limousine transportation. Whether you are planning a romantic getaway, a weekend wine tour, a birthday celebration, or a special outing with friends and family, our private chauffeur services provide a safe, comfortable, and memorable way to explore California's famous wine country.</p>
+
+                        <p>Located north of San Francisco, Napa Valley is one of the world's most celebrated wine-producing destinations. With hundreds of wineries, beautiful vineyard landscapes, and unique wine-tasting experiences, the region attracts wine enthusiasts and visitors from around the world. Our private Napa Valley wine tours allow you to enjoy everything this beautiful destination has to offer without worrying about driving, directions, or transportation arrangements.</p>
+
+                        <h2>Explore the Beautiful Napa Valley Vineyards and Wineries</h2>
+
+                        <p>Napa Valley is home to an incredible collection of vineyards and wineries, each offering its own history, atmosphere, wine varieties, and tasting experiences. From traditional family-owned wineries to prestigious wine estates, there is something special for every wine enthusiast. Whether you are an experienced wine collector or exploring wine tasting for the first time, a private tour gives you the flexibility to discover wineries that match your interests.</p>
+
+                        <p>Enjoy the scenic beauty of Napa Valley as your professional chauffeur takes you through picturesque vineyard roads, charming wine-country communities, and some of the region's most recognized winery destinations. You can plan your preferred winery stops, enjoy wine tastings, take memorable photographs, and experience the unique character of California wine country at your own pace.</p>
+
+                        <h2>Luxury Limousine Transportation for Your Napa Valley Wine Tour</h2>
+
+                        <p>Make your wine-tasting experience even more special with luxury transportation from 1st Classic Chauffeur Services. We offer a selection of premium Executive Class vehicles designed to provide comfort, privacy, and convenience throughout your journey. Whether you are traveling as a couple, with family, or as part of a larger group, we have transportation options to accommodate your needs.</p>
+
+                        <p>Choose from our selection of luxury vehicles, including:</p>
+
+                        <ul>
+                            <li><strong><a href="https://1stclassiclimos.com/executive-class-stretch-limousine" title="Executive Class Stretch Limousine">Stretch Limousine:</a></strong> Enjoy an elegant and luxurious wine-country experience with spacious seating and premium comfort.</li>
+                            <li><strong><a href="https://1stclassiclimos.com/executive-class-sedan" title="Executive Class Sedan">Executive Class Sedan:</a></strong> An excellent choice for couples, individuals, and private executive wine tours.</li>
+                            <li><strong><a href="https://1stclassiclimos.com/executive-class-suv" title="Executive Class SUV">Luxury SUV:</a></strong> Comfortable and spacious transportation for small families and groups.</li>
+                            <li><strong><a href="https://1stclassiclimos.com/executive-class-sprinter-van" title="Executive Class Sprinter Van">Executive Sprinter Van:</a></strong> Ideal for larger groups looking for comfortable private transportation.</li>
+                            <li><strong>Charter Bus:</strong> A convenient transportation option for corporate outings, celebrations, and larger wine-tasting groups.</li>
+                        </ul>
+
+                        <h2>Private Wine Tours from San Francisco and the Bay Area</h2>
+
+                        <p>Planning a Napa Valley wine-tasting trip from San Francisco or the surrounding Bay Area? 1st Classic Chauffeur Services provides private luxury transportation for visitors traveling from San Francisco, Oakland, and nearby communities. Avoid the inconvenience of driving through unfamiliar roads and enjoy a relaxing journey to Napa Valley with a professional chauffeur.</p>
+
+                        <p>Whether you need transportation from your hotel, residence, airport, or business location, we can help arrange a convenient pickup and drop-off for your wine tour. Our private chauffeur service allows you to focus on enjoying your day while we take care of your transportation.</p>
+
+                        <h2>Why Choose 1st Classic for Your Napa Valley Wine Tour?</h2>
+
+                        <p>At 1st Classic Chauffeur Services, we understand that a memorable wine tour requires more than simply visiting wineries. It is about enjoying the journey, exploring beautiful destinations, and traveling in comfort. Our goal is to provide reliable private transportation that makes your Napa Valley experience convenient and enjoyable.</p>
+
+                        <ul>
+                            <li><strong>Professional Chauffeurs:</strong> Travel with courteous and experienced chauffeurs familiar with Bay Area and Napa Valley transportation routes.</li>
+                            <li><strong>Luxury Fleet:</strong> Choose from executive sedans, luxury SUVs, stretch limousines, Sprinter vans, and charter buses.</li>
+                            <li><strong>Private Transportation:</strong> Enjoy a personalized transportation experience without sharing your ride with strangers.</li>
+                            <li><strong>Flexible Wine Tour Experience:</strong> Plan your preferred winery destinations and schedule according to your travel arrangements.</li>
+                            <li><strong>Comfort and Convenience:</strong> Relax and enjoy the beautiful scenery while your chauffeur handles the driving.</li>
+                            <li><strong>Group Transportation:</strong> Suitable transportation options for couples, families, friends, corporate groups, and special celebrations.</li>
+                        </ul>
+
+                        <h2>Perfect for Special Occasions and Group Wine Tours</h2>
+
+                        <p>A private Napa Valley limousine wine tour is an excellent way to celebrate life's special moments. Whether you are organizing a birthday celebration, anniversary, engagement, bachelor or bachelorette party, corporate outing, or weekend getaway, luxury chauffeur transportation adds comfort and convenience to your experience.</p>
+
+                        <p>Travel with your guests, explore beautiful vineyards, enjoy scheduled wine tastings, and create unforgettable memories together. With different vehicle options available, we can help you select suitable transportation for your group size and travel requirements.</p>
+
+                        <h2>Book Your Private Napa Valley Limousine Wine Tour Today</h2>
+
+                        <p>Make your next Napa Valley wine-tasting adventure special with 1st Classic Chauffeur Services. From San Francisco and Oakland to the beautiful vineyards of Napa Valley, we provide private limousine and black car transportation designed around your travel needs.</p>
+
+                        <p>Choose your preferred vehicle, arrange your pickup location, select your travel date, and let us help you plan a comfortable journey to California wine country. Whether you are looking for a luxury limousine, executive sedan, spacious SUV, Sprinter van, or charter bus, we are ready to assist with your transportation arrangements.</p>
+
+                        <p><strong>Reserve your private Napa Valley wine tour today and experience wine country in comfort, style, and class with 1st Classic Chauffeur Services!</strong></p>
+                    `,
+                    price: "550.54",
+                    hourlyRate: "6 Hours",
+                    promoCode: "WINE1ST",
+                    updatedTime: '2026-10-20 10:30:00',
+                }
+            };
+        }
+
+        if (pageCategory === "WINE_TOUR") {
+            response = {
+                data:
+                    {
+                    pageId: 'PAGE0262026082201116',
+                    pageUrl: 'napa-valley-wine-country',
+                    pageTitle: 'Private Sonoma Valley Limousine Wine Tasting Tour',
+                    seoFlyer: 'napa-valley-limousine-wine-tours.jpeg',
+                    seoDescription: 'Book a private Napa Valley limousine wine tasting tour from San Francisco and the San Francisco Bay Area. Explore over 400 wineries and vineyards while enjoying luxury transportation with professional 1st Classic chauffeurs.',
+                    pageContent: `
+                        <h2>The World's Great Wine-Growing Regions – Napa Valley</h2>
+
+                        <p>Napa Valley is recognized as one of the world's great wine-growing regions, offering ideal conditions for growing some of the finest wine grapes, including Chardonnay and Pinot Noir. With more than 400 vineyards, grape growers, and winemakers, Napa Valley is celebrated for its exceptional wines, beautiful countryside, and near-perfect year-round weather conditions.</p>
+
+                        <p>Beyond its outstanding wine production, Napa Valley is also known for its exclusive gourmet restaurants, charming cafes, and luxurious private spa-treatment centers. Its beautiful landscapes and relaxing atmosphere make it an ideal destination for visitors looking to enjoy wine tasting, fine dining, and a memorable getaway.</p>
+
+                        <h2>Experience a Private Napa Valley Wine Tasting Tour</h2>
+
+                        <p>Many visitors travel to Napa Valley to explore its famous wineries and experience the exceptional quality of its vintage wines. Whether you are a wine enthusiast or simply looking for an exciting day exploring California's wine country, Napa Valley offers an unforgettable experience.</p>
+
+                        <p>If you are planning a visit to Napa Valley, 1st Classic Chauffeur Services is ready to take you on an exciting wine tour. We provide convenient private pickups from locations throughout the San Francisco Bay Area, including San Francisco and Oakland, taking you directly to the beautiful vineyards and wineries of Napa Valley.</p>
+
+                        <p>Enjoy a relaxing journey as our knowledgeable and courteous chauffeurs take you across Napa Valley, allowing you to explore its beautiful wine-growing region and experience some of the finest wines available. Our professional transportation service makes your wine-tasting adventure comfortable, convenient, and enjoyable.</p>
+
+                        <h2>Luxury Executive Class Vehicles for Your Napa Valley Wine Tour</h2>
+
+                        <p>Travel in comfort and style with our selection of premium Executive Class vehicles. At 1st Classic Chauffeur Services, we offer different luxury transportation options to accommodate individuals, couples, families, and larger groups planning a private Napa Valley wine tour.</p>
+
+                        <p>Choose from our available luxury vehicles, including:</p>
+
+                        <ul>
+                            <li><strong><a href="https://1stclassiclimos.com/executive-class-sedan" title="Executive Class Sedan">Executive Class Sedan:</a></strong> Enjoy comfortable and sophisticated transportation for individuals and couples.</li>
+
+                            <li><strong><a href="https://1stclassiclimos.com/executive-class-suv" title="Executive Class SUV">Executive Class SUV:</a></strong> Spacious luxury transportation for families and small groups.</li>
+
+                            <li><strong><a href="https://1stclassiclimos.com/executive-class-sprinter-van" title="Executive Class Sprinter Van">Executive Class Sprinter Van:</a></strong> An excellent option for groups seeking comfortable and convenient transportation.</li>
+
+                            <li><strong><a href="https://1stclassiclimos.com/executive-class-stretch-limousine" title="Executive Class Stretch Limousine">Stretch Limousine:</a></strong> Experience an elegant and luxurious wine-tasting journey through Napa Valley.</li>
+
+                            <li><strong>Executive Class Charter Bus:</strong> Convenient transportation for larger groups and organized wine tours.</li>
+
+                            <li><strong>Limousine Bus:</strong> Enjoy spacious group transportation while exploring the beautiful Napa Valley wine region.</li>
+                        </ul>
+
+                        <h2>Private Chauffeur Service from San Francisco Bay Area to Napa Valley</h2>
+
+                        <p>Whether you are departing from San Francisco, Oakland, or another location within the San Francisco Bay Area, 1st Classic Chauffeur Services provides private transportation to Napa Valley. Our chauffeurs are familiar with the region and will ensure you enjoy a comfortable journey to your preferred winery destinations.</p>
+
+                        <p>Relax in one of our luxurious Executive Class vehicles while we take care of the driving. Enjoy the beautiful countryside, explore Napa Valley's vineyards, and experience the exceptional wines that make this destination famous worldwide.</p>
+
+                        <h2>Book Your Napa Valley Limousine Wine Tour Today</h2>
+
+                        <p>Make your next visit to Napa Valley a memorable experience with 1st Classic Chauffeur Services. Whether you are planning a private wine-tasting adventure, a day exploring beautiful vineyards, or a special outing with friends and family, we have the luxury vehicles and professional chauffeurs to make your journey enjoyable.</p>
+
+                        <p>Reserve your preferred Executive Class vehicle today and let our knowledgeable and courteous chauffeurs take you on an unforgettable wine tour through Napa Valley.</p>
+
+                        <p><strong>Experience Napa Valley wine country in comfort, luxury, and style with 1st Classic Chauffeur Services!</strong></p>
+                    `,
+                    updatedTime: '2026-10-20 10:30:00',
+                }
+            };
+        }
+
         //// Call Endpoint //////
         // _callFetchEndPoints({
         //     url: `site/fetch-page?pageCategory=${pageCategory}&pageId=${pageId}&limit=${limit || ''}`,
@@ -1279,6 +1427,8 @@ function _getEachPageDetails(options) {
             const passengers = data?.passengers ?? '';
             const luggage = data?.luggage ?? '';
             const price = data?.price ?? '';
+            const hourlyRate = data?.hourlyRate ?? '';
+            const promoCode = data?.promoCode ?? '';
         
             let pixPath = '';
             if (pageCategory == 'SERVICE') {
@@ -1287,6 +1437,10 @@ function _getEachPageDetails(options) {
                 pixPath = fleetPixPath;
             } else if (pageCategory == 'BLOG') {
                 pixPath = blogPixPath;
+            } else if (pageCategory == 'PACKAGE_DEALS') {
+                pixPath = packageDealsPixPath;
+            } else if (pageCategory == 'WINE_TOUR') {
+                pixPath = wineTourPixPath;
             }
 
             $('#pageTitle').html(pageTitle);
@@ -1299,7 +1453,9 @@ function _getEachPageDetails(options) {
             $('#categoryName').html(categoryName);
             $('#passengers').html(passengers);
             $('#luggage').html(luggage);
-            $('#price').html('$'+price);    
+            $('#price').html('$' + price);  
+            $('#hourlyRate').html(hourlyRate);  
+            $('#promoCode').html(promoCode); 
             
 			$('#seoFlyer').attr('src',`${pixPath}/${seoFlyer}?t=${new Date().getTime()}`);
 			updateReadingTime();
@@ -1318,9 +1474,11 @@ function _getEachPageDetails(options) {
 			}
 			$('#fetchPagePictures').html(pixHtml);
 			if (picturesArray.length>0) {
-				$('.bottom-img-div').show();
+                $('.bottom-img-div').show();
+                $('.gallery-nav-btn').show();
 			} else {
-				$(".bottom-img-div").hide();
+                $(".bottom-img-div").hide();
+                $('.gallery-nav-btn').hide();
 			}
 
         // })
@@ -1498,12 +1656,14 @@ function _pageRelatedFleetDetailData(data, pageContainer) {
     $(`#${pageContainer}`).html(content);
 }
 
-/// Initialize Fetch Tour Packages List ///
-function _pageTourPackagesData(data, pageContainer) {
+/// Initialize Fetch Packages Deals List ///
+function _pagePackageDealsData(data, pageContainer) {
     const content = data.map((item) => {
 
         return `
             <div class="tour-packages-div" data-aos="fade-in" data-aos-duration="800">
+              <a href="${websiteUrl}/${item?.pageUrl}" title="${item?.pageTitle}">
+
                 <div class="title">
                     From <span>$${item?.price}</span> |
                     <div class="text no-border">${item?.duration}</div>
@@ -1511,7 +1671,7 @@ function _pageTourPackagesData(data, pageContainer) {
 
                 <div class="img-div">
                     <img 
-                        src="${tourPackagePixPath}/${item?.seoFlyer}" 
+                        src="${packageDealsPixPath}/${item?.seoFlyer}" 
                         alt="${item?.pageTitle}"
                     />
                 </div>
@@ -1524,13 +1684,11 @@ function _pageTourPackagesData(data, pageContainer) {
 							${item?.seoDescription.length > 120 ? '...' : ''}
                         </p>
 
-                        <a href="/tour-packages/${item?.pageUrl}" title="${item?.pageTitle}">
-                            <button class="btn" title="${item?.pageTitle}">
-                                READ MORE <i class="bi-arrow-right"></i>
-                            </button>
-                        </a>
+                        <button class="btn" title="${item?.pageTitle}">
+                            READ MORE <i class="bi-arrow-right"></i>
+                        </button>
                     </div>
-                </div>
+                </div></a>
             </div>
         `;
     }).join("");
@@ -1567,6 +1725,144 @@ function _pageWineToursData(data, pageContainer) {
             </div>
         `;
     }).join("");
+    // First inject the HTML
+    $(`#${pageContainer}`).html(content);
+}
+
+/// Fetch Place Of Interest List ///
+function _getPlaceOfInterestList(options = {}) {
+    const {
+        pageContainer ="placeOfInterestContent",
+        pageId,
+    } = options;
+
+    try {
+        /*
+        ///// Real endpoint /////
+
+        _callFetchEndPoints({
+            url: `site/fetch-faq${queryString ? `?${queryString}` : ''}`,
+        })
+        .then((response) => {
+            _faqListDisplay(response?.data, pageContainer);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+
+            if (error.status == 0) {
+                _showEmptyState({
+                    container: pageContainer,
+                    message: "Check your internet connection and try again",
+                });
+            } else {
+                _showEmptyState({
+                    container: pageContainer,
+                    message: error.message,
+                });
+            }
+        });
+        */
+
+        // Dummy response for testing
+        const placeOfInterestData = {
+            data: [
+                {
+                    name: "Artesa Vineyards & Winery - Napa Valley",
+                    address: "1345 Henry Rd, Napa, CA 94559",
+                    telephone: "(707) 224-1668",
+                    website: "https://www.artesawinery.com",
+                    image: `artesa-winery.jpeg`,
+                },
+                {
+                    name: "Beaulieu Vineyard - Napa Valley",
+                    address: "1960 St Helena Hwy, Rutherford, CA 94573",
+                    telephone: "(707) 257-5749",
+                    website: "https://www.bvwines.com",
+                    image: `beaulieu.jpeg`,
+                },
+                {
+                    name: "Beringer Vineyards - Napa Valley",
+                    address: "2000 Main St, St Helena, CA 94574",
+                    telephone: "(707) 257-5771",
+                    website: "https://www.beringer.com",
+                    image: `beringer.jpeg`,
+                }
+            ]
+        };
+
+        _renderPlaceOfInterestData(placeOfInterestData?.data, pageContainer);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+/// Initialize Fetch Place Of Interest List ///
+function _renderPlaceOfInterestData(data, pageContainer) {
+    const content = data.map((item) => {
+        return `
+            <div class="airport-div place-of-interest-div">
+                <a href="${item?.website}" target="_blank" rel="noopener noreferrer">
+                    <div class="image">
+                        <img
+                            src="${placeOfInterestPixPath}/${item?.image}" 
+                            alt="${item?.name}"
+                            loading="lazy"
+                        />
+                    </div>
+
+                    <div class="content">
+                        <h2>${item?.name}</h2>
+                        <p><strong>Address:</strong> ${item?.address}</p>
+                        <p><strong>Tel:</strong> ${item?.telephone}</p>
+                        <p><strong>Website:</strong> ${item?.website}</p>
+                    </div>
+                </a>
+            </div>
+        `;
+    }).join("");
+
+    $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Packages Deals List ///
+function _relatedPackageDealsData(data, pageContainer) {
+    const content = data.map((item) => {
+
+        return `
+            <div class="cg-carousel__slide js-carousel__slide" data-aos="fade-left" data-aos-duration="1200">
+                <div class="tour-packages-div related-tour-packages-div" data-aos="fade-in" data-aos-duration="800">
+                <a href="${websiteUrl}/${item?.pageUrl}" title="${item?.pageTitle}">
+
+                    <div class="title">
+                        From <span>$${item?.price}</span> |
+                        <div class="text no-border">${item?.duration}</div>
+                    </div>
+
+                    <div class="img-div">
+                        <img 
+                            src="${packageDealsPixPath}/${item?.seoFlyer}" 
+                            alt="${item?.pageTitle}"
+                        />
+                    </div>
+
+                    <div class="text-div">
+                        <div class="div-in">
+                            <h2>${item?.pageTitle}</h2>
+                            <p>
+                                ${item?.seoDescription.substring(0, 120)}
+                                ${item?.seoDescription.length > 120 ? '...' : ''}
+                            </p>
+
+                            <button class="btn" title="${item?.pageTitle}">
+                                READ MORE <i class="bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+        `;
+    }).join("");
+
     // First inject the HTML
     $(`#${pageContainer}`).html(content);
 }

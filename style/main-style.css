@@ -6136,7 +6136,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   align-items: stretch;
   flex-wrap: wrap;
   gap: 20px 1%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .airport-div {
@@ -6151,6 +6151,11 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   background: linear-gradient(-100deg, var(--card-bg-gradient-start), var(--card-bg-gradient-end));
 }
 
+.place-of-interest-div {
+  width: 31%;
+  flex: 1 31%;
+  max-width: 420px;
+}
 
 .airport-div .image {
 	position: relative;
@@ -6167,6 +6172,10 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
   transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
 }
 
+.place-of-interest-div .image{
+  height: 230px;
+}
+
 .airport-div:hover .image img {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -6176,7 +6185,7 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 .airport-div .content {  
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
   color: var(--body-color);
   text-align: left;
   padding: 20px 15px;
@@ -6196,6 +6205,14 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 
 .airport-div .content p {
   color: var(--sub-body-color);
+}
+
+@media (max-width: 950px) {
+  .place-of-interest-div {
+    width: 48%;
+    flex: 1 48%;
+    max-width: 100%;
+  }
 }
 
 
@@ -6382,6 +6399,11 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 	display: flex;
 }
 
+.tour-packages-back-div .related-tour-packages-div {
+  width: 100%;
+  margin: 0px 8px;
+}
+
 .tour-packages-back-div .tour-packages-div .title{
 	position:absolute;
 	display: flex;
@@ -6419,12 +6441,14 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 .tour-packages-back-div .tour-packages-div .text-div .div-in{
 	padding: 20px;
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 10px;
 }
 
 .tour-packages-back-div .tour-packages-div .text-div .div-in h2{
-	font-size: 25px;
+	font-size: 22px;
 	line-height: 30px;
 	font-family: sub-title-font;
 	color: var(--text-white);
@@ -6489,4 +6513,28 @@ header .header-bottom .header-bottom-inner .btn-div .mobile-btn:hover{
 		font-size: 18px;
 		line-height: 25px;
 	}
+}
+
+
+.package-deals-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--filter-bg);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: var(--filter-border);
+  color: var(--sub-body-color);
+}
+
+.package-deals-details h5{
+  color: var(--sub-text-color);
+  font-family: sub-title-font;
+  font-size: 20px;
+}
+
+.package-deals-details .secondary-color{
+  color: var(--secondary-color);
 }

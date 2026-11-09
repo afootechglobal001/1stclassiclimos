@@ -10,11 +10,18 @@
 <link href="<?php echo $websiteUrl?>/style/aos.css" type="text/css" rel="stylesheet" />
 <link href="<?php echo $websiteUrl?>/style/paramount.css?v=<?php echo $codeVersion?>" type="text/css"rel="stylesheet" />
 <link href="<?php echo $websiteUrl?>/style/tablePaginator.css?v=<?php echo $codeVersion?>" type="text/css" rel="stylesheet" />
-<link href="<?php echo $websiteUrl?>/portal/style/main-style.css?v=<?php echo $codeVersion?>" type="text/css"rel="stylesheet" />
-<link href="<?php echo $websiteUrl?>/portal/style/nav-style.css?v=<?php echo $codeVersion?>" type="text/css"rel="stylesheet" />
-<link href="<?php echo $websiteUrl?>/portal/style/jquery.datetimepicker.css" type="text/css"rel="stylesheet"/>
+<link href="<?php echo $websiteUrl?>/admin/portal/style/main-style.css?v=<?php echo $codeVersion?>" type="text/css"rel="stylesheet" />
+<link href="<?php echo $websiteUrl?>/admin/portal/style/nav-style.css?v=<?php echo $codeVersion?>" type="text/css"rel="stylesheet" />
+<link href="<?php echo $websiteUrl?>/admin/portal/style/jquery.datetimepicker.css" type="text/css"rel="stylesheet"/>
 
-<script src="<?php echo $websiteUrl?>/js/jquery-v3.6.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    let staffLoginData = JSON.parse(sessionStorage.getItem("staffLoginData"));
+    const loginStaffId = staffLoginData.staffId;
+    const loginAccessKey = staffLoginData.accessKey;
+    const loginRoleId = staffLoginData.roleId;
+</script>
 
 <script src="<?php echo $websiteUrl?>/js/paramount.js?v=<?php echo $codeVersion?>"></script>
 <script src="<?php echo $websiteUrl?>/js/textfield-selectfield.js?v=<?php echo $codeVersion?>"></script>
@@ -22,8 +29,8 @@
 <script src="<?php echo $websiteUrl?>/js/aos.js"></script>
 <script src="<?php echo $websiteUrl?>/js/tablePaginator.js?v=<?php echo $codeVersion?>"></script>
 
-<script src="<?php echo $websiteUrl?>/portal/js/jquery.datetimepicker.js"></script>
-<script src="<?php echo $websiteUrl?>/portal/js/chart.min.js"></script>
-<script src="<?php echo $websiteUrl?>/portal/js/canvasjs.min.js" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/jquery.datetimepicker.js"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/chart.min.js"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/canvasjs.min.js" type="text/javascript"></script>
 
-<script src="<?php echo $websiteUrl?>/portal/js/useDashboard.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/useDashboard.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>

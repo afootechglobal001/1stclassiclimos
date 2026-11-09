@@ -58,22 +58,23 @@ $userDeviceId = getBrowserId();
     var completeResetPasswordUrl = websiteUrl + '/admin/complete-reset-password'; /// For Complete Reset Password Url //
 
     /// Portal Middleware Urls ///
-    var portalMiddleWareUrl = websiteUrl + '/portal/config/code'; /// For Portal Login Middleware Url //
-    var portalUrl = websiteUrl + '/portal'; /// For Portal Url //
+    var portalMiddleWareUrl = websiteUrl + '/admin/portal/config/code'; /// For Portal Login Middleware Url //
+    var portalUrl = websiteUrl + '/admin/portal'; /// For Portal Url //
 
     /// Pictures Paths ///
     var blogPixPath = websiteUrl + '/uploaded_files/blog'; /// For Blog Picture Path //
     var servicePixPath = websiteUrl + '/uploaded_files/services'; /// For Services Picture Path //
     var pagesPixPath = websiteUrl + '/uploaded_files/pagePictures'; /// For Pages Pictures Path //
     var fleetPixPath = websiteUrl + '/uploaded_files/fleets'; /// For Fleet Pictures Path //
-    var tourPackagePixPath = websiteUrl + '/uploaded_files/tour-packages'; /// For Tour Packages Pictures Path //
+    var packageDealsPixPath = websiteUrl + '/uploaded_files/tour-packages'; /// For Tour Packages Pictures Path //
     var wineTourPixPath = websiteUrl + '/uploaded_files/wine-tour'; /// For Wine Tours Pictures Path //
+    var placeOfInterestPixPath = websiteUrl + '/uploaded_files/place-of-interest'; /// For Wine Tours Pictures Path //
     
     var pageCategory = {
         SERVICE: 'SERVICE',
         BLOG: 'BLOG',
         FLEET: 'FLEET',
-        TOUR_PACKAGES: 'TOUR_PACKAGES', 
-        WINE_TOURS: 'WINE_TOURS',
+        PACKAGE_DEALS: 'PACKAGE_DEALS', 
+        WINE_TOUR: 'WINE_TOUR',
     }
 </script>

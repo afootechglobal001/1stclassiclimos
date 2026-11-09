@@ -7,14 +7,14 @@ html {
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: #D59217 #f0f0f0;
+    scrollbar-color: #386E94 #f0f0f0;
 }
 *::-webkit-scrollbar-thumb:hover {
-    background-color: #D59217;
+    background-color: #386E94;
 }
 *::-webkit-scrollbar-track {
     background-color: #f0f0f0;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 
@@ -62,6 +62,9 @@ html {
   --shadow-medium: rgba(0, 0, 0, 0.2);
   --shadow-heavy: rgba(0, 0, 0, 0.3);
 
+  --notification-bg-color: #E1201F;
+  --dropdown-bg-color: #fcfcfc;
+
   --dashboard-bg-color: #f8f8f8;
   --dashboard-header-bg: #faf5e580;
   --card-bg-color: #ffffff;
@@ -70,8 +73,23 @@ html {
   --card-hover-gradient-start: #ffffff;
   --card-hover-gradient-end: #fdfaf5;
   --card-hover-border-color: rgba(157, 4, 60, 0.096);
-
+  --nav-bg-color: #f1f0e9;
+  --nav-hover-bg-color: rgba(56, 110, 148, 0.1);
+  --active-border-color: rgba(56, 110, 148, 0.144);
+  --info-color: #3b82f6;
+  --info-bg-light: rgba(59,130,246,.05);
+  --info-bg-medium: rgba(59,130,246,.06);
+  --info-border-light: rgba(59,130,246,.048);
   --card-shadow: rgba(0, 0, 0, 0.02);
+
+  --login-card-bg: #ffffff;
+  --login-card-border: #ececec;
+  --login-card-divider: #ececec;
+  --login-card-shadow: rgba(0,0,0,.05);
+  --dashed-border-color: #70818b;
+  --menu-hover-bg-color: #faf5e5;
+  --menu-hover-border-color: #fff4d4;
+  --logout-bg-color: #fdc1b6;
   
   --table-hover-bg: rgba(215,215,215,.3);
   --table-icon-bg: rgba(59,131,246,.13);
@@ -157,6 +175,12 @@ html.dark-mode{
   --card-hover-gradient-start: #0F0F0F;
   --card-hover-gradient-end: #0F0F0F;
   --card-hover-border-color: #3a3a3a;
+  --dropdown-bg-color: #0F0F0F;
+
+  --login-card-bg: #0F0F0F;
+  --login-card-border: #303030;
+  --login-card-divider: #404040;
+  --login-card-shadow: rgba(0,0,0,.4);
 
   --table-hover-bg: rgba(255,255,255,.05);
   --table-icon-bg: rgba(59,130,246,.15);
@@ -531,11 +555,8 @@ a {
   z-index: 999;
   bottom: 100px;
   right: 2%;
-  background: linear-gradient(
-    90deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background:
+    var(--primary-color);
   background-size: 100%;
   background-position: left;
   transition:

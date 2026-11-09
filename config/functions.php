@@ -415,7 +415,7 @@ function _sideHotLinks($websiteUrl)  { ?>
                 </div>
             </div></a>
             
-            <a href="<?php echo $websiteUrl ?>">
+            <a href="<?php echo $websiteUrl ?>/wine-country-region-of-northern-california">
             <div class="services-cont">
                 <div class="icon">
                     <i class="bi bi-check2-circle"></i>
@@ -426,7 +426,7 @@ function _sideHotLinks($websiteUrl)  { ?>
                 </div>
             </div></a>
 
-            <a href="<?php echo $websiteUrl ?>">
+            <a href="<?php echo $websiteUrl ?>/tour-special-package-deals">
             <div class="services-cont">
                 <div class="icon">
                     <i class="bi bi-check2-circle"></i>
