@@ -38,7 +38,7 @@
                         'last' => false
                     ],
                     [
-                        'title' => 'Tour Packages',
+                        'title' => 'Tour Packages Deals',
                         'url' => $websiteUrl . '/tour-special-package-deals',
                         'last' => true
                     ]
@@ -56,7 +56,7 @@
                             <h3>SEARCH</h3>
                             <div class="text_field_container">
                                 <input class="text_field" id="searchContent"
-                                    onkeyup="_filtersPages(this.value, 'tourPackagesPageContainer', 'tour-packages-div');" type="text"
+                                    onkeyup="_filtersPages(this.value, 'packagesDealsPageContainer', 'tour-packages-div');" type="text"
                                     placeholder="" />
                                 <div class="placeholder">Type Here To Search</div>
                             </div>
@@ -66,11 +66,11 @@
                     </div>
 
                     <div class="left-div">
-                        <div class="tour-packages-back-div" id="tourPackagesPageContainer">
+                        <div class="tour-packages-back-div" id="packagesDealsPageContainer">
                             <script>
                                 _getPageList({
-                                    pageCategory: "TOUR_PACKAGES",
-                                    pageContainer: "tourPackagesPageContainer"
+                                    pageCategory: "PACKAGE_DEALS",
+                                    pageContainer: "packagesDealsPageContainer"
                                 })
                             </script> 
                         </div>
