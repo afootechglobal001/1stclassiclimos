@@ -74,7 +74,7 @@ $userDeviceId = getBrowserId();
         SERVICE: 'SERVICE',
         BLOG: 'BLOG',
         FLEET: 'FLEET',
-        PACKAGE_DEALS: 'PACKAGE_DEALS', 
+        PACKAGE_DEAL: 'PACKAGE_DEAL', 
         WINE_TOUR: 'WINE_TOUR',
     }
 </script>

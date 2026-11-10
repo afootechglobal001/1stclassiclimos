@@ -69,7 +69,7 @@
                         <div class="tour-packages-back-div" id="packagesDealsPageContainer">
                             <script>
                                 _getPageList({
-                                    pageCategory: "PACKAGE_DEALS",
+                                    pageCategory: "PACKAGE_DEAL",
                                     pageContainer: "packagesDealsPageContainer"
                                 })
                             </script> 

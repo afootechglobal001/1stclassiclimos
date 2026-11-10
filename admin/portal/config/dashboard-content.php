@@ -332,7 +332,7 @@
                         <div class="content-title">
                             <div class="title">
                                 <i class="bi bi-car-front"></i>
-                                <p>Recent Pending Bookings</p>
+                                <p>Recent Bookings</p>
                             </div>
 
                             <button class="btn btn-view" title="View All"
@@ -346,8 +346,8 @@
                                 <div class="bookings-div">
                                     <div class="booking-header">
                                         <div class="booking-id-wrap">
-                                            <span class="booking-id">#BK-9042</span>
-                                            <span class="booking-badge badge-pending">Pending Dispatch</span>
+                                            <span class="booking-id">#BK2025111010201</span>
+                                            <span class="booking-badge PENDING">Pending</span>
                                         </div>
                                         <span class="booking-time">10 mins ago</span>
                                     </div>
@@ -377,7 +377,10 @@
                                     <div class="booking-footer">
                                         <div class="booking-price">$240.00</div>
                                         <div class="booking-actions">
-                                            <button class="btn btn-primary">View Details</button>
+                                            <button class="btn">
+                                                <i class="bi bi-eye"></i>
+                                                View Booking
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -385,16 +388,18 @@
                                 <div class="bookings-div">
                                     <div class="booking-header">
                                         <div class="booking-id-wrap">
-                                            <span class="booking-id">#BK-9041</span>
-                                            <span class="booking-badge badge-confirmed">Confirmed</span>
+                                            <span class="booking-id">#BK2025111010202</span>
+                                            <span class="booking-badge PENDING">Pending</span>
                                         </div>
                                         <span class="booking-time">35 mins ago</span>
                                     </div>
 
                                     <div class="booking-body">
                                         <div class="customer-info">
-                                            <div class="avatar">AS</div>
+                                            <div class="avatar">MS</div>
                                             <div class="customer-details">
+                                                <strong class="customer-name">Maria Smith</strong>
+
                                                 <span class="service-type">
                                                     <i class="bi bi-signpost-2"></i>
                                                     <span>Point to Point</span> |
@@ -420,7 +425,10 @@
                                     <div class="booking-footer">
                                         <div class="booking-price">$850.00</div>
                                         <div class="booking-actions">
-                                            <button class="btn btn-primary">View Details</button>
+                                            <button class="btn">
+                                                <i class="bi bi-eye"></i>
+                                                View Booking
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -511,7 +519,7 @@
                 </div>
 
                 <div class="revenue-date">
-                    <i class="bi-info-circle"></i> Revenue report between <strong id="dateFrom">July 07 2026 </strong>
+                    <i class="bi-info-circle"></i> Revenue Between <strong id="dateFrom">July 07 2026 </strong>
                     and <strong id="dateTo">August 05 2026</strong>
                 </div>
             </div>
@@ -539,23 +547,9 @@
                             </div>
 
                             <div class="report-statistics-text">
-                                <p>Total Advance Payments</p>
-                                <span>Total Advance payments received</span>
+                                <p>Total Bookings Payments</p>
+                                <span>Total bookings payments received</span>
                                 <h2 id="sumCreditCardPayments"><strong>$</strong>10,000.00</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="report-statistics-div" title="Completed Service Payments">
-                        <div class="statistics-inner-div">
-                            <div class="icon-div success">
-                                <i class="bi bi-tools"></i>
-                            </div>
-
-                            <div class="report-statistics-text">
-                                <p>Total Service Payments</p>
-                                <span>Total Income from completed services</span>
-                                <h2 id="sumBankTransferPayments"><strong>$</strong>10,000.00</h2>
                             </div>
                         </div>
                     </div>
@@ -567,23 +561,23 @@
                             </div>
 
                             <div class="report-statistics-text">
-                                <p>Advance Transactions</p>
-                                <span>Total Advance payment transactions</span>
+                                <p>Bookings Transactions</p>
+                                <span>Total bookings payment transactions</span>
                                 <h2 id="countCreditCardPayments">2</h2>
                             </div>
                         </div>
                     </div>
 
-                    <div class="report-statistics-div" title="Service Payment Transactions">
+                    <div class="report-statistics-div" title="Completed Service Payments">
                         <div class="statistics-inner-div">
-                            <div class="icon-div info">
-                                <i class="bi bi-clipboard-check"></i>
+                            <div class="icon-div success">
+                                <i class="bi bi-tools"></i>
                             </div>
 
                             <div class="report-statistics-text">
-                                <p>Service Transactions</p>
-                                <span>Total completed payment transactions</span>
-                                <h2 id="countBankTransferPayments">3</h2>
+                                <p>Total Credit Card Transactions</p>
+                                <span>Total Credit Card payments</span>
+                                <h2 id="sumBankTransferPayments"><strong>10</strong></h2>
                             </div>
                         </div>
                     </div>
@@ -595,9 +589,9 @@
                             </div>
 
                             <div class="report-statistics-text">
-                                <p>Stripe Revenue</p>
-                                <span>Total payments processed through Stripe</span>
-                                <h2 id="sumStripePayments"><strong>$</strong>30,000.00</h2>
+                                <p>Total Bank Transfer Transactions</p>
+                                <span>Total payments processed through Bank Transfer</span>
+                                <h2 id="sumBankTransferPayments"><strong>5</strong></h2>
                             </div>
                         </div>
                     </div>

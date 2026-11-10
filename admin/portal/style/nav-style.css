@@ -52,7 +52,7 @@ header .header-div-in .header-nav-div .left-nav	ul li{
 	padding: 10px 20px;
 	background-color: var(--nav-hover-bg-color);
 	font-size: 12px;
-	border-radius: 25px;
+	border-radius: 10px;
 	transition:all ease 0.2s;
 	cursor:pointer;
 }
@@ -471,13 +471,19 @@ header .header-div-in .header-nav-div .right-nav .right-icon-div .profile-div .i
 }
 
 .side-nav-div .div-in .nav-back-div .title-wrapper .nav-container .nav-div i{
-    font-size: 16px;
+    font-size: 15px;
 	color: var(--primary-color);
 }
 
 .side-nav-div .div-in .nav-back-div .title-wrapper .nav-container .request-nav{	
 	align-items: center;
 	justify-content: space-between;
+}
+
+.side-nav-div .div-in .nav-back-div .title-wrapper .nav-container .request-nav .left-cont{	
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
 .side-nav-div .div-in .nav-back-div .title-wrapper .nav-container .request-nav .request-count{

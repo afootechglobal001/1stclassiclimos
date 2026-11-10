@@ -34,3 +34,9 @@
 <script src="<?php echo $websiteUrl?>/admin/portal/js/canvasjs.min.js" type="text/javascript"></script>
 
 <script src="<?php echo $websiteUrl?>/admin/portal/js/useDashboard.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/useStaff.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/useCustomers.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/useFleets.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/usePage.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/useWineTour.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/usePackageDeals.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>

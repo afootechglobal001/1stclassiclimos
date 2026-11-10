@@ -21,20 +21,6 @@
                     </div>
                 <?php } ?>
 
-                <?php if ($pageCategory == 'GALLERY') { ?>
-                    <div class="text_field_container" id="professionId_container">
-                        <script>
-                            selectField({
-                                id: 'professionId',
-                                title: 'Select Gallery Category',
-                                fieldValue: useEachPageSession?.professionData?.professionId ?? '',
-                                fieldLabel: useEachPageSession?.professionData?.professionName ?? ''
-                            });
-                            _getSelectProfessionCategories('professionId');
-                        </script>
-                    </div>
-                <?php } ?>
-
                 <div class="text-field-wrapper">
                     <div class="title">PAGE URL</div>
                     <div class="text_field_container" id="pageUrl_container">
@@ -101,7 +87,7 @@
                 <script>
                     $(document).ready(function () {
                         const pageCategory = "<?php echo $pageCategory; ?>";
-                        const pixPath = pageCategory === 'BLOG' ? blogPixPath : pageCategory === 'SERVICE' ? servicePixPath : galleryPixPath;
+                        const pixPath = pageCategory === 'FLEET' ? fleetPixPath : pageCategory === 'SERVICE' ? servicePixPath : galleryPixPath;
                         const fetchSeoFlyer = useEachPageSession?.seoFlyer;
                         const seoFlyerUrl = fetchSeoFlyer ? pixPath + "/" + fetchSeoFlyer + '?t=' + new Date().getTime() : "<?php echo $websiteUrl ?>/all-images/images/sample.jpg";
 
@@ -115,7 +101,7 @@
     <div class="page-form-div">
         <div class="page-title">FULL PAGE CONTENT</div>
         <div class="form-div content-form">
-            <script src="<?php echo $websiteUrl ?>/portal/js/TextEditor.js" referrerpolicy="origin"></script>
+            <script src="<?php echo $websiteUrl ?>/admin/portal/js/TextEditor.js" referrerpolicy="origin"></script>
             <script>
                 $(document).ready(function () {
                     tinymce.init({
@@ -139,14 +125,52 @@
                 <div class="issueText" id="issue_pageContentEditor"></div>
             </div>
 
-            <?php if ($pageCategory == 'GALLERY') { ?>
+            <?php if ($pageCategory == 'FLEET') { ?>
                 <div class="text-field-wrapper">
-                    <div class="text_field_container" id="location_container">
+                    <div class="text_field_container" id="numberOfPassengers_container">
                         <script>
                             textField({
-                                id: 'location',
-                                title: 'Location',
-                                value: useEachPageSession?.location ?? ''
+                                id: 'numberOfPassengers',
+                                title: 'Number Of Passenger',
+                                value: useEachPageSession?.numberOfPassengers ?? ''
+                            });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="text-field-wrapper">
+                    <div class="text_field_container" id="hourlyRate_container">
+                        <script>
+                            textField({
+                                id: 'hourlyRate',
+                                title: 'Hourly Rate',
+                                value: useEachPageSession?.hourlyRate ?? ''
+                            });
+                        </script>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <?php if ($pageCategory == 'PACKAGE_DEAL') { ?>
+                <div class="text-field-wrapper">
+                    <div class="text_field_container" id="hourOfHire_container">
+                        <script>
+                            textField({
+                                id: 'hourOfHire',
+                                title: 'Hour Of Hire',
+                                value: useEachPageSession?.hourOfHire ?? ''
+                            });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="text-field-wrapper">
+                    <div class="text_field_container" id="hourlyRate_container">
+                        <script>
+                            textField({
+                                id: 'hourlyRate',
+                                title: 'Hourly Rate',
+                                value: useEachPageSession?.hourlyRate ?? ''
                             });
                         </script>
                     </div>

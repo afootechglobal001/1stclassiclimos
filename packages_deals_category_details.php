@@ -134,7 +134,7 @@
             </div>
             <script>
                 _getEachPageDetails({
-                    pageCategory: "PACKAGE_DEALS",
+                    pageCategory: "PACKAGE_DEAL",
                     pageId: "<?php echo $pageId ?>"
                 })
             </script>
@@ -256,7 +256,7 @@
                                 <div class="cg-carousel__track js-carousel__track" id="relatedPackgaeDealsDetailPageContainer">
                                     <script>
                                         _getPageList({
-                                            pageCategory: "PACKAGE_DEALS",
+                                            pageCategory: "PACKAGE_DEAL",
                                             pageContainer: "relatedPackgaeDealsDetailPageContainer"
                                         })
                                     </script>
