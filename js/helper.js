@@ -199,6 +199,9 @@ function getMapDetails() {
       systemGeneratedDistance = route.distance.text;
       systemGeneratedDuration = route.duration.text;
 
+      $("#systemGeneratedDistance").html(systemGeneratedDistance);
+      $("#systemGeneratedDuration").html(systemGeneratedDuration);
+
       $("#output").html("");
     } else {
       console.error("Directions request failed:", status);

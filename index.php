@@ -143,19 +143,7 @@
                             <h3>Where would you like to go?</h3>
                         </div>
 
-                        <div class="tabs-btn-div">
-                            <button class="btn active" onclick="changeBookingType('distance')">
-                                <i class="bi bi-signpost-2"></i> Distance
-                            </button>
-
-                            <button class="btn" onclick="changeBookingType('hourly')">
-                                <i class="bi bi-clock"></i> Hourly
-                            </button>
-
-                            <button class="btn" onclick="changeBookingType('flat-rate')">
-                                <i class="bi bi-cash-coin"></i> Flat Rate
-                            </button>
-                        </div>
+                        <?php _bookTabBtn($extraClass) ?>
                     </div>
 
                     <div class="slide-book-form">
@@ -354,77 +342,18 @@
                         </div>
                     </div>
 
-                    <div class="service-wrapper">
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl; ?>/uploaded_files/services/service-2.jpg" alt="Service">
-                            </div>
-
-                            <div class="icon-div">
-                                <img 
-                                    src="<?php echo $websiteUrl; ?>/all-images/images/icon.png"
-                                    alt="Airport Transportation Icon" 
-                                />
-                            </div>
-
-                            <div class="content-div">
-                                <h3>Airport Transportation</h3>
-                                <p>Book an Airport Transportation, Car, Sedan, SUV, and Van services for Airport Transfer To and From San Francisco (SFO),...</p>
-                                <button class="btn" title="Learn More About Airport Transportation">
-                                    Read More
-                                    <i class="bi bi-arrow-right-circle"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl; ?>/uploaded_files/services/service-1.jpg" alt="Service">
-                            </div>
-
-                            <div class="icon-div">
-                                <img 
-                                    src="<?php echo $websiteUrl; ?>/all-images/images/icon.png"
-                                    alt="Airport Transportation Icon" 
-                                />
-                            </div>
-
-                            <div class="content-div">
-                                <h3>Corporate Transportation Black Car Services</h3>
-                                <p>Book a Corporate and Private Jet Aviation FBO Black Car Transportation Service for Corporate Business travelers and exec...</p>
-                                <button class="btn" title="Learn More About Corporate Transportation Black Car Services">
-                                    Read More
-                                    <i class="bi bi-arrow-right-circle"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1300">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl; ?>/uploaded_files/services/service-3.jpg" alt="Service">
-                            </div>
-
-                            <div class="icon-div">
-                                <img 
-                                    src="<?php echo $websiteUrl; ?>/all-images/images/icon.png"
-                                    alt="Airport Transportation Icon" 
-                                />
-                            </div>
-
-                            <div class="content-div">
-                                <h3>Point to Point Transportation Limousine Car Service</h3>
-                                <p>Book a Point to Point Transportation Limousine Car Service for your business...</p>
-
-                                <button class="btn" title="Learn More About Point to Point Transportation Limousine Car Service">
-                                    Read More
-                                    <i class="bi bi-arrow-right-circle"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <div class="service-wrapper" id="indexServicePageContent">
+                        <script>
+                            _getPageList({
+                                pageCategory: "SERVICE",
+                                limit: 3,
+                                pageContainer: "indexServicePageContent"
+                            })
+                        </script>
                     </div>
 
                     <div class="bottom-btn-div animated fadeIn">
-                        <a href="<?php echo $websiteUrl; ?>/#">
+                        <a href="<?php echo $websiteUrl; ?>/airport-transportation-limousine-car-service">
                         <button class="btn" title=" Discover All Services">
                             Discover All Services
                             <i class="bi bi-gem"></i>

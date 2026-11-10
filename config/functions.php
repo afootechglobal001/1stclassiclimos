@@ -78,28 +78,17 @@ function _otherPagesTitleContent($props) {
                     </div>
 
                     <div class="form-wrapper">
-                        <div class="tabs-btn-div">
-                            <button class="btn active" onclick="changeBookingType('distance')">
-                                <i class="bi bi-signpost-2"></i> Distance
-                            </button>
+                        <?php _bookTabBtn($extraClass) ?>
 
-                            <button class="btn" onclick="changeBookingType('hourly')">
-                                <i class="bi bi-clock"></i> Hourly
-                            </button>
-
-                            <button class="btn" onclick="changeBookingType('flat-rate')">
-                                <i class="bi bi-cash-coin"></i> Flat Rate
-                            </button>
-                        </div>
-
-                        <div class="text_field_container" id="route_container" style="display: none;">
+                        <div class="text_field_container" id="serviceType_container">
                             <script>
                                 selectField({
-                                    id: 'route',
-                                    title: 'Route',
-                                    icon: '<i class="bi bi-signpost-2"></i>',
+                                    id: 'serviceType',
+                                    title: 'Service Type',
+                                    icon: '<i class="bi bi-airplane"></i>',
                                     applyBorder: true,
                                 });
+                                _getSelectServiceType("serviceType");
                             </script>
                         </div>
 
@@ -401,7 +390,7 @@ function _whyChooseUsSection($extraClass = '', $websiteUrl, $appName)  { ?>
 <?php
 function _sideHotLinks($websiteUrl)  { ?>
     <div class="div-in">
-        <h3>Hot Links</h3>
+        <h3>HOT LINKS</h3>
 
         <div class="related-services-cont" id="relatedServicesCont">
             <a href="<?php echo $websiteUrl ?>/airport-transportation-limousine-car-service">
@@ -426,7 +415,7 @@ function _sideHotLinks($websiteUrl)  { ?>
                 </div>
             </div></a>
             
-            <a href="<?php echo $websiteUrl ?>">
+            <a href="<?php echo $websiteUrl ?>/wine-country-region-of-northern-california">
             <div class="services-cont">
                 <div class="icon">
                     <i class="bi bi-check2-circle"></i>
@@ -437,7 +426,7 @@ function _sideHotLinks($websiteUrl)  { ?>
                 </div>
             </div></a>
 
-            <a href="<?php echo $websiteUrl ?>">
+            <a href="<?php echo $websiteUrl ?>/tour-special-package-deals">
             <div class="services-cont">
                 <div class="icon">
                     <i class="bi bi-check2-circle"></i>
@@ -474,5 +463,22 @@ function _sideHotLinks($websiteUrl)  { ?>
                 });
             </script>
         </div>
+    </div>
+<?php } ?>
+
+<?php
+function _bookTabBtn($extraClass) { ?>
+    <div class="tabs-btn-div <?= !empty($extraClass) ? ' '.$extraClass : ''; ?>">
+        <button class="btn active" onclick="changeBookingType('airport-transfer')" title="Airport Transfer">
+            <i class="bi bi-airplane-engines-fill"></i> Airport Transfer
+        </button>
+
+        <button class="btn" onclick="changeBookingType('point-to-point')" title="Point to Point Transfer">
+            <i class="bi bi-geo-alt-fill"></i> Point to Point
+        </button>
+
+        <button class="btn" onclick="changeBookingType('hourly')" title="Hourly">
+            <i class="bi bi-stopwatch-fill"></i> Hourly
+        </button>
     </div>
 <?php } ?>
