@@ -54,8 +54,15 @@ html {
 	--sub-white-color: #eeeeee;
 	--close-color: #f00;
 	--active-color: #090;
+  --active-status-bg: rgba(0, 153, 0, 0.2);
+  --active-status-border: rgba(0, 139, 0, 0.282);
+  --active-status-color: rgba(0, 139, 0, 0.282);
+  --suspended-status-bg: rgba(241, 157, 67, 0.2);
+  --suspended-color: rgba(218, 90, 31, 0.87);
+  --suspended-status-border: rgba(218, 90, 31, 0.185);
 	--active-color2: #98CD99;
 	--sub-text-color: #D7353A;
+  --delete-bg-color: rgba(215, 53, 58, 0.1);
   --primary-border-color: #f8fafc;
   
   --shadow-light: rgba(0, 0, 0, 0.1);
@@ -66,7 +73,7 @@ html {
   --dropdown-bg-color: #fcfcfc;
 
   --dashboard-bg-color: #f8f8f8;
-  --dashboard-header-bg: #faf5e580;
+  --dashboard-header-bg: rgba(56, 110, 148, 0.027);
   --card-bg-color: #ffffff;
   --card-bg-gradient-start: #fffdf6;
   --card-bg-gradient-end: #ffffff;
@@ -149,8 +156,8 @@ html {
 }
 
 html.dark-mode{
-  --primary-color: #042555;
-  --secondary-color: #FF6900;
+  --primary-color: #306d99;
+  --secondary-color: rgba(213, 146, 23, 0.7);
   --body-color: #f5f5f5;
   --sub-body-color: #d4d4d4;
   --sub-body-color2: #b8b8b8;

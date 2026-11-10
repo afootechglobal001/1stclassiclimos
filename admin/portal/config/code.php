@@ -21,6 +21,10 @@ switch ($action){
 		require_once('page-details.php');
 		require_once('information-category-content.php');
 		require_once('account-report/account-report-content.php');
+		require_once('customers-content.php');
+		require_once('fleet-content.php');
+		require_once('wine-tour-content.php');
+		require_once('package-deals-content.php');
 	break;
 
 	case 'get_form':
@@ -40,6 +44,9 @@ switch ($action){
 		require_once('information-category-content.php');
 		require_once('account-report/account-report-content.php');
 		require_once('customers-content.php');
+		require_once('fleet-content.php');
+		require_once('wine-tour-content.php');
+		require_once('package-deals-content.php');
 	break;
 
 	case 'uploadPagePix':

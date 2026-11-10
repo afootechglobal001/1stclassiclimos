@@ -204,11 +204,11 @@
             </div>
 
             <div class="inner-table-content colum-table-content">
-                <div class="text_field_container col-1" id="staffId_container">
+                <div class="text_field_container col-1" id="customerId_container">
                     <script>
                     textField({
-                        id: 'staffId',
-                        title: 'Staff ID',
+                        id: 'customerId',
+                        title: 'Customer ID',
                         readonly: true,
                         value: getEachCustomerDetailsSession?.customerId ?? ''
                     });
@@ -226,7 +226,18 @@
                     </script>
                 </div>
 
-                <div class="text_field_container col-2" id="statusId_container">
+                <div class="text_field_container col-1" id="lastLoginTime_container">
+                    <script>
+                    textField({
+                        id: 'lastLoginTime',
+                        title: 'Last Login Time',
+                        readonly: true,
+                        value: getEachCustomerDetailsSession?.lastLoginTime ?? ''
+                    });
+                    </script>
+                </div>
+
+                <div class="text_field_container col-1" id="statusId_container">
                     <script>
                     selectField({
                         id: 'statusId',

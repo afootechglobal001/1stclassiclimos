@@ -155,47 +155,131 @@ function _createStaffCallback(formData) {
     });
 }
 
-/// Fetch Staff Data ///
-function _fetchStaffData() {
-	try {
-		//// call endpoint //////
-		_callFetchEndPoints({
-			url: `admin/staff/fetch-staff`,
-			accessKey: true,
-		})
-		.then((response) => {
-            _initFetchStaffData(response?.data);
-		 })
-		.catch((error) => {
-			_staffValidationCheck(error.response);
-			console.error("Error:", error);
-			if (error.status==0) {
-				_showEmptyState({
-					container: "staffPageContent",
-					message: "Check your internet connection and try again",
-                    colspan: 20,
-					paginationContainer: "staffContentPaginationControls",
-				});
+// /// Fetch Staff Data ///
+// function _fetchStaffData() {
+// 	try {
+// 		//// call endpoint //////
+// 		_callFetchEndPoints({
+// 			url: `admin/staff/fetch-staff`,
+// 			accessKey: true,
+// 		})
+// 		.then((response) => {
+//             _initFetchStaffData(response?.data);
+// 		 })
+// 		.catch((error) => {
+// 			_staffValidationCheck(error.response);
+// 			console.error("Error:", error);
+// 			if (error.status==0) {
+// 				_showEmptyState({
+// 					container: "staffPageContent",
+// 					message: "Check your internet connection and try again",
+//                     colspan: 20,
+// 					paginationContainer: "staffContentPaginationControls",
+// 				});
 
-				_callAjaxError(() => _fetchStaffData(), error.message); // retry if needed
-			} else {
-				_showEmptyState({
-					container: "staffPageContent",
-					message: error.message,
-                    colspan: 20,
-					button: `
-						<button class="btn" title="ADD NEW STAFF" onclick="sessionStorage.removeItem('getEachStaffDetailsSession'); _getForm({page: 'staffReg', url: portalMiddleWareUrl});">
-							<i class="bi-plus-square"></i> ADD NEW STAFF
-						</button>
-					`,
-					paginationContainer: "staffContentPaginationControls",
-				});
-			}
-		});
-	} catch (error) {
-		console.error("Error:", error);
-		_callCatchError(() => _fetchStaffData());
-  	}
+// 				_callAjaxError(() => _fetchStaffData(), error.message); // retry if needed
+// 			} else {
+// 				_showEmptyState({
+// 					container: "staffPageContent",
+// 					message: error.message,
+//                     colspan: 20,
+// 					button: `
+// 						<button class="btn" title="ADD NEW STAFF" onclick="sessionStorage.removeItem('getEachStaffDetailsSession'); _getForm({page: 'staffReg', url: portalMiddleWareUrl});">
+// 							<i class="bi-plus-square"></i> ADD NEW STAFF
+// 						</button>
+// 					`,
+// 					paginationContainer: "staffContentPaginationControls",
+// 				});
+// 			}
+// 		});
+// 	} catch (error) {
+// 		console.error("Error:", error);
+// 		_callCatchError(() => _fetchStaffData());
+//   	}
+// }
+
+function _fetchStaffData() {
+    const response = {
+        data: [
+            {
+                staffId: "STF001",
+                firstName: "EMMANUEL",
+                lastName: "AFOLABI",
+                emailAddress: "emmanuel.afolabi@schoolbolt.com",
+                phoneNumber: "+2348012345678",
+                lastLoginTime: "2026-08-03 09:15:22",
+                roleData: {
+					roleName: "SUPER ADMIN"
+				},
+				statusData: {
+					statusName: "ACTIVE"
+				}
+            },
+            {
+                staffId: "STF002",
+                firstName: "GRACE",
+                lastName: "JOHNSON",
+                emailAddress: "grace.johnson@schoolbolt.com",
+                phoneNumber: "+2348023456789",
+                lastLoginTime: "2026-08-02 15:42:10",
+                roleData: {
+					roleName: "SUPER ADMIN"
+				},
+				statusData: {
+					statusName: "ACTIVE"
+				}
+            }
+        ]
+    };
+
+    _initFetchStaffData(response.data);
+}
+
+/// Render Staff Data ///
+function _renderStaffData(data, start) {
+  return data
+    .map(
+      (item, i) => `
+	  	<tr class="tb-row">
+			<td>${start + i + 1}</td>
+			<td class="clickable-td" title="Click to view staff profile" onclick="_fetchEachSaff('${item.staffId}');">
+				<div class="text-back-div">
+					<div class="image-div">
+						<img src="${websiteUrl}/all-images/images/avatar.jpg" alt="${item.firstName} ${item.lastName}"/>
+					</div>
+
+					<div class="text-div">
+						<div class="first-class">${item.firstName} ${item.lastName}</div>
+						<div class="second-class">${item.staffId}</div>
+					</div>
+				</div>
+			</td>
+			<td>
+				<div class="text-div">
+					<div>${item.emailAddress}</div> 
+					<div">${item.phoneNumber}</div>
+				</div>
+			</td>
+			<td>${item.roleData?.roleName}</td>
+			<td>${item.lastLoginTime ? item.lastLoginTime : "00-00-00 00:00:00"}</td>
+			<td><div class="status-div ${item.statusData?.statusName}">${item.statusData?.statusName}</div></td>
+			<td><button class="btn view-btn" title="Click to view staff profile" onclick="_fetchEachSaff('${item.staffId}');">VIEW</button></td>
+		</tr>`
+    )
+    .join("");
+}
+
+/// Initialize Fetch Staff Data ///
+function _initFetchStaffData(data) {
+  const paginator = new Paginator(
+    data,
+    _renderStaffData,
+    "staffContentPaginationControls",
+    "staffPageContent",
+    10
+  );
+  __paginatorHandlers["staffContentPaginationControls"] = paginator;
+  paginator.renderPage();
 }
 
 /// Render Staff Data ///
@@ -260,29 +344,82 @@ function _initFetchStaffData(data) {
 }
 
 //// Fetch Each Staff ////
+// function _fetchEachSaff(staffId) {
+//     $("#get-form-more-div").css({'display': 'flex','justify-content': 'center','align-items': 'center'}) .fadeIn(500);
+// 	try {
+// 		//// call endpoint //////
+// 		_callFetchEndPoints({
+// 			url: `admin/staff/fetch-staff?staffId=${staffId}`,
+// 			accessKey: true,
+// 		})
+// 		.then((response) => {
+// 			sessionStorage.setItem("getEachStaffDetailsSession", JSON.stringify(response?.data?.[0]));
+// 			_getForm({page: 'staffProfile', url: portalMiddleWareUrl});
+// 		 })
+// 		.catch((error) => {
+// 			_staffValidationCheck(error.response);
+// 			_alertClose();
+// 			console.error("Error:", error);
+// 			_callAjaxError(() => _fetchEachSaff(staffId), error.message); // retry if needed
+// 		});
+// 	} catch (error) {
+// 		_alertClose();
+// 		console.error("Error:", error);
+// 		_callCatchError(() => _fetchEachSaff(staffId));
+//   	}
+// }
+
 function _fetchEachSaff(staffId) {
-    $("#get-form-more-div").css({'display': 'flex','justify-content': 'center','align-items': 'center'}) .fadeIn(500);
-	try {
-		//// call endpoint //////
-		_callFetchEndPoints({
-			url: `admin/staff/fetch-staff?staffId=${staffId}`,
-			accessKey: true,
-		})
-		.then((response) => {
-			sessionStorage.setItem("getEachStaffDetailsSession", JSON.stringify(response?.data?.[0]));
-			_getForm({page: 'staffProfile', url: portalMiddleWareUrl});
-		 })
-		.catch((error) => {
-			_staffValidationCheck(error.response);
-			_alertClose();
-			console.error("Error:", error);
-			_callAjaxError(() => _fetchEachSaff(staffId), error.message); // retry if needed
-		});
-	} catch (error) {
-		_alertClose();
-		console.error("Error:", error);
-		_callCatchError(() => _fetchEachSaff(staffId));
-  	}
+    $("#get-form-more-div").css({
+        'display': 'flex',
+        'justify-content': 'center',
+        'align-items': 'center'
+    }).fadeIn(500);
+
+    try {
+        //// DUMMY RESPONSE FOR TESTING //////
+
+        const response = {
+            data: [
+                {
+                    staffId: staffId,
+                    firstName: "John",
+                    lastName: "Doe",
+                    emailAddress: "john.doe@example.com",
+                    phoneNumber: "08012345678",
+                    createdTime: "2026-10-15 09:30:00",
+                    lastLoginTime: "2026-11-09 14:25:00",
+
+                    roleData: {
+                        roleId: "ADMIN",
+                        roleName: "Administrator"
+                    },
+
+                    statusData: {
+                        statusId: "1",
+                        statusName: "ACTIVE"
+                    }
+                }
+            ]
+        };
+
+        //// END DUMMY RESPONSE //////
+
+        sessionStorage.setItem(
+            "getEachStaffDetailsSession",
+            JSON.stringify(response?.data?.[0])
+        );
+
+        _getForm({
+            page: 'staffProfile',
+            url: portalMiddleWareUrl
+        });
+
+    } catch (error) {
+        _alertClose();
+        console.error("Error:", error);
+        _callCatchError(() => _fetchEachSaff(staffId));
+    }
 }
 
 //// /// Update Staff ////

@@ -24,10 +24,14 @@
                     <span>Administrators</span>
                 </div>
 
-                <div class="nav-div" title="Bookings" id="bookingsPage"
+                <div class="nav-div request-nav" title="Bookings" id="bookingsPage"
                     onclick="_getActivePage({page:'bookingsPage', divid:'bookingsPage'});">
-                    <i class="bi bi-calendar-check"></i>
-                    <span>Bookings</span>
+                    <div class="left-cont">
+                        <i class="bi bi-calendar-check"></i>
+                        <span>Bookings</span>
+                    </div>
+                    
+                    <div class="request-count">20</div>
                 </div>
 
                 <div class="nav-div" title="Customers" id="customerPage"

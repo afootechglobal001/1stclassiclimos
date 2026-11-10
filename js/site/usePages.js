@@ -1262,7 +1262,7 @@ function _getEachPageDetails(options) {
             };
         }
 
-        if (pageCategory === "PACKAGE_DEALS") {
+        if (pageCategory === "PACKAGE_DEAL") {
             response = {
                 data:
                     {
@@ -1437,7 +1437,7 @@ function _getEachPageDetails(options) {
                 pixPath = fleetPixPath;
             } else if (pageCategory == 'BLOG') {
                 pixPath = blogPixPath;
-            } else if (pageCategory == 'PACKAGE_DEALS') {
+            } else if (pageCategory == 'PACKAGE_DEAL') {
                 pixPath = packageDealsPixPath;
             } else if (pageCategory == 'WINE_TOUR') {
                 pixPath = wineTourPixPath;
