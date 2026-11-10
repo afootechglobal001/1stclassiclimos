@@ -80,32 +80,48 @@
                             <li title="Administrators" onclick="_getActivePage({page:'adminPage', divid:'adminPage'});">
                                 <i class="bi bi-people"></i> Administrators
                             </li>
-                            <li title="Artisan"
-                                onclick="_getActivePage({page:'artisanPage', divid:'artisanPage'});">
-                                <i class="bi bi-tools"></i> Artisan
+                            <li title="Bookings"
+                                onclick="_getActivePage({page:'bookingsPage', divid:'bookingsPage'});">
+                                <i class="bi bi-calendar-check"></i> Bookings
                             </li>
-                            <li title="Task"
-                                onclick="_getActivePage({page:'taskPage', divid:'taskPage'});">
-                                <i class="bi bi-list-check"></i> Task
+                            <li title="Customers"
+                                onclick="_getActivePage({page:'customerPage', divid:'customerPage'});">
+                                <i class="bi bi-people"></i> Customers
                             </li>
-                            <li title="Invoice"
-                                onclick="_getActivePage({page:'invoicePage', divid:'invoicePage'});">
-                                <i class="bi bi-receipt"></i> Invoice
+                            <li title="Fleets"
+                                onclick="_getActivePage({page:'fleetPage', divid:'fleetPage'});">
+                                <i class="bi bi-car-front"></i> Fleets
                             </li>
-                            <li title="Services" onclick="_getActivePage({page:'servicePage', divid:'servicePage'});">
-                                <i class="bi bi-stack"></i> Services
+                            <li title="Wine Tour" onclick="_getActivePage({page:'wineTourPage', divid:'wineTourPage'});">
+                                <i class="bi bi-cup-straw"></i> Wine Tour
                             </li>
-                            <li title="Gallery"
-                                onclick="_getActivePage({page:'galleryPage', divid:'galleryPage'});">
-                                <i class="bi bi-images"></i> Gallery
+                            <li title="Package Deals"
+                                onclick="_getActivePage({page:'packageDealsPage', divid:'packageDealsPage'});">
+                                <i class="bi bi-box-seam"></i> Package Deals
                             </li>
-                            <li title="Blog"
-                                onclick="_getActivePage({page:'blogPage', divid:'blogPage'});">
-                                <i class="bi bi-journal-text"></i> Blog
+                            <li title="Airport Transport"
+                                onclick="_getActivePage({page:'airportTransportPage', divid:'airportTransportPage'});">
+                                <i class="bi bi-airplane"></i> Airport Transport
                             </li>
-                            <li title="Frequently Asked Questions"
-                                onclick="_getActivePage({page:'faqPage', divid:'faqPage'});">
-                                <i class="bi bi-question-circle"></i> FAQ
+                            <li title="Charter Services"
+                                onclick="_getActivePage({page:'chartterServicesPage', divid:'chartterServicesPage'});">
+                                <i class="bi bi-bus-front"></i> Charter Services
+                            </li>
+                            <li title="Service Locations"
+                                onclick="_getActivePage({page:'serviceLocationsPage', divid:'serviceLocationsPage'});">
+                                <i class="bi bi-geo-alt"></i> Service Locations
+                            </li>
+                            <li title="Resorts"
+                                onclick="_getActivePage({page:'resortPage', divid:'resortPage'});">
+                                <i class="bi bi-buildings"></i> Resorts
+                            </li>
+                            <li title="Airports"
+                                onclick="_getActivePage({page:'airportsPage', divid:'airportsPage'});">
+                                <i class="bi bi-airplane"></i> Airports
+                            </li>
+                            <li title="Affiliates"
+                                onclick="_getActivePage({page:'affiliatesPage', divid:'affiliatesPage'});">
+                                <i class="bi bi-diagram-3"></i> Affiliates
                             </li>
                             <li class="logOut" title="Log-Out" onclick="_confirmLogOut();">
                                 <i class="bi bi-power"></i> Log-Out
