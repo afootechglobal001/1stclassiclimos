@@ -8,18 +8,22 @@
 <head>
     <?php include 'meta.php' ?>
     <title><?php echo $appName ?> | Worldwide Chauffeured Transportation</title>
-    <meta name="keywords" content="Limo Rental, Limousine, Shuttle, Car Service, Limo Transportation, Limo Rental, Limo to Airport, Airport, Shuttle to Airport, Oakland International Airport, San Francisco International Airport, San Jose International Airport, Napa Airport, Sacramento International Airport, Wine Tour, Wine Tasting, Wine Tour and Tasting, Limo wine tour, Limousine Wine Tour, Napa Wine, Sonoma Wine Tour, Livermore Wine Tour, Russian River Wine Tour, Corporate Transportation Car  Service, Sports Event Limousine, Night Out Limo, Airport Limousine, Airport Car Service, Wedding Limousine, Prom Limousine, Birthday Limousine, Airport Transfer, Bay Area Limo, Limo in San Francisco, Sightseeing Limo, Airport Transportation, Airport Shuttle, Napa Valley Wine Tour, Sonoma Valley Wine Tour, Livermore Valley Wine Tour, Wine Country Tour, Transportation service, Shuttle Service, Limousine Service, Black Car Service, OAK, SFO, SJC, SMF, Hourly transportation, Day Trip, Day tour, Point-to-point transportation, Hourly Limousine Service, Hourly Car Service, Hourly Transportation Car Service, Charter Bus Service, Bay Area, limo rentals, party buses, classic cars, stretch limo rental services, California, 1st classic, first classic" />
-    <meta name="description" content="Premier Airport Transportation Limousine Car service provider in San Francisco for Corporate Transportation, Wine Tour to Napa, Sonoma, Livermore Valley"/>
+    <meta name="keywords"
+        content="Limo Rental, Limousine, Shuttle, Car Service, Limo Transportation, Limo Rental, Limo to Airport, Airport, Shuttle to Airport, Oakland International Airport, San Francisco International Airport, San Jose International Airport, Napa Airport, Sacramento International Airport, Wine Tour, Wine Tasting, Wine Tour and Tasting, Limo wine tour, Limousine Wine Tour, Napa Wine, Sonoma Wine Tour, Livermore Wine Tour, Russian River Wine Tour, Corporate Transportation Car  Service, Sports Event Limousine, Night Out Limo, Airport Limousine, Airport Car Service, Wedding Limousine, Prom Limousine, Birthday Limousine, Airport Transfer, Bay Area Limo, Limo in San Francisco, Sightseeing Limo, Airport Transportation, Airport Shuttle, Napa Valley Wine Tour, Sonoma Valley Wine Tour, Livermore Valley Wine Tour, Wine Country Tour, Transportation service, Shuttle Service, Limousine Service, Black Car Service, OAK, SFO, SJC, SMF, Hourly transportation, Day Trip, Day tour, Point-to-point transportation, Hourly Limousine Service, Hourly Car Service, Hourly Transportation Car Service, Charter Bus Service, Bay Area, limo rentals, party buses, classic cars, stretch limo rental services, California, 1st classic, first classic" />
+    <meta name="description"
+        content="Premier Airport Transportation Limousine Car service provider in San Francisco for Corporate Transportation, Wine Tour to Napa, Sonoma, Livermore Valley" />
 
     <meta property="og:title" content="<?php echo $appName ?> | Worldwide Chauffeured Transportation" />
-    <meta property="og:image" content="<?php echo $websiteUrl ?>/all-images/plugin-pix/1st-classic.jpg"/>
-    <meta property="og:description" content="Premier Airport Transportation Limousine Car service provider in San Francisco for Corporate Transportation, Wine Tour to Napa, Sonoma, Livermore Valley"/>
+    <meta property="og:image" content="<?php echo $websiteUrl ?>/all-images/plugin-pix/1st-classic.jpg" />
+    <meta property="og:description"
+        content="Premier Airport Transportation Limousine Car service provider in San Francisco for Corporate Transportation, Wine Tour to Napa, Sonoma, Livermore Valley" />
 
     <meta name="twitter:title" content="<?php echo $appName ?> | Worldwide Chauffeured Transportation" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <meta name="twitter:image" content="<?php echo $websiteUrl ?>/all-images/plugin-pix/1st-classic.jpg"/>
-    <meta name="twitter:description" content="Premier Airport Transportation Limousine Car service provider in San Francisco for Corporate Transportation, Wine Tour to Napa, Sonoma, Livermore Valley"/>
+    <meta name="twitter:image" content="<?php echo $websiteUrl ?>/all-images/plugin-pix/1st-classic.jpg" />
+    <meta name="twitter:description"
+        content="Premier Airport Transportation Limousine Car service provider in San Francisco for Corporate Transportation, Wine Tour to Napa, Sonoma, Livermore Valley" />
 </head>
 
 <body>
@@ -30,20 +34,25 @@
             <div class="content-back-div">
                 <div class="text-content-div animated fadeIn">
                     <div class="top-content">
-                        <i class="bi-car-front-fill"></i> <h3>Premium Chauffeured & Airpot Transportation</h3>
+                        <i class="bi-car-front-fill"></i>
+                        <h3>Premium Chauffeured & Airpot Transportation</h3>
                     </div>
-                    <h1 id="pageTitle">1st Classic Chauffeur Services.</h1>
-                    <p><strong><?php echo $appName ?></strong> is a premier chauffeured transportation provider serving the San Francisco Bay Area and beyond. We specialize in professional airport transportation, corporate travel, private car service.</p>
+                    <h1 id="pageTitle">1st Classic Worldwide Chauffeur Services.</h1>
+                    <p>A premier chauffeured transportation provider serving
+                        the San Francisco Bay Area and beyond. We specialize in professional airport transportation,
+                        corporate travel, private car service.</p>
 
                     <div class="btn-div">
-                        <button class="btn" title="Make Reservation Now"><i class="bi bi-calendar2-check-fill"></i> Make Reservation Now</button>
-                        <button class="btn variant-btn" title="Make Reservation Now"><i class="bi-car-front-fill"></i> Explore Our Fleets</button>
+                        <button class="btn" title="Make Reservation Now"><i class="bi bi-calendar2-check-fill"></i> Make
+                            Reservation Now</button>
+                        <button class="btn variant-btn" title="Make Reservation Now"><i class="bi-car-front-fill"></i>
+                            Explore Our Fleets</button>
                     </div>
 
                     <div class="features-wrapper">
                         <div class="feature-div">
                             <div class="icon-div">
-                                <i class="bi-car-front-fill"></i> 
+                                <i class="bi-car-front-fill"></i>
                             </div>
 
                             <div class="content">
@@ -56,7 +65,7 @@
                             <div class="icon-div">
                                 <i class="bi bi-headset"></i>
                             </div>
-                            
+
                             <div class="content">
                                 <h3>24/7 Support</h3>
                                 <p>We're here, always.</p>
@@ -67,7 +76,7 @@
                             <div class="icon-div">
                                 <i class="bi bi-shield-check"></i>
                             </div>
-                            
+
                             <div class="content">
                                 <h3>Trusted & Secure</h3>
                                 <p>Your journey, our priority.</p>
@@ -77,60 +86,6 @@
                 </div>
             </div>
         </div>
-
-        <script type="text/javascript">
-            // List of sentences
-            var _CONTENT = ["1st Classic Worldwide Chauffeur Services.",
-                "Airport Limo, Black Car & Bus Services.",
-                "Ride in style, comfort and class!",
-                "Corporate Travel, Wine Tours & More!",
-            ];
-            // Current sentence being processed
-            var _PART = 0;
-            // Character number of the current sentence being processed 
-            var _PART_INDEX = 0;
-            // Element that holds the text
-            var _ELEMENT = document.querySelector("#pageTitle");
-            // Implements typing effect
-            function Type() {
-                var text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
-                _ELEMENT.innerHTML = text;
-                _PART_INDEX++;
-
-                // If full sentence has been displayed then start to delete the sentence after some time
-                if (text === _CONTENT[_PART]) {
-                    clearInterval(_INTERVAL_VAL);
-                    setTimeout(function() {
-                        _INTERVAL_VAL = setInterval(Delete, 2);
-                    }, 5000);
-                }
-            }
-            // Implements deleting effect
-            function Delete() {
-                var text = _CONTENT[_PART].substring(0, _PART_INDEX - 1);
-                _ELEMENT.innerHTML = text;
-                _PART_INDEX--;
-
-                // If sentence has been deleted then start to display the next sentence
-                if (text === '') {
-                    clearInterval(_INTERVAL_VAL);
-
-                    // If last sentence then display the first one, else move to the next
-                    if (_PART == (_CONTENT.length - 1))
-                        _PART = 0;
-                    else
-                        _PART++;
-                    _PART_INDEX = 0;
-
-                    // Start to display the next sentence after some time
-                    setTimeout(function() {
-                        _INTERVAL_VAL = setInterval(Type, 50);
-                    }, 200);
-                }
-            }
-            // Start the typing effect on load
-            _INTERVAL_VAL = setInterval(Type, 50);
-        </script>
     </div>
 
     <section class="index-content-div">
@@ -217,8 +172,7 @@
                             </div>
                         </div>
 
-                        <input type="hidden" name="bookingType"
-                            id="slideBookingType" value="distance">
+                        <input type="hidden" name="bookingType" id="slideBookingType" value="distance">
 
                         <button title="Book Your Ride" class="btn">
                             <i class="bi-car-front-fill"></i>
@@ -240,7 +194,8 @@
 
                         <div class="main-title">
                             <h2>Exceptional Cars For Exceptional Journeys</h2>
-                            <p>Explore a carefully curated collection of luxury vehicles, selected for refined comfort, distinctive design, and effortless performance on every journey.</p>
+                            <p>Explore a carefully curated collection of luxury vehicles, selected for refined comfort,
+                                distinctive design, and effortless performance on every journey.</p>
                         </div>
                     </div>
 
@@ -251,15 +206,15 @@
                                 limit: 3,
                                 pageContainer: "indexFleetPageContent"
                             })
-                        </script> 
+                        </script>
                     </div>
 
                     <div class="bottom-btn-div animated fadeIn">
                         <a href="<?php echo $websiteUrl; ?>/fleet">
-                        <button class="btn" title="Explore More Fleet">
-                            Explore More Fleet
-                            <i class="bi bi-car-front-fill"></i>
-                        </button></a>
+                            <button class="btn" title="Explore More Fleet">
+                                Explore More Fleet
+                                <i class="bi bi-car-front-fill"></i>
+                            </button></a>
                     </div>
                 </div>
             </div>
@@ -268,7 +223,7 @@
         <section class="body-div net-bg-tr">
             <div class="body-div-in">
                 <div class="main-pages-back-div">
-                    <div class="about-wrapper"  data-aos="fade-in" data-aos-duration="1200">
+                    <div class="about-wrapper" data-aos="fade-in" data-aos-duration="1200">
                         <div class="content-div">
                             <div class="general-title other-title" data-aos="fade-in" data-aos-duration="1000">
                                 <div class="top-title">
@@ -283,7 +238,12 @@
 
                             <div class="text-div">
                                 <p>
-                                   <strong><?php echo $appName ?></strong>, is a premier chauffeured transportation provider serving the San Francisco Bay Area and beyond. We specialize in professional airport transportation, corporate travel, private car service, and group transportation. Built around reliability, safety, comfort, and exceptional customer care, we provide seamless transportation solutions for residential, business, and leisure travelers.
+                                    <strong><?php echo $appName ?></strong>, is a premier chauffeured transportation
+                                    provider serving the San Francisco Bay Area and beyond. We specialize in
+                                    professional airport transportation, corporate travel, private car service, and
+                                    group transportation. Built around reliability, safety, comfort, and exceptional
+                                    customer care, we provide seamless transportation solutions for residential,
+                                    business, and leisure travelers.
                                 </p>
 
                                 <div class="about-listing">
@@ -294,7 +254,8 @@
 
                                         <div class="content">
                                             <h3>Exceptional Fleet</h3>
-                                            <p>Curated luxury vehicles crafted for memorable and effortless journeys.</p>
+                                            <p>Curated luxury vehicles crafted for memorable and effortless journeys.
+                                            </p>
                                         </div>
                                     </div>
 
@@ -320,7 +281,8 @@
                         </div>
 
                         <div class="image-div" data-aos="fade-up" data-aos-duration="1000">
-                            <img src="<?php echo $websiteUrl; ?>/all-images/body-pix/about-bg.png" alt="About <?php echo $appName ?>">
+                            <img src="<?php echo $websiteUrl; ?>/all-images/body-pix/about-bg.png"
+                                alt="About <?php echo $appName ?>">
                         </div>
                     </div>
                 </div>
@@ -338,7 +300,8 @@
 
                         <div class="main-title">
                             <h2>Premium Services for Every Journey</h2>
-                            <p>Discover our luxury vehicle rentals and professional chauffeur services, tailored to deliver comfort, convenience, and a first-class travel experience.</p>
+                            <p>Discover our luxury vehicle rentals and professional chauffeur services, tailored to
+                                deliver comfort, convenience, and a first-class travel experience.</p>
                         </div>
                     </div>
 
@@ -354,10 +317,10 @@
 
                     <div class="bottom-btn-div animated fadeIn">
                         <a href="<?php echo $websiteUrl; ?>/airport-transportation-limousine-car-service">
-                        <button class="btn" title=" Discover All Services">
-                            Discover All Services
-                            <i class="bi bi-gem"></i>
-                        </button></a>
+                            <button class="btn" title=" Discover All Services">
+                                Discover All Services
+                                <i class="bi bi-gem"></i>
+                            </button></a>
                     </div>
                 </div>
             </div>
@@ -399,10 +362,10 @@
 
                             <div class="btn-div">
                                 <a href="<?php echo $websiteUrl; ?>/faq">
-                                <button class="btn" title="Read More FAQ">
-                                    Read More FAQ
-                                    <i class="bi bi-arrow-right-circle"></i>
-                                </button></a>
+                                    <button class="btn" title="Read More FAQ">
+                                        Read More FAQ
+                                        <i class="bi bi-arrow-right-circle"></i>
+                                    </button></a>
                             </div>
                         </div>
                     </div>
@@ -423,7 +386,8 @@
 
                         <div class="main-title">
                             <h2>News, Blogs & Articles</h2>
-                            <p>Explore our latest travel stories, vehicle insights, and destination guides to find inspiration for your next Revamo experience.</p>
+                            <p>Explore our latest travel stories, vehicle insights, and destination guides to find
+                                inspiration for your next Revamo experience.</p>
                         </div>
                     </div>
 
@@ -438,10 +402,10 @@
 
                     <div class="bottom-btn-div animated fadeIn">
                         <a href="<?php echo $websiteUrl; ?>/blog">
-                        <button class="btn" title="Read More Blogs">
-                            Read More Blogs
-                            <i class="bi bi-arrow-right-circle"></i>
-                        </button></a>
+                            <button class="btn" title="Read More Blogs">
+                                Read More Blogs
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button></a>
                     </div>
                 </div>
             </div>
